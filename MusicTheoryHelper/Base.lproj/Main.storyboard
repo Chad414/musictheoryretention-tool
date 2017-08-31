@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MTH-->
+        <scene sceneID="sx4-CQ-7jr">
+            <objects>
+                <tableViewController id="6fe-Yi-R18" customClass="MainMenuTableViewController" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="p9a-yQ-csN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="oCM-Xa-JEt">
+                                <rect key="frame" x="0.0" y="28" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCM-Xa-JEt" id="3iI-Xv-jTP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6fe-Yi-R18" id="1aQ-S0-ghb"/>
+                            <outlet property="delegate" destination="6fe-Yi-R18" id="Lt7-xI-daj"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="MTH" id="hyO-Ji-1Fw">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="reF-HI-uxc"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="dqX-AP-WKv" kind="show" identifier="piano1" id="hPs-xu-Zlj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eiW-xT-oP2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-546.47676161919048"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tf0-lt-9Sg">
+            <objects>
+                <viewController id="dqX-AP-WKv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3oa-Qn-lXi"/>
+                        <viewControllerLayoutGuide type="bottom" id="DHN-Jp-Mz0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fdW-hy-MzY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Options For Piano Note Identification" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAV-Tl-qh9">
+                                <rect key="frame" x="47" y="96" width="281" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-Rk-PBz">
+                                <rect key="frame" x="170" y="509" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="fCP-pQ-SxT" kind="show" id="saf-iX-to9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomize Placement of Buttons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fko-ps-aPw">
+                                <rect key="frame" x="60.5" y="181" width="254" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7n-k1-ZOD">
+                                <rect key="frame" x="163" y="210" width="51" height="31"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="a7n-k1-ZOD" firstAttribute="centerX" secondItem="fdW-hy-MzY" secondAttribute="centerX" id="8w7-BG-1w0"/>
+                            <constraint firstItem="bAV-Tl-qh9" firstAttribute="top" secondItem="3oa-Qn-lXi" secondAttribute="bottom" constant="32" id="I6L-Lz-Usd"/>
+                            <constraint firstItem="Fko-ps-aPw" firstAttribute="centerX" secondItem="fdW-hy-MzY" secondAttribute="centerX" id="NoU-Am-XHk"/>
+                            <constraint firstItem="eyZ-Rk-PBz" firstAttribute="centerX" secondItem="fdW-hy-MzY" secondAttribute="centerX" id="Rna-kG-lbB"/>
+                            <constraint firstItem="Fko-ps-aPw" firstAttribute="top" secondItem="bAV-Tl-qh9" secondAttribute="bottom" constant="64" id="VGI-NS-XCa"/>
+                            <constraint firstItem="bAV-Tl-qh9" firstAttribute="centerX" secondItem="fdW-hy-MzY" secondAttribute="centerX" id="exk-jI-jdi"/>
+                            <constraint firstItem="DHN-Jp-Mz0" firstAttribute="top" secondItem="eyZ-Rk-PBz" secondAttribute="bottom" constant="128" id="hIw-XN-nWb"/>
+                            <constraint firstItem="a7n-k1-ZOD" firstAttribute="top" secondItem="Fko-ps-aPw" secondAttribute="bottom" constant="8" id="lGN-Db-C3T"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaR-06-chP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2896.8000000000002" y="-543.77811094452773"/>
+        </scene>
+        <!--Piano Note IdentificationVC-->
+        <scene sceneID="0Nw-MO-2cn">
+            <objects>
+                <viewController id="fCP-pQ-SxT" customClass="PianoNoteIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fm4-IU-hZC"/>
+                        <viewControllerLayoutGuide type="bottom" id="cXC-fm-efw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="o18-Af-FCR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgM-UM-fbf">
+                                <rect key="frame" x="37.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="note1:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="clh-sr-4xq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-mI-i3v">
+                                <rect key="frame" x="262.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="A"/>
+                                <connections>
+                                    <action selector="note10:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="QXG-h5-g6L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQG-vZ-2Qa">
+                                <rect key="frame" x="82.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="D"/>
+                                <connections>
+                                    <action selector="note3:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="7Ly-4I-w02"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtH-u6-qnl">
+                                <rect key="frame" x="127.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="E"/>
+                                <connections>
+                                    <action selector="note5:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="ZLD-oC-xka"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35f-n5-xNS">
+                                <rect key="frame" x="217.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="G"/>
+                                <connections>
+                                    <action selector="note8:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="lWf-z2-wkI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaZ-i9-Wmi">
+                                <rect key="frame" x="307.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="B"/>
+                                <connections>
+                                    <action selector="note12:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="5xr-uK-kNL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOA-6h-2Uf">
+                                <rect key="frame" x="58.5" y="517" width="32" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="C#"/>
+                                <connections>
+                                    <action selector="note2:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="8X9-1c-Ss8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-R2-FN3">
+                                <rect key="frame" x="172.5" y="517" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="F#"/>
+                                <connections>
+                                    <action selector="note7:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="L0S-ty-kPp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-iA-G90">
+                                <rect key="frame" x="227.5" y="517" width="32" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="G#"/>
+                                <connections>
+                                    <action selector="note9:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="occ-Z8-vuR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-6h-Z2P">
+                                <rect key="frame" x="284.5" y="517" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="A#"/>
+                                <connections>
+                                    <action selector="note11:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="705-c3-lVc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIw-Ze-Vyn">
+                                <rect key="frame" x="172.5" y="578" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="F"/>
+                                <connections>
+                                    <action selector="note6:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="pQJ-sW-x6q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-H4-gTV">
+                                <rect key="frame" x="115.5" y="517" width="32" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="D#"/>
+                                <connections>
+                                    <action selector="note4:" destination="fCP-pQ-SxT" eventType="touchUpInside" id="Zmq-hv-hrg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Note Displayed on the Piano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu9-6D-ozY">
+                                <rect key="frame" x="39" y="96" width="297" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-sV-NDY">
+                                <rect key="frame" x="142.5" y="476.5" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQD-bU-lAa">
+                                <rect key="frame" x="47.5" y="180.5" width="280" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="K8a-ih-Dhh"/>
+                                    <constraint firstAttribute="width" constant="280" id="vHb-wB-h8S"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="toc-mI-i3v" secondAttribute="bottom" constant="48" id="5Jc-dy-LFA"/>
+                            <constraint firstItem="kaZ-i9-Wmi" firstAttribute="leading" secondItem="toc-mI-i3v" secondAttribute="trailing" constant="15" id="89Q-kp-k3s"/>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="35f-n5-xNS" secondAttribute="bottom" constant="48" id="8gM-F6-dJ2"/>
+                            <constraint firstItem="QQD-bU-lAa" firstAttribute="top" secondItem="hu9-6D-ozY" secondAttribute="bottom" constant="64" id="91q-IS-0sI"/>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="AgM-UM-fbf" secondAttribute="bottom" constant="48" id="99N-TD-JfQ"/>
+                            <constraint firstItem="Dfa-6h-Z2P" firstAttribute="leading" secondItem="Pw4-iA-G90" secondAttribute="trailing" constant="25" id="9he-5W-mzv"/>
+                            <constraint firstItem="cIw-Ze-Vyn" firstAttribute="centerX" secondItem="o18-Af-FCR" secondAttribute="centerX" id="CMS-GX-xi2"/>
+                            <constraint firstItem="qtH-u6-qnl" firstAttribute="leading" secondItem="yQG-vZ-2Qa" secondAttribute="trailing" constant="15" id="DeD-kH-g66"/>
+                            <constraint firstItem="QQD-bU-lAa" firstAttribute="centerX" secondItem="o18-Af-FCR" secondAttribute="centerX" id="EjC-Bn-UbV"/>
+                            <constraint firstItem="yQG-vZ-2Qa" firstAttribute="leading" secondItem="AgM-UM-fbf" secondAttribute="trailing" constant="15" id="II1-Sc-743"/>
+                            <constraint firstItem="AzV-R2-FN3" firstAttribute="leading" secondItem="m1o-H4-gTV" secondAttribute="trailing" constant="25" id="MiU-c4-hJA"/>
+                            <constraint firstItem="35f-n5-xNS" firstAttribute="leading" secondItem="cIw-Ze-Vyn" secondAttribute="trailing" constant="15" id="Oxw-R3-sTZ"/>
+                            <constraint firstItem="m1o-H4-gTV" firstAttribute="leading" secondItem="yOA-6h-2Uf" secondAttribute="trailing" constant="25" id="R4U-rl-oZo"/>
+                            <constraint firstItem="yQG-vZ-2Qa" firstAttribute="top" secondItem="yOA-6h-2Uf" secondAttribute="bottom" constant="20" id="RNC-8O-RnA"/>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="kaZ-i9-Wmi" secondAttribute="bottom" constant="48" id="S3V-n7-rOM"/>
+                            <constraint firstItem="cIw-Ze-Vyn" firstAttribute="top" secondItem="AzV-R2-FN3" secondAttribute="bottom" constant="20" id="UYl-qA-kGd"/>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="qtH-u6-qnl" secondAttribute="bottom" constant="48" id="WpU-YW-qOt"/>
+                            <constraint firstItem="Pw4-iA-G90" firstAttribute="leading" secondItem="AzV-R2-FN3" secondAttribute="trailing" constant="25" id="Ynk-WZ-4wf"/>
+                            <constraint firstItem="AzV-R2-FN3" firstAttribute="centerX" secondItem="o18-Af-FCR" secondAttribute="centerX" id="Z6p-ki-law"/>
+                            <constraint firstItem="qtH-u6-qnl" firstAttribute="top" secondItem="m1o-H4-gTV" secondAttribute="bottom" constant="20" id="b92-XH-M8a"/>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="cIw-Ze-Vyn" secondAttribute="bottom" constant="48" id="brd-UI-SYJ"/>
+                            <constraint firstItem="toc-mI-i3v" firstAttribute="leading" secondItem="35f-n5-xNS" secondAttribute="trailing" constant="15" id="edR-fA-dnY"/>
+                            <constraint firstItem="cXC-fm-efw" firstAttribute="top" secondItem="yQG-vZ-2Qa" secondAttribute="bottom" constant="48" id="edi-5j-3cR"/>
+                            <constraint firstItem="cIw-Ze-Vyn" firstAttribute="leading" secondItem="qtH-u6-qnl" secondAttribute="trailing" constant="15" id="hMh-tB-amA"/>
+                            <constraint firstItem="toc-mI-i3v" firstAttribute="top" secondItem="Dfa-6h-Z2P" secondAttribute="bottom" constant="20" id="iQ8-zM-JQE"/>
+                            <constraint firstItem="hu9-6D-ozY" firstAttribute="centerX" secondItem="o18-Af-FCR" secondAttribute="centerX" id="jPJ-cr-vKD"/>
+                            <constraint firstItem="hu9-6D-ozY" firstAttribute="top" secondItem="fm4-IU-hZC" secondAttribute="bottom" constant="32" id="qR1-Dr-mhL"/>
+                            <constraint firstItem="QcA-sV-NDY" firstAttribute="centerX" secondItem="o18-Af-FCR" secondAttribute="centerX" id="tmZ-cp-NXe"/>
+                            <constraint firstItem="m1o-H4-gTV" firstAttribute="top" secondItem="QcA-sV-NDY" secondAttribute="bottom" constant="20" id="vLb-g1-gFE"/>
+                            <constraint firstItem="35f-n5-xNS" firstAttribute="top" secondItem="Pw4-iA-G90" secondAttribute="bottom" constant="20" id="zdp-o7-ql5"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="note10Button" destination="toc-mI-i3v" id="08Z-wr-eUw"/>
+                        <outlet property="note11Button" destination="Dfa-6h-Z2P" id="12a-f0-Q2A"/>
+                        <outlet property="note12Button" destination="kaZ-i9-Wmi" id="JQh-lK-Eq2"/>
+                        <outlet property="note1Button" destination="AgM-UM-fbf" id="KAE-JO-cnf"/>
+                        <outlet property="note2Button" destination="yOA-6h-2Uf" id="EgR-OX-XWs"/>
+                        <outlet property="note3Button" destination="yQG-vZ-2Qa" id="jyS-41-ByS"/>
+                        <outlet property="note4Button" destination="m1o-H4-gTV" id="orv-jb-dSP"/>
+                        <outlet property="note5Button" destination="qtH-u6-qnl" id="3x6-i0-OgU"/>
+                        <outlet property="note6Button" destination="cIw-Ze-Vyn" id="GzN-ES-DaS"/>
+                        <outlet property="note7Button" destination="AzV-R2-FN3" id="Mwl-No-Mro"/>
+                        <outlet property="note8Button" destination="35f-n5-xNS" id="cN3-yV-Zye"/>
+                        <outlet property="note9Button" destination="Pw4-iA-G90" id="xVP-5c-gFg"/>
+                        <outlet property="pianoImageView" destination="QQD-bU-lAa" id="iOm-oJ-lXD"/>
+                        <outlet property="scoreLabel" destination="QcA-sV-NDY" id="Gjf-6d-yTR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="igM-aE-Blh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3804" y="-545.57721139430294"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ngX-uM-Ivz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9e7-1V-gaW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EQP-Ua-l20">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6fe-Yi-R18" kind="relationship" relationship="rootViewController" id="TlM-hg-kfh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOS-IR-5HQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1088.8" y="-546.47676161919048"/>
+        </scene>
+    </scenes>
+</document>
