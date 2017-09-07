@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MTH-->
+        <!--MTRT-->
         <scene sceneID="sx4-CQ-7jr">
             <objects>
                 <tableViewController id="6fe-Yi-R18" customClass="MainMenuTableViewController" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,7 +32,7 @@
                             <outlet property="delegate" destination="6fe-Yi-R18" id="Lt7-xI-daj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MTH" id="hyO-Ji-1Fw">
+                    <navigationItem key="navigationItem" title="MTRT" id="hyO-Ji-1Fw">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="reF-HI-uxc"/>
                     </navigationItem>
                     <connections>
@@ -62,7 +62,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-Rk-PBz">
-                                <rect key="frame" x="170" y="509" width="34" height="30"/>
+                                <rect key="frame" x="170.5" y="509" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="fCP-pQ-SxT" kind="show" id="saf-iX-to9"/>
@@ -204,22 +204,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Note Displayed on the Piano" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu9-6D-ozY">
-                                <rect key="frame" x="39" y="96" width="297" height="20.5"/>
+                                <rect key="frame" x="38.5" y="96" width="298" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-sV-NDY">
-                                <rect key="frame" x="142.5" y="476.5" width="90" height="21"/>
+                                <rect key="frame" x="142.5" y="476" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQD-bU-lAa">
-                                <rect key="frame" x="47.5" y="180.5" width="280" height="128"/>
+                                <rect key="frame" x="36" y="181" width="303" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="K8a-ih-Dhh"/>
-                                    <constraint firstAttribute="width" constant="280" id="vHb-wB-h8S"/>
+                                    <constraint firstAttribute="width" constant="303" id="vHb-wB-h8S"/>
                                 </constraints>
                             </imageView>
                         </subviews>

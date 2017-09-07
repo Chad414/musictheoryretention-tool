@@ -8,22 +8,6 @@
 
 import UIKit
 
-struct PianoImages { // Stores paths for different note images
-    static let paths: [Int:String] = [
-        0 : "0",
-        1 : "1",
-        2 : "2",
-        3 : "3",
-        4 : "4",
-        5 : "5",
-        6 : "6",
-        7 : "7",
-        8 : "8",
-        9 : "9",
-        10 : "10",
-        11 : "11"]
-}
-
 class PianoNoteIdentificationVC: UIViewController {
     
     // Each note should be displayed twice per session, order will be randomized later.
@@ -138,6 +122,8 @@ class PianoNoteIdentificationVC: UIViewController {
         print("Current Displayed Note: \(notesToDisplay[progress])")
         
         // Display first note here, further progress will be handled by button actions
+        pianoImageView.image = UIImage(named: "PianoGraphic.png")
+        //pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png") Use this once piano graphic is complete
         
     }
     
@@ -169,6 +155,7 @@ class PianoNoteIdentificationVC: UIViewController {
             scoreLabel.text = "Score: \(correctAnswers)/\(notesToDisplay.count)"
             progress += 1
             // Display next note here
+            pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
         }
         
         print("Current Displayed Note: \(notesToDisplay[progress])")
