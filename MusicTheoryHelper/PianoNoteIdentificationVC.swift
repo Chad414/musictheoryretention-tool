@@ -100,7 +100,7 @@ class PianoNoteIdentificationVC: UIViewController {
         
         // Randomize placement of butons
         noteButtonOrder.shuffle()
-        print("Randomized Button Order: \(noteButtonOrder)")
+        //print("Randomized Button Order: \(noteButtonOrder)")
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         var noteStringsToDisplay: [String] = []
         
@@ -122,13 +122,13 @@ class PianoNoteIdentificationVC: UIViewController {
         print("Current Displayed Note: \(notesToDisplay[progress])")
         
         // Display first note here, further progress will be handled by button actions
-        pianoImageView.image = UIImage(named: "PianoGraphic.png")
-        //pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png") Use this once piano graphic is complete
+        //pianoImageView.image = UIImage(named: "PianoGraphic.png")
+        pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
         
     }
     
     func proccessNoteButtonAction(note: Int) {
-        // Process specific note passed in here
+        // Process specific note passed here
         
         print("Note \(note) Selected!")
         
