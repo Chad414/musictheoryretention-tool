@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="17A360a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -43,10 +43,10 @@
             </objects>
             <point key="canvasLocation" x="2028" y="-546.47676161919048"/>
         </scene>
-        <!--View Controller-->
+        <!--Piano Note Identification OptionsVC-->
         <scene sceneID="tf0-lt-9Sg">
             <objects>
-                <viewController id="dqX-AP-WKv" sceneMemberID="viewController">
+                <viewController id="dqX-AP-WKv" customClass="PianoNoteIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3oa-Qn-lXi"/>
                         <viewControllerLayoutGuide type="bottom" id="DHN-Jp-Mz0"/>
@@ -65,7 +65,7 @@
                                 <rect key="frame" x="170.5" y="509" width="34" height="30"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
-                                    <segue destination="fCP-pQ-SxT" kind="show" id="saf-iX-to9"/>
+                                    <segue destination="fCP-pQ-SxT" kind="show" identifier="start" id="saf-iX-to9"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomize Placement of Buttons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fko-ps-aPw">
@@ -90,6 +90,9 @@
                             <constraint firstItem="a7n-k1-ZOD" firstAttribute="top" secondItem="Fko-ps-aPw" secondAttribute="bottom" constant="8" id="lGN-Db-C3T"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="randomizeButtons" destination="a7n-k1-ZOD" id="6TO-KD-RsV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaR-06-chP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -15,6 +15,7 @@ class PianoNoteIdentificationVC: UIViewController {
     var noteButtonOrder: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] // Order will be randomized
     var progress: Int = 0
     var correctAnswers: Int = 0
+    var randomizeButtons: Bool = true
     
     // There must be a total of 12 buttons for each note
     // Use button number for button order index
@@ -95,25 +96,26 @@ class PianoNoteIdentificationVC: UIViewController {
         navigationItem.title = "Piano Note Identification"
         scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
         
-        // Rewrite note names on buttons based on user settings
-        // Keep in mind this will need feedback from the Image View to be tested
-        
         // Randomize placement of butons
-        noteButtonOrder.shuffle()
-        //print("Randomized Button Order: \(noteButtonOrder)")
-        noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
-        var noteStringsToDisplay: [String] = []
-        
-        
-        for i in noteButtonOrder {
-            noteStringsToDisplay.append(GlobalSettings.noteNames1[i])
-        }
-        print("Note Strings: \(noteStringsToDisplay)")
-        
-        var noteCounter = 0
-        for i in noteButtons {
-            i.setTitle(noteStringsToDisplay[noteCounter], for: .normal)
-            noteCounter += 1
+        if randomizeButtons {
+            noteButtonOrder.shuffle()
+            
+            //print("Randomized Button Order: \(noteButtonOrder)")
+            noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
+            var noteStringsToDisplay: [String] = []
+            
+            
+            for i in noteButtonOrder {
+                noteStringsToDisplay.append(GlobalSettings.noteNames1[i])
+            }
+            print("Note Strings: \(noteStringsToDisplay)")
+            
+            var noteCounter = 0
+            for i in noteButtons {
+                i.setTitle(noteStringsToDisplay[noteCounter], for: .normal)
+                noteCounter += 1
+            }
+            
         }
         
         // Randomize notes array here
@@ -132,7 +134,7 @@ class PianoNoteIdentificationVC: UIViewController {
         
         print("Note \(note) Selected!")
         
-        guard progress < notesToDisplay.count else {
+        guard (progress + 1) < notesToDisplay.count else {
             print("Session should of ended, no more notes to display")
             return
         }
@@ -149,7 +151,7 @@ class PianoNoteIdentificationVC: UIViewController {
         }
         
         // Also check notes array progress, once all notes have been shown, end session
-        if progress == notesToDisplay.count {
+        if (progress + 1) == notesToDisplay.count {
             // End session
         } else {
             scoreLabel.text = "Score: \(correctAnswers)/\(notesToDisplay.count)"
@@ -162,4 +164,18 @@ class PianoNoteIdentificationVC: UIViewController {
         
     }
     
+}
+
+class PianoNoteIdentificationOptionsVC: UIViewController {
+    @IBOutlet var randomizeButtons: UISwitch!
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "start"?:
+            let destinationViewController = segue.destination as! PianoNoteIdentificationVC
+            destinationViewController.randomizeButtons = randomizeButtons.isOn
+        default:
+            print("Unexpected segue selected")
+        }
+    }
 }
