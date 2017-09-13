@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PianoNoteIdentificationVC: UIViewController {
     
     // Each note should be displayed twice per session, order will be randomized later.
     var notesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
     var noteButtonOrder: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] // Order will be randomized
-    var progress: Int = 0
+    var progress: Int = 0 {
+        didSet {
+            // Display next note here
+            self.pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
+            self.userIsResponder = true
+        }
+    }
+    var userIsResponder: Bool = false
     var correctAnswers: Int = 0
     var randomizeButtons: Bool = true
     
@@ -21,51 +29,87 @@ class PianoNoteIdentificationVC: UIViewController {
     // Use button number for button order index
     @IBAction func note1(_ sender: UIButton) {
         print("\(noteButtonOrder[0]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[0])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[0], buttonIndex: 0)
+        }
     }
     @IBAction func note2(_ sender: UIButton) {
         print("\(noteButtonOrder[1]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[1])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[1], buttonIndex: 1)
+        }
     }
     @IBAction func note3(_ sender: UIButton) {
         print("\(noteButtonOrder[2]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[2])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[2], buttonIndex: 2)
+        }
     }
     @IBAction func note4(_ sender: UIButton) {
         print("\(noteButtonOrder[3]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[3])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[3], buttonIndex: 3)
+        }
     }
     @IBAction func note5(_ sender: UIButton) {
         print("\(noteButtonOrder[4]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[4])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[4], buttonIndex: 4)
+        }
     }
     @IBAction func note6(_ sender: UIButton) {
         print("\(noteButtonOrder[5]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[5])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[5], buttonIndex: 5)
+        }
     }
     @IBAction func note7(_ sender: UIButton) {
         print("\(noteButtonOrder[6]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[6])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[6], buttonIndex: 6)
+        }
     }
     @IBAction func note8(_ sender: UIButton) {
         print("\(noteButtonOrder[7]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[7])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[7], buttonIndex: 7)
+        }
     }
     @IBAction func note9(_ sender: UIButton) {
         print("\(noteButtonOrder[8]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[8])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[8], buttonIndex: 8)
+        }
     }
     @IBAction func note10(_ sender: UIButton) {
         print("\(noteButtonOrder[9]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[9])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[9], buttonIndex: 9)
+        }
     }
     @IBAction func note11(_ sender: UIButton) {
         print("\(noteButtonOrder[10]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[10])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[10], buttonIndex: 10)
+        }
     }
     @IBAction func note12(_ sender: UIButton) {
         print("\(noteButtonOrder[11]) Pressed")
-        proccessNoteButtonAction(note: noteButtonOrder[11])
+        if userIsResponder {
+            userIsResponder = false
+            proccessNoteButtonAction(note: noteButtonOrder[11], buttonIndex: 11)
+        }
     }
     @IBOutlet var note1Button: UIButton!
     @IBOutlet var note2Button: UIButton!
@@ -127,9 +171,11 @@ class PianoNoteIdentificationVC: UIViewController {
         //pianoImageView.image = UIImage(named: "PianoGraphic.png")
         pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
         
+        userIsResponder = true
+        
     }
     
-    func proccessNoteButtonAction(note: Int) {
+    func proccessNoteButtonAction(note: Int, buttonIndex: Int) {
         // Process specific note passed here
         
         print("Note \(note) Selected!")
@@ -143,10 +189,12 @@ class PianoNoteIdentificationVC: UIViewController {
         // Note passed will be compared to current note being shown from the notes array
         if note == notesToDisplay[progress] {
             // The correct note was selected
+            animateFeedback(answer: true, buttonIndex: buttonIndex)
             print("Correct Note Selected")
             correctAnswers += 1
         } else {
             // The incorrect note was selected
+            animateFeedback(answer: false, buttonIndex: buttonIndex)
             print("Incorrect note selected")
         }
         
@@ -155,13 +203,30 @@ class PianoNoteIdentificationVC: UIViewController {
             // End session
         } else {
             scoreLabel.text = "Score: \(correctAnswers)/\(notesToDisplay.count)"
-            progress += 1
-            // Display next note here
-            pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
         }
         
         print("Current Displayed Note: \(notesToDisplay[progress])")
         
+    }
+    
+    func animateFeedback(answer correct: Bool, buttonIndex: Int) {
+        // Force any outstanding lauout changes
+        view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            if correct {
+                self.noteButtons[buttonIndex].tintColor = UIColor.green
+            } else {
+                self.noteButtons[buttonIndex].tintColor = UIColor.red
+            }
+        }, completion: { (finished: Bool) in
+            self.progress += 1
+            UIView.animate(withDuration: 1.0, animations: {
+                self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
+            }, completion: { (finished: Bool) in
+                //self.progress += 1
+            })
+        })
     }
     
 }
