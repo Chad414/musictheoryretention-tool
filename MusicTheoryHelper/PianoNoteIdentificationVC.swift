@@ -11,6 +11,10 @@ import AVFoundation
 
 class PianoNoteIdentificationVC: UIViewController {
     
+    var pianoAudioURL: [NSDataAsset] = [
+        NSDataAsset(name: "C3")!]
+    
+    var audioPlayer = AVAudioPlayer()
     // Each note should be displayed twice per session, order will be randomized later.
     var notesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
     var noteButtonOrder: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] // Order will be randomized
@@ -19,6 +23,7 @@ class PianoNoteIdentificationVC: UIViewController {
             // Display next note here
             self.pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
             self.userIsResponder = true
+            // Play next note here with AVFoundation
         }
     }
     var userIsResponder: Bool = false
@@ -138,7 +143,7 @@ class PianoNoteIdentificationVC: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Piano Note Identification"
-        scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
+        scoreLabel.text = "Progress: 0/\(notesToDisplay.count)"
         
         // Randomize placement of butons
         if randomizeButtons {
@@ -173,6 +178,15 @@ class PianoNoteIdentificationVC: UIViewController {
         
         userIsResponder = true
         
+        do {
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
+        audioPlayer.prepareToPlay()
+        
     }
     
     func proccessNoteButtonAction(note: Int, buttonIndex: Int) {
@@ -184,6 +198,9 @@ class PianoNoteIdentificationVC: UIViewController {
             print("Session should of ended, no more notes to display")
             return
         }
+        
+        // Play selected note here with AVFoundation
+        audioPlayer.play()
         
         // Check if it's correct and change score label, also keep track of an integer score so performance data can be used later
         // Note passed will be compared to current note being shown from the notes array
@@ -201,8 +218,9 @@ class PianoNoteIdentificationVC: UIViewController {
         // Also check notes array progress, once all notes have been shown, end session
         if (progress + 1) == notesToDisplay.count {
             // End session
+            // Perform segue here and pass score to destination view controller
         } else {
-            scoreLabel.text = "Score: \(correctAnswers)/\(notesToDisplay.count)"
+            scoreLabel.text = "Progress: \(correctAnswers)/\(notesToDisplay.count)"
         }
         
         print("Current Displayed Note: \(notesToDisplay[progress])")
@@ -224,7 +242,7 @@ class PianoNoteIdentificationVC: UIViewController {
             UIView.animate(withDuration: 1.0, animations: {
                 self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
             }, completion: { (finished: Bool) in
-                //self.progress += 1
+                // Completion of second animation
             })
         })
     }
