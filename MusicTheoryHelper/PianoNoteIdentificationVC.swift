@@ -178,14 +178,13 @@ class PianoNoteIdentificationVC: UIViewController {
         
         userIsResponder = true
         
+        // Should audio be loaded here?
         do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error)
         }
-        audioPlayer.prepareToPlay()
         
     }
     
@@ -200,9 +199,15 @@ class PianoNoteIdentificationVC: UIViewController {
         }
         
         // Play selected note here with AVFoundation
-        audioPlayer.play()
+        // Test is loading the audio file here is fast enough on a real device
+        /*do {
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
+        } catch {
+            print(error)
+        }
+        audioPlayer.play()*/
         
-        // Check if it's correct and change score label, also keep track of an integer score so performance data can be used later
+        // Check if it's correct and change score value that will update score label
         // Note passed will be compared to current note being shown from the notes array
         if note == notesToDisplay[progress] {
             // The correct note was selected

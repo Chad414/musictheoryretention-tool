@@ -31,7 +31,7 @@ class MainMenuTableViewController: UITableViewController {
             case 0:
                 cell.textLabel?.text = "Piano Note Identification"
             case 1:
-                cell.textLabel?.text = "Piano Interval Identification"
+                cell.textLabel?.text = "Piano Scale Identification"
             case 2:
                 cell.textLabel?.text = "Piano Chord Identification"
             default:
