@@ -12,7 +12,19 @@ import AVFoundation
 class PianoNoteIdentificationVC: UIViewController {
     
     var pianoAudioURL: [NSDataAsset] = [
-        NSDataAsset(name: "C3")!]
+        NSDataAsset(name: "C3")!,
+        NSDataAsset(name: "C#3")!,
+        NSDataAsset(name: "D3")!,
+        NSDataAsset(name: "D#3")!,
+        NSDataAsset(name: "E3")!,
+        NSDataAsset(name: "F3")!,
+        NSDataAsset(name: "F#3")!,
+        NSDataAsset(name: "G3")!,
+        NSDataAsset(name: "G#3")!,
+        NSDataAsset(name: "A3")!,
+        NSDataAsset(name: "A#3")!,
+        NSDataAsset(name: "B3")!,
+    ]
     
     var audioPlayer = AVAudioPlayer()
     // Each note should be displayed twice per session, order will be randomized later.
@@ -143,14 +155,15 @@ class PianoNoteIdentificationVC: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Piano Note Identification"
-        scoreLabel.text = "Progress: 0/\(notesToDisplay.count)"
+        scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
+        
+        // Define button array here
+        noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
         // Randomize placement of butons
         if randomizeButtons {
             noteButtonOrder.shuffle()
             
-            //print("Randomized Button Order: \(noteButtonOrder)")
-            noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
             var noteStringsToDisplay: [String] = []
             
             
@@ -200,12 +213,12 @@ class PianoNoteIdentificationVC: UIViewController {
         
         // Play selected note here with AVFoundation
         // Test is loading the audio file here is fast enough on a real device
-        /*do {
+        do {
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
         } catch {
             print(error)
         }
-        audioPlayer.play()*/
+        audioPlayer.play()
         
         // Check if it's correct and change score value that will update score label
         // Note passed will be compared to current note being shown from the notes array
@@ -225,7 +238,7 @@ class PianoNoteIdentificationVC: UIViewController {
             // End session
             // Perform segue here and pass score to destination view controller
         } else {
-            scoreLabel.text = "Progress: \(correctAnswers)/\(notesToDisplay.count)"
+            scoreLabel.text = "Score: \(correctAnswers)/\(notesToDisplay.count)"
         }
         
         print("Current Displayed Note: \(notesToDisplay[progress])")
