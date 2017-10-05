@@ -23,13 +23,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="oCM-Xa-JEt">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="oCM-Xa-JEt" customClass="MenuCell" customModule="MusicTheoryHelper" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCM-Xa-JEt" id="3iI-Xv-jTP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="63.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-Oj-YFh" userLabel="icon">
+                                            <rect key="frame" x="293" y="6.6666666666666679" width="50" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="AEu-Ef-z5W"/>
+                                                <constraint firstAttribute="width" constant="50" id="zw3-qh-P9h"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="R1P-Oj-YFh" firstAttribute="centerY" secondItem="3iI-Xv-jTP" secondAttribute="centerY" id="aM4-hY-dW4"/>
+                                        <constraint firstAttribute="trailing" secondItem="R1P-Oj-YFh" secondAttribute="trailing" constant="32" id="w69-6T-aff"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="iconView" destination="R1P-Oj-YFh" id="q9q-1l-Yjh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -38,9 +54,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MTRT" id="hyO-Ji-1Fw">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="reF-HI-uxc"/>
+                        <barButtonItem key="leftBarButtonItem" title="Settings" image="icons8-horizontal_settings_mixer" id="reF-HI-uxc"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="settingsButton" destination="reF-HI-uxc" id="XTK-aA-Ncp"/>
                         <segue destination="dqX-AP-WKv" kind="show" identifier="piano1" id="hPs-xu-Zlj"/>
                         <segue destination="Sg2-pD-nU1" kind="show" identifier="piano2" id="3Zo-3h-Uk5"/>
                     </connections>
@@ -290,7 +307,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu9-6D-ozY">
-                                <rect key="frame" x="75.333333333333314" y="120" width="224.33333333333337" height="24"/>
+                                <rect key="frame" x="75.666666666666686" y="120" width="224" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -393,7 +410,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-DC-C6I">
-                                <rect key="frame" x="147" y="506" width="80" height="44"/>
+                                <rect key="frame" x="147.66666666666666" y="506" width="80" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Restart"/>
                                 <connections>
@@ -401,7 +418,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alc-Ff-pP5">
-                                <rect key="frame" x="168.66666666666666" y="614" width="37" height="36"/>
+                                <rect key="frame" x="169" y="614" width="37" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Quit"/>
                                 <connections>
@@ -409,7 +426,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0J-EQ-u1L">
-                                <rect key="frame" x="121.66666666666666" y="272" width="132.33333333333331" height="40.666666666666686"/>
+                                <rect key="frame" x="121.66666666666669" y="272" width="132" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -639,4 +656,7 @@
             <point key="canvasLocation" x="3804" y="194"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-horizontal_settings_mixer" width="33" height="33"/>
+    </resources>
 </document>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		63531C3D1F3F9579003BD606 /* PianoNoteIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63531C3C1F3F9579003BD606 /* PianoNoteIdentificationVC.swift */; };
 		63531C3F1F3FAE9F003BD606 /* GlobalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63531C3E1F3FAE9F003BD606 /* GlobalSettings.swift */; };
+		638691FD1F8591DB0096100C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638691FC1F8591DB0096100C /* MenuCell.swift */; };
 		6394646F1F7A7DC300A58048 /* PianoScaleIndentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394646E1F7A7DC300A58048 /* PianoScaleIndentificationVC.swift */; };
 		63966D311F66F0D6005940C1 /* PianoChordIndentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63966D301F66F0D6005940C1 /* PianoChordIndentificationVC.swift */; };
 		63A683FE1F3AAA1600B17DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A683FD1F3AAA1600B17DE5 /* AppDelegate.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		63531C3C1F3F9579003BD606 /* PianoNoteIdentificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoNoteIdentificationVC.swift; sourceTree = "<group>"; };
 		63531C3E1F3FAE9F003BD606 /* GlobalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalSettings.swift; sourceTree = "<group>"; };
+		638691FC1F8591DB0096100C /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
 		6394646E1F7A7DC300A58048 /* PianoScaleIndentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoScaleIndentificationVC.swift; sourceTree = "<group>"; };
 		63966D301F66F0D6005940C1 /* PianoChordIndentificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoChordIndentificationVC.swift; sourceTree = "<group>"; };
 		63A683FA1F3AAA1600B17DE5 /* MusicTheoryHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTheoryHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +113,7 @@
 				63A684061F3AAA1600B17DE5 /* LaunchScreen.storyboard */,
 				63A684091F3AAA1600B17DE5 /* Info.plist */,
 				63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */,
+				638691FC1F8591DB0096100C /* MenuCell.swift */,
 				63531C3C1F3F9579003BD606 /* PianoNoteIdentificationVC.swift */,
 				6394646E1F7A7DC300A58048 /* PianoScaleIndentificationVC.swift */,
 				63966D301F66F0D6005940C1 /* PianoChordIndentificationVC.swift */,
@@ -277,6 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				638691FD1F8591DB0096100C /* MenuCell.swift in Sources */,
 				63A6842C1F3AAB4400B17DE5 /* MainMenuTableViewController.swift in Sources */,
 				63531C3F1F3FAE9F003BD606 /* GlobalSettings.swift in Sources */,
 				63A683FE1F3AAA1600B17DE5 /* AppDelegate.swift in Sources */,

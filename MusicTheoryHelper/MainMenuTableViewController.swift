@@ -18,11 +18,13 @@ class MainMenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
     }
+    @IBOutlet var settingsButton: UIBarButtonItem!
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) //as! MenuCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
         
         switch indexPath.section {
         case 0:
@@ -37,6 +39,9 @@ class MainMenuTableViewController: UITableViewController {
             default:
                 print("Trying to display unexpected table cell in first section")
             }
+            OperationQueue.main.addOperation {
+                cell.updateIconView(image: UIImage(named: "icons8-piano.png"))
+            }
         case 1:
             // Dispaly staff section
             switch indexPath.row {
@@ -49,6 +54,9 @@ class MainMenuTableViewController: UITableViewController {
             default:
                 print("Trying to display unexpected table cell in second section")
             }
+            OperationQueue.main.addOperation {
+                cell.updateIconView(image: UIImage(named: "icons8-music_transcript.png"))
+            }
         case 2:
             // Display ear section
             switch indexPath.row {
@@ -60,6 +68,9 @@ class MainMenuTableViewController: UITableViewController {
                 cell.textLabel?.text = "Chord Ear Training"
             default:
                 print("Trying to display unexpectecd table cell in third section")
+            }
+            OperationQueue.main.addOperation {
+                cell.updateIconView(image: UIImage(named: "icons8-speaker.png"))
             }
         default:
             print("Trying to display cells in an unexpected section")
