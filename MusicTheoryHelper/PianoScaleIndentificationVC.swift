@@ -27,6 +27,7 @@ class PianoScaleIndentificationVC: UIViewController {
     
     var scalesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
     var scaleIsMajor: Bool = true
+    let minorGraphicsIndex: [Int] = [9, 10, 11, 0, 1, 2, 8, 4, 5, 6, 7, 3]
     var progress: Int = 0 {
         didSet {
             if scaleIsMajor {
@@ -100,9 +101,9 @@ class PianoScaleIndentificationVC: UIViewController {
         
         // Update image view to display firt scale
         if scaleIsMajor {
-            pianoImageView.image = UIImage(named: "PianoGraphic" + String(scalesToDisplay[progress]) + ".png")
+            pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(scalesToDisplay[progress]) + ".png")
         } else {
-            pianoImageView.image = UIImage(named: "PianoGraphic" + String(scalesToDisplay[progress]) + "_m" + ".png")
+            pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(minorGraphicsIndex[scalesToDisplay[progress]]) + ".png")
         }
     }
     

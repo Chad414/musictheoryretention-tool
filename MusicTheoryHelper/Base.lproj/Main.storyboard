@@ -54,7 +54,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="MTRT" id="hyO-Ji-1Fw">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" image="icons8-horizontal_settings_mixer" id="reF-HI-uxc"/>
+                        <barButtonItem key="leftBarButtonItem" image="icons8-horizontal_settings_mixer" id="reF-HI-uxc"/>
                     </navigationItem>
                     <connections>
                         <outlet property="settingsButton" destination="reF-HI-uxc" id="XTK-aA-Ncp"/>
@@ -85,7 +85,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-Rk-PBz">
-                                <rect key="frame" x="170.66666666666666" y="620" width="34" height="30"/>
+                                <rect key="frame" x="160.66666666666666" y="606" width="54" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="fCP-pQ-SxT" kind="show" identifier="start" id="saf-iX-to9"/>
@@ -140,7 +141,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bV-aCb">
-                                <rect key="frame" x="170.66666666666666" y="620" width="34" height="30"/>
+                                <rect key="frame" x="160.66666666666666" y="606" width="54" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="OcL-7y-iPk" kind="show" identifier="start" id="EoR-5E-JMy"/>
@@ -313,8 +315,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-sV-NDY">
-                                <rect key="frame" x="142.66666666666666" y="587" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="118" y="577" width="140" height="31"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -326,7 +328,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-C4-DJa">
-                                <rect key="frame" x="132.66666666666666" y="558" width="110" height="21"/>
+                                <rect key="frame" x="132.66666666666666" y="548" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>

@@ -255,13 +255,16 @@ class PianoNoteIdentificationVC: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
                 self.noteButtons[buttonIndex].tintColor = UIColor.green
+                self.scoreLabel.textColor = UIColor.green
             } else {
                 self.noteButtons[buttonIndex].tintColor = UIColor.red
+                self.scoreLabel.textColor = UIColor.red
             }
         }, completion: { (finished: Bool) in
             self.progress += 1
             UIView.animate(withDuration: 1.0, animations: {
                 self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
+                self.scoreLabel.textColor = UIColor.black
             }, completion: { (finished: Bool) in
                 // Completion of second animation
             })
@@ -327,7 +330,7 @@ class PianoNoteIdentificationCompletionVC: UIViewController {
         
         switch finalScore {
         case 0...15:
-            headerLabel.text = "You Should Probably Try Again."
+            headerLabel.text = "Better Luck Next Time!"
             scoreLabel.textColor = UIColor.red
         case 16...20:
             headerLabel.text = "Not Bad!"

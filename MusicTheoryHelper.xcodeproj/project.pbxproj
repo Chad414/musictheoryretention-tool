@@ -113,11 +113,11 @@
 				63A684061F3AAA1600B17DE5 /* LaunchScreen.storyboard */,
 				63A684091F3AAA1600B17DE5 /* Info.plist */,
 				63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */,
-				638691FC1F8591DB0096100C /* MenuCell.swift */,
 				63531C3C1F3F9579003BD606 /* PianoNoteIdentificationVC.swift */,
 				6394646E1F7A7DC300A58048 /* PianoScaleIndentificationVC.swift */,
 				63966D301F66F0D6005940C1 /* PianoChordIndentificationVC.swift */,
 				63531C3E1F3FAE9F003BD606 /* GlobalSettings.swift */,
+				638691FC1F8591DB0096100C /* MenuCell.swift */,
 			);
 			path = MusicTheoryHelper;
 			sourceTree = "<group>";
