@@ -33,6 +33,11 @@ class PianoNoteIdentificationVC: UIViewController {
     var progress: Int = 0 {
         didSet {
             // Display next note here
+            if (progress + 1) > notesToDisplay.count {
+                // Perform segue here and pass score to destination view controller
+                performSegue(withIdentifier: "completion", sender: self)
+                return
+            }
             self.pianoImageView.image = UIImage(named: "PianoGraphic" + String(notesToDisplay[progress]) + ".png")
             progressLabel.text = "Progress: \(progress + 1)/\(notesToDisplay.count)"
             self.userIsResponder = true
@@ -172,7 +177,7 @@ class PianoNoteIdentificationVC: UIViewController {
             for i in noteButtonOrder {
                 noteStringsToDisplay.append(GlobalSettings.noteNames1[i])
             }
-            print("Note Strings: \(noteStringsToDisplay)")
+            print("Note Button Order: \(noteButtonOrder)")
             
             var noteCounter = 0
             for i in noteButtons {
@@ -209,14 +214,7 @@ class PianoNoteIdentificationVC: UIViewController {
         
         print("Note \(note) Selected!")
         
-        guard (progress + 1) < notesToDisplay.count else {
-            // Perform segue here and pass score to destination view controller
-            performSegue(withIdentifier: "completion", sender: self)
-            return
-        }
-        
         // Play selected note here with AVFoundation
-        // Test is loading the audio file here is fast enough on a real device
         do {
             /*audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")*/
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[note].data, fileTypeHint: "mp3")
@@ -239,11 +237,6 @@ class PianoNoteIdentificationVC: UIViewController {
             print("Incorrect note selected")
         }
         
-        // Also check notes array progress, once all notes have been shown, end session
-        if (progress + 1) == notesToDisplay.count {
-            print("Session should of ended, no more notes to display")
-        }
-        
         print("Current Displayed Note: \(notesToDisplay[progress])")
         
     }
@@ -252,21 +245,27 @@ class PianoNoteIdentificationVC: UIViewController {
         // Force any outstanding lauout changes
         view.layoutIfNeeded()
         
+        let indexOfCorrectButton = self.noteButtonOrder.index(of: self.notesToDisplay[self.progress])
+        
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
                 self.noteButtons[buttonIndex].tintColor = UIColor.green
                 self.scoreLabel.textColor = UIColor.green
             } else {
                 self.noteButtons[buttonIndex].tintColor = UIColor.red
+                self.noteButtons[indexOfCorrectButton!].tintColor = UIColor.green
                 self.scoreLabel.textColor = UIColor.red
             }
         }, completion: { (finished: Bool) in
-            self.progress += 1
-            UIView.animate(withDuration: 1.0, animations: {
+            UIView.animate(withDuration: 0.75, animations: {
                 self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
                 self.scoreLabel.textColor = UIColor.black
+                if !correct {
+                    self.noteButtons[indexOfCorrectButton!].tintColor = UIColor.appleBlue()
+                }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                self.progress += 1
             })
         })
     }
@@ -274,8 +273,9 @@ class PianoNoteIdentificationVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "completion"?:
-            let destinationViewController = segue.destination as! PianoNoteIdentificationCompletionVC
+            let destinationViewController = segue.destination as! CompletionVC
             destinationViewController.finalScore = self.correctAnswers
+            destinationViewController.optionsIndex = 0
         default:
             print("Unexpeted segue selected")
         }
@@ -294,54 +294,5 @@ class PianoNoteIdentificationOptionsVC: UIViewController {
         default:
             print("Unexpected segue selected")
         }
-    }
-}
-
-class PianoNoteIdentificationCompletionVC: UIViewController {
-    var finalScore: Int = 0
-    
-    @IBOutlet var headerLabel: UILabel!
-    @IBOutlet var scoreLabel: UILabel!
-    @IBAction func quitButton(_ sender: UIButton) {
-        // Return to menu here
-        self.navigationController?.popToRootViewController(animated: true)
-    }
-    @IBAction func restartButton(_ sender: UIButton) {
-        // Pop current view controller off navigation controller stack
-        var optionsView: UIViewController?
-        let viewControllers: [UIViewController] = (self.navigationController?.viewControllers)!
-        for i in viewControllers {
-            if i is PianoNoteIdentificationOptionsVC {
-                optionsView = i
-            }
-        }
-        guard optionsView != nil else {
-            print("Couldn't find options view controller in stack")
-            return
-        }
-        
-        self.navigationController?.popToViewController(optionsView!, animated: true)
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.hidesBackButton = true
-        
-        switch finalScore {
-        case 0...15:
-            headerLabel.text = "Better Luck Next Time!"
-            scoreLabel.textColor = UIColor.red
-        case 16...20:
-            headerLabel.text = "Not Bad!"
-        case 20...24:
-            headerLabel.text = "Well Done!"
-        default:
-            headerLabel.text = "Something's wrong here."
-            headerLabel.textColor = UIColor.red
-        }
-        
-        scoreLabel.text = "Score: \(finalScore)"
-        
     }
 }

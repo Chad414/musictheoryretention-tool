@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="2896.8000000000002" y="-543.77811094452773"/>
         </scene>
-        <!--Piano Scale Indentification OptionsVC-->
+        <!--Piano Scale Identification OptionsVC-->
         <scene sceneID="U01-Ol-gXB">
             <objects>
-                <viewController id="Sg2-pD-nU1" customClass="PianoScaleIndentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sg2-pD-nU1" customClass="PianoScaleIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2QP-Z5-Wpa"/>
                         <viewControllerLayoutGuide type="bottom" id="NpX-iI-N1y"/>
@@ -134,8 +134,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano Scale Indentification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-eC-EUK">
-                                <rect key="frame" x="72.666666666666686" y="120" width="230" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano Scale Identification" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-eC-EUK">
+                                <rect key="frame" x="78.666666666666686" y="120" width="219" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -163,6 +163,9 @@
                                     <segment title="Major"/>
                                     <segment title="Minor"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changedScale:" destination="Sg2-pD-nU1" eventType="valueChanged" id="YJQ-xW-brh"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,24 +184,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tf3-Na-DG6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2896.8000000000002" y="193.5960591133005"/>
-        </scene>
-        <!--Piano Scale Indentification CompletionVC-->
-        <scene sceneID="lPG-eq-lSd">
-            <objects>
-                <viewController id="O9T-vm-djF" customClass="PianoScaleIndentificationCompletionVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g7R-9x-tEc"/>
-                        <viewControllerLayoutGuide type="bottom" id="orm-00-Mbh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iuV-lc-hBv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CAi-8p-xKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4649" y="191"/>
         </scene>
         <!--Piano Note IdentificationVC-->
         <scene sceneID="0Nw-MO-2cn">
@@ -315,8 +300,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-sV-NDY">
-                                <rect key="frame" x="118" y="577" width="140" height="31"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                <rect key="frame" x="116" y="577" width="144.66666666666669" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -393,10 +378,10 @@
             </objects>
             <point key="canvasLocation" x="3804" y="-545.57721139430294"/>
         </scene>
-        <!--Piano Note Identification CompletionVC-->
+        <!--CompletionVC-->
         <scene sceneID="KeH-8m-NKE">
             <objects>
-                <viewController id="V8t-zC-p4p" customClass="PianoNoteIdentificationCompletionVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V8t-zC-p4p" customClass="CompletionVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QrS-Z6-irT"/>
                         <viewControllerLayoutGuide type="bottom" id="Jig-Sf-JhY"/>
@@ -473,10 +458,10 @@
             </objects>
             <point key="canvasLocation" x="1088.8" y="-546.47676161919048"/>
         </scene>
-        <!--Piano Scale IndentificationVC-->
+        <!--Piano Scale IdentificationVC-->
         <scene sceneID="hcE-i8-ixl">
             <objects>
-                <viewController id="OcL-7y-iPk" customClass="PianoScaleIndentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OcL-7y-iPk" customClass="PianoScaleIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M6h-gA-U4x"/>
                         <viewControllerLayoutGuide type="bottom" id="sac-Z1-EQK"/>
@@ -588,8 +573,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCa-pe-uwl">
-                                <rect key="frame" x="142.66666666666666" y="587" width="90" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="115.66666666666669" y="576.66666666666652" width="144.66666666666663" height="31.333333333333371"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -600,6 +585,18 @@
                                     <constraint firstAttribute="width" constant="303" id="iOE-9M-eIe"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-EZ-1mj">
+                                <rect key="frame" x="132.66666666666666" y="547" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale: Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-Jq-ENz">
+                                <rect key="frame" x="153" y="344" width="69.666666666666657" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -608,14 +605,17 @@
                             <constraint firstItem="RUz-fu-ftB" firstAttribute="top" secondItem="fCa-pe-uwl" secondAttribute="bottom" constant="20" id="9zP-QA-oKi"/>
                             <constraint firstItem="sac-Z1-EQK" firstAttribute="top" secondItem="FZ2-aa-hri" secondAttribute="bottom" constant="48" id="ENZ-Y4-Gva"/>
                             <constraint firstItem="sac-Z1-EQK" firstAttribute="top" secondItem="prF-Ht-V7U" secondAttribute="bottom" constant="48" id="F0R-lh-R4u"/>
+                            <constraint firstItem="fCa-pe-uwl" firstAttribute="top" secondItem="9gl-EZ-1mj" secondAttribute="bottom" constant="8" id="GVF-bv-L80"/>
                             <constraint firstItem="sac-Z1-EQK" firstAttribute="top" secondItem="J0u-4V-115" secondAttribute="bottom" constant="48" id="ICE-oC-Elf"/>
                             <constraint firstItem="fCa-pe-uwl" firstAttribute="centerX" secondItem="6Dv-b2-iiH" secondAttribute="centerX" id="J1G-Qf-0FO"/>
                             <constraint firstItem="WZw-FX-C6Z" firstAttribute="centerX" secondItem="6Dv-b2-iiH" secondAttribute="centerX" id="JJf-ra-0DT"/>
                             <constraint firstItem="z9l-X0-zMa" firstAttribute="top" secondItem="srN-hZ-63k" secondAttribute="bottom" constant="20" id="Km0-SL-sJ8"/>
+                            <constraint firstItem="BZg-Jq-ENz" firstAttribute="top" secondItem="WZw-FX-C6Z" secondAttribute="bottom" constant="8" id="LYM-90-n8I"/>
                             <constraint firstItem="sac-Z1-EQK" firstAttribute="top" secondItem="Re4-KD-LeY" secondAttribute="bottom" constant="48" id="LhH-HY-GYb"/>
                             <constraint firstItem="sac-Z1-EQK" firstAttribute="top" secondItem="sBw-2Y-IuI" secondAttribute="bottom" constant="48" id="Q1Q-26-Gd2"/>
                             <constraint firstItem="sBw-2Y-IuI" firstAttribute="top" secondItem="bZd-og-P1U" secondAttribute="bottom" constant="20" id="Qkf-T5-Tb1"/>
                             <constraint firstItem="sac-Z1-EQK" firstAttribute="top" secondItem="z9l-X0-zMa" secondAttribute="bottom" constant="48" id="UZk-1c-cJm"/>
+                            <constraint firstItem="9gl-EZ-1mj" firstAttribute="centerX" secondItem="6Dv-b2-iiH" secondAttribute="centerX" id="Xjr-7G-r0y"/>
                             <constraint firstItem="Re4-KD-LeY" firstAttribute="top" secondItem="pSd-jf-4pf" secondAttribute="bottom" constant="20" id="aDE-JG-Ntv"/>
                             <constraint firstItem="sBw-2Y-IuI" firstAttribute="leading" secondItem="prF-Ht-V7U" secondAttribute="trailing" constant="15" id="cd7-za-eE6"/>
                             <constraint firstItem="wvF-zx-3fG" firstAttribute="top" secondItem="M6h-gA-U4x" secondAttribute="bottom" constant="32" id="eVP-B2-EDt"/>
@@ -633,6 +633,7 @@
                             <constraint firstItem="RUz-fu-ftB" firstAttribute="leading" secondItem="pSd-jf-4pf" secondAttribute="trailing" constant="25" id="ufK-Pi-0Fk"/>
                             <constraint firstItem="wvF-zx-3fG" firstAttribute="centerX" secondItem="6Dv-b2-iiH" secondAttribute="centerX" id="ukq-gy-15G"/>
                             <constraint firstItem="J0u-4V-115" firstAttribute="leading" secondItem="sBw-2Y-IuI" secondAttribute="trailing" constant="15" id="uun-8H-nLj"/>
+                            <constraint firstItem="BZg-Jq-ENz" firstAttribute="centerX" secondItem="6Dv-b2-iiH" secondAttribute="centerX" id="xnf-II-ggA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -649,8 +650,10 @@
                         <outlet property="note8Button" destination="J0u-4V-115" id="U4B-Es-0LF"/>
                         <outlet property="note9Button" destination="XX3-PF-oj1" id="Q9n-7X-7Hw"/>
                         <outlet property="pianoImageView" destination="WZw-FX-C6Z" id="yd7-JI-1eF"/>
+                        <outlet property="progressLabel" destination="9gl-EZ-1mj" id="jsT-Ac-LoX"/>
+                        <outlet property="scaleLabel" destination="BZg-Jq-ENz" id="30h-Hy-5eO"/>
                         <outlet property="scoreLabel" destination="fCa-pe-uwl" id="1aL-nc-FXQ"/>
-                        <segue destination="O9T-vm-djF" kind="show" identifier="completion" id="9kh-lh-Vbj"/>
+                        <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="7PF-Aa-b3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vN7-cR-1Rn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -661,4 +664,7 @@
     <resources>
         <image name="icons8-horizontal_settings_mixer" width="33" height="33"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="7PF-Aa-b3Q"/>
+    </inferredMetricsTieBreakers>
 </document>
