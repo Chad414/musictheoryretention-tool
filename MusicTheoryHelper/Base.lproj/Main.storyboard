@@ -250,7 +250,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Augmented"/>
                                 <connections>
-                                    <action selector="augmentedButtonPressed:" destination="ca9-ep-E9G" eventType="touchUpInside" id="YEr-bO-Plb"/>
+                                    <action selector="augmentedButtonPressed:" destination="ca9-ep-E9G" eventType="touchUpInside" id="WX9-uN-gao"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-Tr-T7Z">
@@ -258,8 +258,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
-                                    <action selector="minorButtonAction:" destination="ca9-ep-E9G" eventType="touchUpInside" id="5tJ-HK-AGm"/>
-                                    <action selector="minorButtonPressed:" destination="ca9-ep-E9G" eventType="touchUpInside" id="Om4-S8-Pt0"/>
+                                    <action selector="minorButtonAction:" destination="ca9-ep-E9G" eventType="touchUpInside" id="cSn-EH-WVK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC2-LD-5B9">
@@ -267,7 +266,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Diminished"/>
                                 <connections>
-                                    <action selector="diminishedButtonPressed:" destination="ca9-ep-E9G" eventType="touchUpInside" id="2Dp-iC-blz"/>
+                                    <action selector="diminishedButtonPressed:" destination="ca9-ep-E9G" eventType="touchUpInside" id="zW1-4Q-xIA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHK-aq-DAn">
@@ -275,9 +274,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
-                                    <action selector="majorButtonAction:" destination="ca9-ep-E9G" eventType="touchUpInside" id="6YA-CI-f28"/>
-                                    <action selector="majorButtonPressed:" destination="ca9-ep-E9G" eventType="touchUpInside" id="Bb7-in-xIu"/>
-                                    <action selector="majorSelected:" destination="esC-os-rtM" eventType="touchUpInside" id="a4r-x2-9Es"/>
+                                    <action selector="majorButtonAction:" destination="ca9-ep-E9G" eventType="touchUpInside" id="XTr-yP-M3o"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-UW-wKj">
@@ -321,17 +318,16 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="augmentedButton" destination="lBo-Tv-zJO" id="irG-3s-gVt"/>
-                        <outlet property="diminishedButton" destination="VC2-LD-5B9" id="ROo-hC-ldF"/>
-                        <outlet property="majorButton" destination="AHK-aq-DAn" id="3K3-dw-T6c"/>
-                        <outlet property="minorButton" destination="pYT-Tr-T7Z" id="sB9-AM-8u4"/>
+                        <outlet property="augmentedButton" destination="lBo-Tv-zJO" id="kST-zI-hQ2"/>
+                        <outlet property="diminishedButton" destination="VC2-LD-5B9" id="Aba-Qy-d5N"/>
+                        <outlet property="majorButton" destination="AHK-aq-DAn" id="E6a-QR-hQV"/>
+                        <outlet property="minorButton" destination="pYT-Tr-T7Z" id="KeM-d3-rPj"/>
                         <outlet property="pianoImageView" destination="C8q-lu-16S" id="p1Y-d0-pUP"/>
                         <outlet property="progressLabel" destination="2TC-h1-4GB" id="AhU-Xu-3CB"/>
                         <outlet property="scoreLabel" destination="TNf-UW-wKj" id="Fj0-6h-986"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGo-qL-d3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="esC-os-rtM" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3804" y="913"/>
         </scene>

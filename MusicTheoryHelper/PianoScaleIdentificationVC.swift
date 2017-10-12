@@ -42,9 +42,10 @@ class PianoScaleIdentificationVC: UIViewController {
                 pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(minorGraphicsIndex[scalesToDisplay[progress]]) + ".png")
             }
             progressLabel.text = "Progress: \(progress + 1)/\(scalesToDisplay.count)"
-            self.userIsResponder = true
+            userIsResponder = true
         }
     }
+    
     var userIsResponder: Bool = false
     var correctAnswers: Int = 0
     
@@ -154,7 +155,7 @@ class PianoScaleIdentificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Scale Note Identification"
+        navigationItem.title = "Piano Scale Identification"
         if scaleIsMajor {
             scaleLabel.text = "Scale: Major"
         } else {
