@@ -48,7 +48,7 @@ class PianoChordIdentificationVC: UIViewController {
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     var buttons: [UIButton] = []
-    var chordsToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] // Order will be randomized, only indicies 0..23 will be shown
+    var chordsToDisplay: [Int] = Array(0...38) // Order will be randomized, only indicies 0..23 will be shown
     var userIsResponder: Bool = false
     var correctAnswers: Int = 0
     var numberOfQuestions = 24
@@ -74,7 +74,7 @@ class PianoChordIdentificationVC: UIViewController {
         
         buttons = [majorButton, minorButton, augmentedButton, diminishedButton]
         
-        //chordsToDisplay.shuffle()
+        chordsToDisplay.shuffle()
         
         pianoImageView.image = UIImage(named: "PianoChordGraphic" + String(chordsToDisplay[progress]) + ".png")
         
@@ -85,36 +85,109 @@ class PianoChordIdentificationVC: UIViewController {
     func processInput(button: Int) {
         let chordDisplayed = chordsToDisplay[progress]
         
-        func correctAnswerSelected() {
-            print("Correct Chord Type Selected!")
-            // Animate feedback here
-            correctAnswers += 1
-            scoreLabel.text = "Score: \(correctAnswers)/\(numberOfQuestions)"
+        func correctAnswerSelected(_ correct: Bool) {
+            if correct {
+                print("Correct Chord Type Selected!")
+                correctAnswers += 1
+                scoreLabel.text = "Score: \(correctAnswers)/\(numberOfQuestions)"
+            }
+            animateFeedback(answer: correct, selectedButtonIndex: button)
         }
         
         switch button {
         case 0:
-            if chordDisplayed <= 11 {
-                // Correct answer because all chords 0...11 are major
-                correctAnswerSelected()
+            if chordDisplayed <= 9 {
+                // Correct answer because all chords 0...9 are major
+                correctAnswerSelected(true)
             } else {
-                // Incorrect answer
+                correctAnswerSelected(false)
             }
         case 1:
-            if chordDisplayed >= 12 && chordDisplayed <= 23 {
+            if chordDisplayed >= 10 && chordDisplayed <= 19 {
                 // Correct answer because all chords 12...23 are minor
-                correctAnswerSelected()
+                correctAnswerSelected(true)
             } else {
-                // Incorrect answer
+                correctAnswerSelected(false)
             }
         case 2:
-            print("Augmented chord range not determined yet")
+            if chordDisplayed >= 20 && chordDisplayed <= 27 {
+                // Correct answer because all chords 20...29 are augmented
+                correctAnswerSelected(true)
+            } else {
+                correctAnswerSelected(false)
+            }
         case 3:
-            print("Diminished chord range not determined yet")
+            if chordDisplayed >= 28 && chordDisplayed <= 38 {
+                // Correct answer because all chords 20...29 are augmented
+                correctAnswerSelected(true)
+            } else {
+                correctAnswerSelected(false)
+            }
         default:
             print("Unexpected button pressed")
         }
         
     }
+    
+    func animateFeedback(answer correct: Bool, selectedButtonIndex: Int) {
+        // Force any outstanding layout changes
+        view.layoutIfNeeded()
+        
+        var correctButtonIndex: Int {
+            switch self.chordsToDisplay[progress] {
+            case 0...9:
+                return 0
+            case 10...19:
+                return 1
+            case 20...27:
+                return 2
+            case 28...38:
+                return 3
+            default:
+                print("Unexpected chord displayed")
+                return 1
+            }
+        }
+        
+        let selectedButton = self.buttons[selectedButtonIndex]
+        let correctButton = self.buttons[correctButtonIndex]
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            if correct {
+                selectedButton.tintColor = UIColor.green
+                self.scoreLabel.textColor = UIColor.green
+            } else {
+                selectedButton.tintColor = UIColor.red
+                correctButton.tintColor = UIColor.green
+                self.scoreLabel.textColor = UIColor.red
+            }
+        }, completion: { (finished: Bool) in
+            UIView.animate(withDuration: 0.75, animations: {
+                selectedButton.tintColor = UIColor.appleBlue()
+                self.scoreLabel.textColor = UIColor.black
+                if !correct {
+                    correctButton.tintColor = UIColor.appleBlue()
+                }
+            }, completion: { (finished: Bool) in
+                // Completion of second animation
+                self.progress += 1
+            })
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "completion"?:
+            let destinationViewController = segue.destination as! CompletionVC
+            destinationViewController.finalScore = correctAnswers
+            destinationViewController.optionsIndex = 2
+        default:
+            print("Unexpected segue selected")
+        }
+    }
+    
+}
+
+class PianoChordIdentificationOptionsVC: UIViewController {
     
 }

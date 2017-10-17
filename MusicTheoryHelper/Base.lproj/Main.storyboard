@@ -187,10 +187,10 @@
             </objects>
             <point key="canvasLocation" x="2896.8000000000002" y="193.5960591133005"/>
         </scene>
-        <!--View Controller-->
+        <!--Piano Chord Identification OptionsVC-->
         <scene sceneID="qln-gd-Q3x">
             <objects>
-                <viewController id="evg-2R-0fS" sceneMemberID="viewController">
+                <viewController id="evg-2R-0fS" customClass="PianoChordIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lrS-ki-wYP"/>
                         <viewControllerLayoutGuide type="bottom" id="zWd-oO-Y15"/>
@@ -325,6 +325,7 @@
                         <outlet property="pianoImageView" destination="C8q-lu-16S" id="p1Y-d0-pUP"/>
                         <outlet property="progressLabel" destination="2TC-h1-4GB" id="AhU-Xu-3CB"/>
                         <outlet property="scoreLabel" destination="TNf-UW-wKj" id="Fj0-6h-986"/>
+                        <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="umw-O5-BsF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGo-qL-d3j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -811,6 +812,6 @@
         <image name="icons8-horizontal_settings_mixer" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7PF-Aa-b3Q"/>
+        <segue reference="umw-O5-BsF"/>
     </inferredMetricsTieBreakers>
 </document>

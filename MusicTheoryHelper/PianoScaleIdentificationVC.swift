@@ -219,7 +219,7 @@ class PianoScaleIdentificationVC: UIViewController {
     }
     
     func animateFeedback(answer correct: Bool, buttonIndex: Int) {
-        // Force any outstanding lauout changes
+        // Force any outstanding layout changes
         view.layoutIfNeeded()
         
         UIView.animate(withDuration: 0.5, animations: {
@@ -268,7 +268,7 @@ class PianoScaleIdentificationOptionsVC: UIViewController {
         } else if sender.selectedSegmentIndex == 1 {
             scaleIsMajor = false
         } else {
-            print("Unexpected segment selected")
+            print("Unexpected segue selected")
         }
     }
 

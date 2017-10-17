@@ -36,6 +36,12 @@ class CompletionVC: UIViewController {
                     optionsView = i
                 }
             }
+        case 2:
+            for i in viewControllers {
+                if i is PianoChordIdentificationOptionsVC {
+                    optionsView = i
+                }
+            }
         default:
             print("Unexpected options index: \(optionsIndex)")
         }

@@ -242,7 +242,7 @@ class PianoNoteIdentificationVC: UIViewController {
     }
     
     func animateFeedback(answer correct: Bool, buttonIndex: Int) {
-        // Force any outstanding lauout changes
+        // Force any outstanding layout changes
         view.layoutIfNeeded()
         
         let indexOfCorrectButton = self.noteButtonOrder.index(of: self.notesToDisplay[self.progress])
