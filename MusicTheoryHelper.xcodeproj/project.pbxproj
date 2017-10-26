@@ -12,6 +12,7 @@
 		6361DFB51F965608003F0CA7 /* NoteEarTrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6361DFB41F965608003F0CA7 /* NoteEarTrainingVC.swift */; };
 		63819B911F8E49C100FB4D61 /* CompletionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63819B901F8E49C100FB4D61 /* CompletionVC.swift */; };
 		638691FD1F8591DB0096100C /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638691FC1F8591DB0096100C /* MenuCell.swift */; };
+		638F8C041FA0B924003668C2 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F8C031FA0B924003668C2 /* SettingsVC.swift */; };
 		6394646F1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6394646E1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift */; };
 		63966D311F66F0D6005940C1 /* PianoChordIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63966D301F66F0D6005940C1 /* PianoChordIdentificationVC.swift */; };
 		63A683FE1F3AAA1600B17DE5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A683FD1F3AAA1600B17DE5 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		6361DFB41F965608003F0CA7 /* NoteEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteEarTrainingVC.swift; sourceTree = "<group>"; };
 		63819B901F8E49C100FB4D61 /* CompletionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionVC.swift; sourceTree = "<group>"; };
 		638691FC1F8591DB0096100C /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		638F8C031FA0B924003668C2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		6394646E1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoScaleIdentificationVC.swift; sourceTree = "<group>"; };
 		63966D301F66F0D6005940C1 /* PianoChordIdentificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoChordIdentificationVC.swift; sourceTree = "<group>"; };
 		63A683FA1F3AAA1600B17DE5 /* MusicTheoryHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTheoryHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 				63531C3E1F3FAE9F003BD606 /* GlobalSettings.swift */,
 				638691FC1F8591DB0096100C /* MenuCell.swift */,
 				63819B901F8E49C100FB4D61 /* CompletionVC.swift */,
+				638F8C031FA0B924003668C2 /* SettingsVC.swift */,
 			);
 			path = MusicTheoryHelper;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				63531C3D1F3F9579003BD606 /* PianoNoteIdentificationVC.swift in Sources */,
 				6394646F1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift in Sources */,
 				63966D311F66F0D6005940C1 /* PianoChordIdentificationVC.swift in Sources */,
+				638F8C041FA0B924003668C2 /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

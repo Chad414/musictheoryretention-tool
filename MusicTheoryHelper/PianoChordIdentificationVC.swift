@@ -14,28 +14,24 @@ class PianoChordIdentificationVC: UIViewController {
     @IBAction func majorButtonAction(_ sender: UIButton) {
         print("Major Button Pressed!")
         if userIsResponder {
-            userIsResponder = false
             processInput(button: 0)
         }
     }
     @IBAction func minorButtonAction(_ sender: UIButton) {
         print("Minor Button Pressed!")
         if userIsResponder {
-            userIsResponder = false
             processInput(button: 1)
         }
     }
     @IBAction func augmentedButtonPressed(_ sender: UIButton) {
         print("Augmented Button Pressed!")
         if userIsResponder {
-            userIsResponder = false
             processInput(button: 2)
         }
     }
     @IBAction func diminishedButtonPressed(_ sender: UIButton) {
         print("Diminished Button Pressed!")
         if userIsResponder {
-            userIsResponder = false
             processInput(button: 3)
         }
     }
@@ -83,6 +79,7 @@ class PianoChordIdentificationVC: UIViewController {
     }
     
     func processInput(button: Int) {
+        userIsResponder = false
         let chordDisplayed = chordsToDisplay[progress]
         
         func correctAnswerSelected(_ correct: Bool) {

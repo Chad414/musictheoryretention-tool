@@ -52,84 +52,73 @@ class PianoScaleIdentificationVC: UIViewController {
     @IBAction func note1(_ sender: UIButton) {
         print("\(1) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 0)
         }
     }
     @IBAction func note2(_ sender: UIButton) {
         print("\(2) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 1)
         }
     }
     @IBAction func note3(_ sender: UIButton) {
         print("\(3) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 2)
         }
     }
     @IBAction func note4(_ sender: UIButton) {
         print("\(4) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 3)
         }
     }
     @IBAction func note5(_ sender: UIButton) {
         print("\(6) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 4)
         }
     }
     @IBAction func note6(_ sender: UIButton) {
         print("\(6) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 5)
         }
     }
     @IBAction func note7(_ sender: UIButton) {
         print("\(7) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 6)
         }
     }
     @IBAction func note8(_ sender: UIButton) {
         print("\(8) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 7)
         }
     }
     @IBAction func note9(_ sender: UIButton) {
         print("\(9) Pressed")
         if userIsResponder {
-            userIsResponder = false
+
             processInput(scale: 8)
         }
     }
     @IBAction func note10(_ sender: UIButton) {
         print("\(10) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 9)
         }
     }
     @IBAction func note11(_ sender: UIButton) {
         print("\(11) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 10)
         }
     }
     @IBAction func note12(_ sender: UIButton) {
         print("\(12) Pressed")
         if userIsResponder {
-            userIsResponder = false
             processInput(scale: 11)
         }
     }
@@ -192,6 +181,7 @@ class PianoScaleIdentificationVC: UIViewController {
     }
     
     func processInput(scale: Int) {
+        userIsResponder = false
         
         // Play audio here
         do {
@@ -200,7 +190,6 @@ class PianoScaleIdentificationVC: UIViewController {
             print(error)
         }
         audioPlayer.play()
-        
         
         if scale == scalesToDisplay[progress] {
             // Correct scale was selected

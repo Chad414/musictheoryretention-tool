@@ -52,84 +52,72 @@ class PianoNoteIdentificationVC: UIViewController {
     @IBAction func note1(_ sender: UIButton) {
         print("\(noteButtonOrder[0]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[0], buttonIndex: 0)
         }
     }
     @IBAction func note2(_ sender: UIButton) {
         print("\(noteButtonOrder[1]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[1], buttonIndex: 1)
         }
     }
     @IBAction func note3(_ sender: UIButton) {
         print("\(noteButtonOrder[2]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[2], buttonIndex: 2)
         }
     }
     @IBAction func note4(_ sender: UIButton) {
         print("\(noteButtonOrder[3]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[3], buttonIndex: 3)
         }
     }
     @IBAction func note5(_ sender: UIButton) {
         print("\(noteButtonOrder[4]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[4], buttonIndex: 4)
         }
     }
     @IBAction func note6(_ sender: UIButton) {
         print("\(noteButtonOrder[5]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[5], buttonIndex: 5)
         }
     }
     @IBAction func note7(_ sender: UIButton) {
         print("\(noteButtonOrder[6]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[6], buttonIndex: 6)
         }
     }
     @IBAction func note8(_ sender: UIButton) {
         print("\(noteButtonOrder[7]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[7], buttonIndex: 7)
         }
     }
     @IBAction func note9(_ sender: UIButton) {
         print("\(noteButtonOrder[8]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[8], buttonIndex: 8)
         }
     }
     @IBAction func note10(_ sender: UIButton) {
         print("\(noteButtonOrder[9]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[9], buttonIndex: 9)
         }
     }
     @IBAction func note11(_ sender: UIButton) {
         print("\(noteButtonOrder[10]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[10], buttonIndex: 10)
         }
     }
     @IBAction func note12(_ sender: UIButton) {
         print("\(noteButtonOrder[11]) Pressed")
         if userIsResponder {
-            userIsResponder = false
             proccessNoteButtonAction(note: noteButtonOrder[11], buttonIndex: 11)
         }
     }
@@ -210,6 +198,8 @@ class PianoNoteIdentificationVC: UIViewController {
     }
     
     func proccessNoteButtonAction(note: Int, buttonIndex: Int) {
+        userIsResponder = false
+        
         // Process specific note passed here
         
         print("Note \(note) Selected!")
