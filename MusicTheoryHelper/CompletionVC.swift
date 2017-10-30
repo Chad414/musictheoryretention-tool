@@ -42,6 +42,18 @@ class CompletionVC: UIViewController {
                     optionsView = i
                 }
             }
+        case 3:
+            for i in viewControllers {
+                if i is StaffNoteIdentificationVC {
+                    optionsView = i
+                }
+            }
+        case 6:
+            for i in viewControllers {
+                if i is NoteEarTrainingOptionsVC {
+                    optionsView = i
+                }
+            }
         default:
             print("Unexpected options index: \(optionsIndex)")
         }
@@ -58,6 +70,7 @@ class CompletionVC: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
+        navigationItem.title = "Results"
         
         switch finalScore {
         case 0...15:

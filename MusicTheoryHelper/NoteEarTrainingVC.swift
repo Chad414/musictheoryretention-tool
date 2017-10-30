@@ -44,6 +44,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             }
             
             progressLabel.text = "Progress: \(progress + 1)/\(numberOfQuestions)"
+            print("Next Note: \(notesToPlay[progress])")
             
             referenceNotePlayed = true
             
@@ -141,18 +142,19 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var note12Button: UIButton!
     var noteButtons: [UIButton] = []
     
-    @IBAction func referenceNoteButtonAction(_ sender: Any) {
+    @IBAction func referenceNoteButtonAction(_ sender: UIButton) {
         if userIsResponder {
             userIsResponder = false
             playReferenceNote()
         }
     }
-    @IBAction func currentNoteButtonAction(_ sender: Any) {
+    @IBAction func currentNoteButtonAction(_ sender: UIButton) {
         if userIsResponder {
             userIsResponder = false
             playCurrentNote()
         }
     }
+    
     @IBOutlet var referenceNoteButton: UIButton!
     @IBOutlet var currentNoteButton: UIButton!
     
@@ -198,12 +200,16 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("Audio did finish playing")
-        userIsResponder = true
         currentNoteButton.imageView?.image = UIImage(named: "icons8-play_filled.png")
         referenceNoteButton.imageView?.image = UIImage(named: "icons8-play_filled.png")
         if referenceNotePlayed {
+            guard progress <= 24 else {
+                return
+            }
             playCurrentNote()
             referenceNotePlayed = false
+        } else {
+            userIsResponder = true
         }
     }
     
@@ -233,6 +239,8 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
+        let correctButtonIndex: Int = self.findNoteIndex(self.notesToPlay[progress])
+        
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
                 self.noteButtons[selectedButtonIndex].tintColor = UIColor.green
@@ -240,20 +248,22 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             } else {
                 self.noteButtons[selectedButtonIndex].tintColor = UIColor.red
                 self.scoreLabel.textColor = UIColor.red
-                // Find index of note played reguardless of octave and highlight green
+                self.noteButtons[correctButtonIndex].tintColor = UIColor.green
             }
         }) { (finished: Bool) in
             UIView.animate(withDuration: 1.25, animations: {
                 self.noteButtons[selectedButtonIndex].tintColor = UIColor.appleBlue()
                 self.scoreLabel.textColor = UIColor.black
                 if !correct {
-                    // Find index of note played reguardless of octave
+                    self.noteButtons[correctButtonIndex].tintColor = UIColor.appleBlue()
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
                 self.progress += 1
                 self.audioPlayer.stop()
-                self.playReferenceNote()
+                if self.progress < 24 {
+                    self.playReferenceNote()
+                }
             })
         }
     }
@@ -279,89 +289,66 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             animateFeedback(answer: correct, selectedButtonIndex: note)
         }
         
-        let notePlayed = notesToPlay[progress]
-        
-        switch notePlayed {
-        case 0,12,24:
-            if note == 0 { // C
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 1,13,25:
-            if note == 1 { // C#
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 2,14,26:
-            if note == 2 { // D
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 3,15,27:
-            if note == 3 { // D#
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 4,16,28:
-            if note == 4 { // E
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 5,17,29:
-            if note == 5 { // F
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 6,18,30:
-            if note == 6 { // F#
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 7,19,31:
-            if note == 7 { // G
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 8,20,32:
-            if note == 8 { // G#
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 9,21,33:
-            if note == 9 { // A
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 10,22,34:
-            if note == 10 { // A#
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
-        case 11,23,35:
-            if note == 11 { // B
-                correctAnswerSelected(true)
-            } else {
-                correctAnswerSelected(false)
-            }
+        if findNoteIndex(notesToPlay[progress]) == findNoteIndex(note) {
+            correctAnswerSelected(true)
+        } else {
+            correctAnswerSelected(false)
+        }
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "completion"?:
+            let destinationViewController = segue.destination as! CompletionVC
+            destinationViewController.finalScore = self.correctAnswers
+            destinationViewController.optionsIndex = 6
         default:
-            print("Unexpected note index played")
+            print("Unexpected segue selected")
         }
     }
     
+    func findNoteIndex(_ note: Int) -> Int {
+        switch note {
+        case 0,12,24:
+            return 0 // C
+        case 1,13,25:
+            return 1 // C#
+        case 2,14,26:
+            return 2 // D
+        case 3,15,27:
+            return 3 // D#
+        case 4,16,28:
+            return 4 // E
+        case 5,17,29:
+            return 5 // F
+        case 6,18,30:
+            return 6 // F#
+        case 7,19,31:
+            return 7 // G
+        case 8,20,32:
+            return 8 // G#
+        case 9,21,33:
+            return 9 // A
+        case 10,22,34:
+            return 10 // A#
+        case 11,23,35:
+            return 11 // B
+        default:
+            print("Unexpected note index")
+            return 0
+        }
+    }
 }
 
 class NoteEarTrainingOptionsVC: UIViewController {
+    
+    let referenceNoteDictionary: [Int:String] = [
+        0 : "C3", 1 : "C#3", 2 : "D3", 3 : "D#3", 4 : "E3", 5 : "F3", 6 : "F#3", 7 : "G3",
+        8 : "G#3", 9 : "A3", 10 : "A#3", 11 : "B3", 12 : "C2", 13 : "C#2", 14 : "D2", 15 : "D#2",
+        16 : "E2", 17 : "F2", 18 : "F#2", 19 : "G2", 20 : "G#2", 21 : "A2", 22 : "A#2", 23 : "B2",
+        24 : "C4", 25 : "C#4", 26 : "D4", 27 : "D#4", 28 : "E4", 29 : "F4", 30 : "F#4", 31 : "G4",
+        32 : "G#4", 33 : "A4", 34 : "A#4", 35 : "B4"]
     
     var referenceNote: Int = 0 {
         didSet {
@@ -369,9 +356,17 @@ class NoteEarTrainingOptionsVC: UIViewController {
                 print("Reference note out of range")
                 referenceNote = 0
             }
+            print("Reference Note Changed to: \(referenceNote)")
         }
     }
     
+    @IBAction func referenceNoteChanged(_ sender: UISlider) {
+        sender.value = floorf(sender.value + 0.5)
+        referenceNote = Int(sender.value)
+        referenceNoteLabel.text = referenceNoteDictionary[referenceNote]
+    }
+    
+    @IBOutlet var referenceNoteLabel: UILabel!
     @IBOutlet var referenceNoteSlider: UISlider!
     @IBOutlet var thirdOctaveOnlySwitch: UISwitch!
     
@@ -381,6 +376,17 @@ class NoteEarTrainingOptionsVC: UIViewController {
         referenceNoteSlider.maximumValue = 35
         referenceNoteSlider.minimumValue = 0
         referenceNoteSlider.value = 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "start"?:
+            let destinationViewController = segue.destination as! NoteEarTrainingVC
+            destinationViewController.referenceNoteIndex = referenceNote
+            destinationViewController.thirdOctaveOnly = thirdOctaveOnlySwitch.isOn
+        default:
+            print("Unexpected segue selected")
+        }
     }
     
 }

@@ -1,15 +1,15 @@
 //
-//  PianoScaleIdentificationVC.swift
+//  StaffNoteIdentificationVC.swift
 //  MusicTheoryHelper
 //
-//  Created by Chad Hamdan on 9/26/17.
+//  Created by Chad Hamdan on 10/26/17.
 //  Copyright © 2017 Chad Hamdan. All rights reserved.
 //
 
 import UIKit
 import AVFoundation
 
-class PianoScaleIdentificationVC: UIViewController {
+class StaffNoteIdentificationVC: UIViewController {
     var pianoAudioURL: [NSDataAsset] = [
         NSDataAsset(name: "C3")!,
         NSDataAsset(name: "C#3")!,
@@ -25,100 +25,76 @@ class PianoScaleIdentificationVC: UIViewController {
         NSDataAsset(name: "B3")!,
         ]
     
-    var audioPlayer = AVAudioPlayer()
-    var scalesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
-    var scaleIsMajor: Bool = true
-    let minorGraphicsIndex: [Int] = [3, 4, 5, 11, 7, 8, 9, 10, 6, 0, 1, 2]
-    var progress: Int = 0 {
-        didSet {
-            if (progress + 1) > scalesToDisplay.count {
-                performSegue(withIdentifier: "completion", sender: self)
-                return
-            }
-            if scaleIsMajor {
-                pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(scalesToDisplay[progress]) + ".png")
-            } else {
-                print("Minor Index: \(minorGraphicsIndex[scalesToDisplay[progress]])")
-                pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(minorGraphicsIndex[scalesToDisplay[progress]]) + ".png")
-            }
-            progressLabel.text = "Progress: \(progress + 1)/\(scalesToDisplay.count)"
-            userIsResponder = true
-        }
-    }
-    
-    var userIsResponder: Bool = false
-    var correctAnswers: Int = 0
-    
     @IBAction func note1(_ sender: UIButton) {
         print("\(1) Pressed")
         if userIsResponder {
-            processInput(scale: 0)
+            processInput(note: 0)
         }
     }
     @IBAction func note2(_ sender: UIButton) {
         print("\(2) Pressed")
         if userIsResponder {
-            processInput(scale: 1)
+            processInput(note: 1)
         }
     }
     @IBAction func note3(_ sender: UIButton) {
         print("\(3) Pressed")
         if userIsResponder {
-            processInput(scale: 2)
+            processInput(note: 2)
         }
     }
     @IBAction func note4(_ sender: UIButton) {
         print("\(4) Pressed")
         if userIsResponder {
-            processInput(scale: 3)
+            processInput(note: 3)
         }
     }
     @IBAction func note5(_ sender: UIButton) {
         print("\(6) Pressed")
         if userIsResponder {
-            processInput(scale: 4)
+            processInput(note: 4)
         }
     }
     @IBAction func note6(_ sender: UIButton) {
         print("\(6) Pressed")
         if userIsResponder {
-            processInput(scale: 5)
+            processInput(note: 5)
         }
     }
     @IBAction func note7(_ sender: UIButton) {
         print("\(7) Pressed")
         if userIsResponder {
-            processInput(scale: 6)
+            processInput(note: 6)
         }
     }
     @IBAction func note8(_ sender: UIButton) {
         print("\(8) Pressed")
         if userIsResponder {
-            processInput(scale: 7)
+            processInput(note: 7)
         }
     }
     @IBAction func note9(_ sender: UIButton) {
         print("\(9) Pressed")
         if userIsResponder {
-            processInput(scale: 8)
+            processInput(note: 8)
         }
     }
     @IBAction func note10(_ sender: UIButton) {
         print("\(10) Pressed")
         if userIsResponder {
-            processInput(scale: 9)
+            processInput(note: 9)
         }
     }
     @IBAction func note11(_ sender: UIButton) {
         print("\(11) Pressed")
         if userIsResponder {
-            processInput(scale: 10)
+            processInput(note: 10)
         }
     }
     @IBAction func note12(_ sender: UIButton) {
         print("\(12) Pressed")
         if userIsResponder {
-            processInput(scale: 11)
+            processInput(note: 11)
         }
     }
     @IBOutlet var note1Button: UIButton!
@@ -135,74 +111,82 @@ class PianoScaleIdentificationVC: UIViewController {
     @IBOutlet var note12Button: UIButton!
     var noteButtons: [UIButton] = []
     
-    @IBOutlet var scaleLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var pianoImageView: UIImageView!
+
+    var audioPlayer = AVAudioPlayer()
+    var notesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
+    var progress: Int = 0 {
+        didSet {
+            if (progress + 1) > notesToDisplay.count {
+                performSegue(withIdentifier: "completion", sender: self)
+                return
+            }
+            
+            if displayTrebleClef {
+                pianoImageView.image = UIImage(named: "TrebleStaff" + "\(notesToDisplay[progress])" + ".png")
+            } else {
+                pianoImageView.image = UIImage(named: "BassStaff" + "\(notesToDisplay[progress])" + ".png")
+            }
+            
+            userIsResponder = true
+        }
+    }
+    var correctAnswers: Int = 0
+    var displayTrebleClef: Bool = true
+    var userIsResponder: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Piano Scale Identification"
-        if scaleIsMajor {
-            scaleLabel.text = "Scale: Major"
-        } else {
-            scaleLabel.text = "Scale: Minor"
-        }
-        progressLabel.text = "Progress: 1/\(scalesToDisplay.count)"
-        scoreLabel.text = "Score: 0/\(scalesToDisplay.count)"
+        navigationItem.title = "Staff Note Identification"
+        progressLabel.text = "Progress: 1/\(notesToDisplay.count)"
+        scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
         
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
-        // Randomize order in which scale will be displayed
-        scalesToDisplay.shuffle()
+        // Randomize displayed notes
+        //notesToDisplay.shuffle()
         
-        // Update image view to display firt scale
-        if scaleIsMajor {
-            pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(scalesToDisplay[progress]) + ".png")
+        // Update Graphic
+        if displayTrebleClef {
+            pianoImageView.image = UIImage(named: "TrebleStaff" + "\(notesToDisplay[progress])" + ".png")
         } else {
-            print("Minor Index: \(minorGraphicsIndex[scalesToDisplay[progress]])")
-            pianoImageView.image = UIImage(named: "PianoScaleGraphic" + String(minorGraphicsIndex[scalesToDisplay[progress]]) + ".png")
+            pianoImageView.image = UIImage(named: "BassStaff" + "\(notesToDisplay[progress])" + ".png")
         }
         
-        userIsResponder = true
-        print("Current Displayed Scale: \(scalesToDisplay[progress])")
-        
-        // Load audio here
         do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToDisplay[progress]].data, fileTypeHint: "mp3")
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error)
         }
         
+        userIsResponder = true
     }
     
-    func processInput(scale: Int) {
+    func processInput(note selected: Int) {
         userIsResponder = false
         
-        // Play audio here
+        // Play selected note
         do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scale].data, fileTypeHint: "mp3")
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[selected].data, fileTypeHint: "mp3")
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error)
         }
-        audioPlayer.play()
+
         
-        if scale == scalesToDisplay[progress] {
-            // Correct scale was selected
-            print("Correct Scale Selected!")
-            animateFeedback(answer: true, buttonIndex: scale)
-            correctAnswers += 1
-            scoreLabel.text = "Score: \(correctAnswers)/\(scalesToDisplay.count)"
+        if selected == notesToDisplay[progress] {
+            // Correct Answer selected
+            animateFeedback(answer: true, buttonIndex: selected)
         } else {
-            // Incorrect scale was selected
-            print("Incorrect Scale Selected!")
-            animateFeedback(answer: false, buttonIndex: scale)
+            // Incorrect Answer Selected
+            animateFeedback(answer: false, buttonIndex: selected)
         }
-        
-        print("Current Displayed Scale: \(scalesToDisplay[progress])")
         
     }
     
@@ -210,13 +194,15 @@ class PianoScaleIdentificationVC: UIViewController {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
+        let indexOfCorrectButton = self.notesToDisplay[self.progress]
+        
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
                 self.noteButtons[buttonIndex].tintColor = UIColor.green
                 self.scoreLabel.textColor = UIColor.green
             } else {
                 self.noteButtons[buttonIndex].tintColor = UIColor.red
-                self.noteButtons[self.scalesToDisplay[self.progress]].tintColor = UIColor.green
+                self.noteButtons[indexOfCorrectButton].tintColor = UIColor.green
                 self.scoreLabel.textColor = UIColor.red
             }
         }, completion: { (finished: Bool) in
@@ -224,7 +210,7 @@ class PianoScaleIdentificationVC: UIViewController {
                 self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
                 self.scoreLabel.textColor = UIColor.black
                 if !correct {
-                self.noteButtons[self.scalesToDisplay[self.progress]].tintColor = UIColor.appleBlue()
+                    self.noteButtons[indexOfCorrectButton].tintColor = UIColor.appleBlue()
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
@@ -238,7 +224,7 @@ class PianoScaleIdentificationVC: UIViewController {
         case "completion"?:
             let destinationViewController = segue.destination as! CompletionVC
             destinationViewController.finalScore = correctAnswers
-            destinationViewController.optionsIndex = 1
+            destinationViewController.optionsIndex = 3
         default:
             print("Unexpected segue selected")
         }
@@ -246,27 +232,31 @@ class PianoScaleIdentificationVC: UIViewController {
     
 }
 
-class PianoScaleIdentificationOptionsVC: UIViewController {
-    var scaleIsMajor: Bool = true
+class StaffNoteIdentificationOptionsVC: UIViewController {
     
-    @IBAction func changedScale(_ sender: UISegmentedControl) {
-        print("Segmented Control:   \(sender.selectedSegmentIndex)")
+    var displayTrebleClef: Bool = true
+    @IBAction func clefType(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 0 {
-            scaleIsMajor = true
+            displayTrebleClef = true
         } else if sender.selectedSegmentIndex == 1 {
-            scaleIsMajor = false
+            displayTrebleClef = false
         } else {
             print("Unexpected segue selected")
         }
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "start"?:
-            let destinationViewController = segue.destination as! PianoScaleIdentificationVC
-            destinationViewController.scaleIsMajor = scaleIsMajor
+            let destinationViewController = segue.destination as! StaffNoteIdentificationVC
+            destinationViewController.displayTrebleClef = displayTrebleClef
         default:
             print("Unexpected segue selected")
         }
     }
 }
+
