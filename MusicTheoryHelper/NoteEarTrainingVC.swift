@@ -16,14 +16,14 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         NSDataAsset(name: "D#3")!, NSDataAsset(name: "E3")!, NSDataAsset(name: "F3")!,
         NSDataAsset(name: "F#3")!, NSDataAsset(name: "G3")!, NSDataAsset(name: "G#3")!,
         NSDataAsset(name: "A3")!, NSDataAsset(name: "A#3")!, NSDataAsset(name: "B3")!,
-        /*NSDataAsset(name: "C2")!, NSDataAsset(name: "C#2")!, NSDataAsset(name: "D2")!,
+        NSDataAsset(name: "C2")!, NSDataAsset(name: "C#2")!, NSDataAsset(name: "D2")!,
         NSDataAsset(name: "D#2")!, NSDataAsset(name: "E2")!, NSDataAsset(name: "F2")!,
         NSDataAsset(name: "F#2")!, NSDataAsset(name: "G2")!, NSDataAsset(name: "G#2")!,
         NSDataAsset(name: "A2")!, NSDataAsset(name: "A#2")!, NSDataAsset(name: "B2")!,
         NSDataAsset(name: "C4")!, NSDataAsset(name: "C#4")!, NSDataAsset(name: "D4")!,
         NSDataAsset(name: "D#4")!, NSDataAsset(name: "E4")!, NSDataAsset(name: "F4")!,
         NSDataAsset(name: "F#4")!, NSDataAsset(name: "G4")!, NSDataAsset(name: "G#4")!,
-        NSDataAsset(name: "A4")!, NSDataAsset(name: "A#4")!, NSDataAsset(name: "B4")!,*/
+        NSDataAsset(name: "A4")!, NSDataAsset(name: "A#4")!, NSDataAsset(name: "B4")!,
         ]
     
     var audioPlayer = AVAudioPlayer()
@@ -308,7 +308,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func findNoteIndex(_ note: Int) -> Int {
+    func findNoteIndex(_ note: Int) -> Int { // This function can be easily replaced by a computed variable to make code cleaner.
         switch note {
         case 0,12,24:
             return 0 // C

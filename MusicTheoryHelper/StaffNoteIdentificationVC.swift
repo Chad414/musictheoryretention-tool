@@ -116,13 +116,15 @@ class StaffNoteIdentificationVC: UIViewController {
     @IBOutlet var pianoImageView: UIImageView!
 
     var audioPlayer = AVAudioPlayer()
-    var notesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
+    var notesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] // Order will be randomized
     var progress: Int = 0 {
         didSet {
             if (progress + 1) > notesToDisplay.count {
                 performSegue(withIdentifier: "completion", sender: self)
                 return
             }
+            
+            progressLabel.text = "Progress: \(progress + 1)/\(notesToDisplay.count)"
             
             if displayTrebleClef {
                 pianoImageView.image = UIImage(named: "TrebleStaff" + "\(notesToDisplay[progress])" + ".png")
@@ -136,6 +138,37 @@ class StaffNoteIdentificationVC: UIViewController {
     var correctAnswers: Int = 0
     var displayTrebleClef: Bool = true
     var userIsResponder: Bool = false
+    var actualNoteIndex: Int {
+        switch notesToDisplay[progress] {
+        case 0,12:
+            return 0
+        case 1,13:
+            return 1
+        case 2,14:
+            return 2
+        case 3,15:
+            return 3
+        case 4,16:
+            return 4
+        case 5,17:
+            return 5
+        case 6,18:
+            return 6
+        case 7,19:
+            return 7
+        case 8,20:
+            return 8
+        case 9,21:
+            return 9
+        case 10,22:
+            return 10
+        case 11,23:
+            return 11
+        default:
+            print("Unexpected note index")
+            return 0
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,17 +180,17 @@ class StaffNoteIdentificationVC: UIViewController {
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
         // Randomize displayed notes
-        //notesToDisplay.shuffle()
+        notesToDisplay.shuffle()
         
         // Update Graphic
         if displayTrebleClef {
-            pianoImageView.image = UIImage(named: "TrebleStaff" + "\(notesToDisplay[progress])" + ".png")
+            pianoImageView.image = UIImage(named: "TrebleStaff" + "\(actualNoteIndex)" + ".png")
         } else {
-            pianoImageView.image = UIImage(named: "BassStaff" + "\(notesToDisplay[progress])" + ".png")
+            pianoImageView.image = UIImage(named: "BassStaff" + "\(actualNoteIndex)" + ".png")
         }
         
         do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[actualNoteIndex].data, fileTypeHint: "mp3")
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
@@ -180,8 +213,11 @@ class StaffNoteIdentificationVC: UIViewController {
         }
 
         
-        if selected == notesToDisplay[progress] {
+        if selected == actualNoteIndex {
             // Correct Answer selected
+            print("Correct Note Selected!")
+            correctAnswers += 1
+            scoreLabel.text = "Score: \(correctAnswers)/\(notesToDisplay.count)"
             animateFeedback(answer: true, buttonIndex: selected)
         } else {
             // Incorrect Answer Selected
@@ -194,7 +230,7 @@ class StaffNoteIdentificationVC: UIViewController {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
-        let indexOfCorrectButton = self.notesToDisplay[self.progress]
+        let indexOfCorrectButton = self.actualNoteIndex
         
         UIView.animate(withDuration: 0.5, animations: {
             if correct {

@@ -44,7 +44,7 @@ class CompletionVC: UIViewController {
             }
         case 3:
             for i in viewControllers {
-                if i is StaffNoteIdentificationVC {
+                if i is StaffNoteIdentificationOptionsVC {
                     optionsView = i
                 }
             }
