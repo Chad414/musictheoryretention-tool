@@ -161,7 +161,6 @@ class PianoNoteIdentificationVC: UIViewController {
             
             var noteStringsToDisplay: [String] = []
             
-            
             for i in noteButtonOrder {
                 noteStringsToDisplay.append(GlobalSettings.noteNames1[i])
             }
