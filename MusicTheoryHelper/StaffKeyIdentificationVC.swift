@@ -10,6 +10,20 @@ import UIKit
 import AVFoundation
 
 class StaffKeyIdentificationVC: UIViewController {
+    var pianoAudioURL: [NSDataAsset] = [
+        NSDataAsset(name: "C3")!,
+        NSDataAsset(name: "C#3")!,
+        NSDataAsset(name: "D3")!,
+        NSDataAsset(name: "D#3")!,
+        NSDataAsset(name: "E3")!,
+        NSDataAsset(name: "F3")!,
+        NSDataAsset(name: "F#3")!,
+        NSDataAsset(name: "G3")!,
+        NSDataAsset(name: "G#3")!,
+        NSDataAsset(name: "A3")!,
+        NSDataAsset(name: "A#3")!,
+        NSDataAsset(name: "B3")!,
+        ]
     
     @IBAction func note3(_ sender: UIButton) {
         print("\(0) Pressed")
@@ -103,7 +117,20 @@ class StaffKeyIdentificationVC: UIViewController {
     // Display 16 signatures because there are 8 per clef
     var signaturesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] // Order will be randomized
     var graphicsArray: [String] = []
-    var progress: Int = 0
+    var progress: Int = 0 {
+        didSet {
+            if (progress + 1) > signaturesToDisplay.count {
+                performSegue(withIdentifier: "completion", sender: self)
+                return
+            }
+            
+            progressLabel.text = "Progress: \(progress + 1)/\(signaturesToDisplay.count)"
+            
+            pianoImageView.image = UIImage(named: graphicsArray[signaturesToDisplay[progress]])
+            
+            userIsResponder = true
+        }
+    }
     var correctAnswers: Int = 0
     var userIsResponder: Bool = false
     var configuration: Int = 0 // 0 = Major, Sharp; 1 = Major, Flat; 2 = Minor, Sharp; 3 = Minor, Flat;
@@ -176,16 +203,77 @@ class StaffKeyIdentificationVC: UIViewController {
         
         pianoImageView.image = UIImage(named: graphicsArray[signaturesToDisplay[progress]])
         
+        do {
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[actualNoteIndex].data, fileTypeHint: "mp3")
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
+        
+        userIsResponder = true
     }
     
     func processInput(note: Int) {
         userIsResponder = false
         
+        do {
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[note].data, fileTypeHint: "mp3")
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
+        
         if note == actualNoteIndex {
             // Correct answer selected
             print("Correct Key Signature Selected!")
+            correctAnswers += 1
+            scoreLabel.text = "Score: \(correctAnswers)/\(signaturesToDisplay.count)"
+            animateFeedback(answer: true, buttonIndex: note)
         } else {
             print("Incorrect Key Signature Selected!")
+            animateFeedback(answer: false, buttonIndex: note)
+        }
+    }
+    
+    func animateFeedback(answer correct: Bool, buttonIndex: Int) {
+        // Force any outstanding layout changes
+        view.layoutIfNeeded()
+        
+        let indexOfCorrectButton = self.actualNoteIndex
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            if correct {
+                self.noteButtons[buttonIndex].tintColor = UIColor.green
+                self.scoreLabel.textColor = UIColor.green
+            } else {
+                self.noteButtons[buttonIndex].tintColor = UIColor.red
+                self.noteButtons[indexOfCorrectButton].tintColor = UIColor.green
+                self.scoreLabel.textColor = UIColor.red
+            }
+        }, completion: { (finished: Bool) in
+            UIView.animate(withDuration: 0.75, animations: {
+                self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
+                self.scoreLabel.textColor = UIColor.black
+                if !correct {
+                    self.noteButtons[indexOfCorrectButton].tintColor = UIColor.appleBlue()
+                }
+            }, completion: { (finished: Bool) in
+                // Completion of second animation
+                self.progress += 1
+            })
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "completion"?:
+            let destinationViewController = segue.destination as! CompletionVC
+            destinationViewController.finalScore = correctAnswers
+            destinationViewController.optionsIndex = 4
+        default:
+            print("Unexpected segue selected")
         }
     }
 }

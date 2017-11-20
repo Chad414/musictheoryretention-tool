@@ -48,6 +48,12 @@ class CompletionVC: UIViewController {
                     optionsView = i
                 }
             }
+        case 4:
+            for i in viewControllers {
+                if i is StaffKeyIdentificationOptionsVC {
+                    optionsView = i
+                }
+            }
         case 6:
             for i in viewControllers {
                 if i is NoteEarTrainingOptionsVC {
