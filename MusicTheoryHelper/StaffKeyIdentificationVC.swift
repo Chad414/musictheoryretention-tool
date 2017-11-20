@@ -97,6 +97,7 @@ class StaffKeyIdentificationVC: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var pianoImageView: UIImageView!
+    @IBOutlet var scaleLabel: UILabel!
     
     var audioPlayer = AVAudioPlayer()
     // Display 16 signatures because there are 8 per clef
@@ -106,7 +107,7 @@ class StaffKeyIdentificationVC: UIViewController {
     var correctAnswers: Int = 0
     var userIsResponder: Bool = false
     var configuration: Int = 0 // 0 = Major, Sharp; 1 = Major, Flat; 2 = Minor, Sharp; 3 = Minor, Flat;
-    var displaySharpGraphics: Bool = false
+    var displaySharpGraphics: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,34 +118,42 @@ class StaffKeyIdentificationVC: UIViewController {
         
         noteButtons = [note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button]
         
+        func assignButtonLabels(labels: [String]) {
+            var labelIndex = 0
+            for i in noteButtons {
+                i.setTitle(labels[labelIndex], for: .normal)
+                labelIndex += 1
+            }
+        }
+        
         // Configure UI based on options here
         switch configuration {
         case 0:
             // Sharp, Major
             displaySharpGraphics = true
+            scaleLabel.text = "Scale: Major"
             // Define buttons labels as string array
             let buttonLabels = ["C", "G", "D", "A", "E", "B", "F#", "C#"]
             // Loop through each button using defined labels
-            var labelIndex = 0
-            for i in noteButtons {
-                i.setTitle(buttonLabels[labelIndex], for: .normal)
-                labelIndex += 1
-            }
+            assignButtonLabels(labels: buttonLabels)
         case 1:
             // Flat, Major
             displaySharpGraphics = false
+            scaleLabel.text = "Scale: Major"
             let buttonLabels = ["C", "F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"]
-            var labelIndex = 0
-            for i in noteButtons {
-                i.setTitle(buttonLabels[labelIndex], for: .normal)
-                labelIndex += 1
-            }
+            assignButtonLabels(labels: buttonLabels)
         case 2:
             // Sharp, Minor
             displaySharpGraphics = true
+            scaleLabel.text = "Scale: Minor"
+            let buttonLabels = ["A", "E", "B", "F#", "C#", "G#", "D#", "A#"]
+            assignButtonLabels(labels: buttonLabels)
         case 3:
             // Flat, Minor
             displaySharpGraphics = false
+            scaleLabel.text = "Scale: Minor"
+            let buttonLabels = ["A", "D", "G", "C", "F", "Bb", "Eb", "Ab"]
+            assignButtonLabels(labels: buttonLabels)
         default:
             print("Unknown configuration selected in options menu")
         }
@@ -153,15 +162,19 @@ class StaffKeyIdentificationVC: UIViewController {
         // This must be done before signatures are shuffled so graphics array can be referenced properly
         if displaySharpGraphics {
             for i in signaturesToDisplay {
-                graphicsArray.append("KeySharpGraphic" + "\(i)" + ".png")
+                graphicsArray.append("SharpKeyGraphic" + "\(i)" + ".png")
             }
         } else {
             for i in signaturesToDisplay {
-                graphicsArray.append("FlatSharpGraphic" + "\(i)" + ".png")
+                graphicsArray.append("FlatKeyGraphic" + "\(i)" + ".png")
             }
         }
         
-        //signaturesToDisplay.shuffle()
+        signaturesToDisplay.shuffle()
+        print(signaturesToDisplay)
+        print(graphicsArray)
+        
+        pianoImageView.image = UIImage(named: graphicsArray[signaturesToDisplay[progress]])
         
     }
     
@@ -180,6 +193,24 @@ class StaffKeyIdentificationVC: UIViewController {
 class StaffKeyIdentificationOptionsVC: UIViewController {
     var signatureIsSharp: Bool = true
     var scaleIsMajor: Bool = true
+    
+    @IBAction func signatureChanged(sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        if selectedIndex == 0 {
+            signatureIsSharp = true
+        } else if selectedIndex == 1 {
+            signatureIsSharp = false
+        }
+    }
+    
+    @IBAction func scaleChanged(sender: UISegmentedControl) {
+        let selectedIndex = sender.selectedSegmentIndex
+        if selectedIndex == 0 {
+            scaleIsMajor = true
+        } else if selectedIndex == 1 {
+            scaleIsMajor = false
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
