@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
@@ -26,9 +27,9 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         ]
     
     var audioPlayer = AVAudioPlayer()
-    let notes: [Int] = Array(0...35) // 12 notes, 3 octaves - 3rd = (0...11) 2nd = (12...23), 4th = (24...35)
-    var notesToPlay: [Int] = [] // Determine notes to be played in viewDidLoad()
-    var thirdOctaveOnly: Bool = true
+    let notes: [Int] = Array(0...47) // 12 major scales, 12 minor scales, 12 harmonic minor, 12 melodic minor
+    var scalesToPlay: [Int] = [] // Determine notes to be played in viewDidLoad()
+    var playHarmonicMinor: Bool = true // This means play melodic minor too
     var userIsResponder: Bool = false {
         didSet {
             print("User Is Responder: \(userIsResponder)")
@@ -43,110 +44,41 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             }
             
             progressLabel.text = "Progress: \(progress + 1)/\(numberOfQuestions)"
-            print("Next Note: \(notesToPlay[progress])")
-            
-            referenceNotePlayed = true
+            print("Next Note: \(scalesToPlay[progress])")
             
             userIsResponder = true
         }
     }
     var numberOfQuestions: Int = 24
     var correctAnswers: Int = 0
-    var referenceNoteIndex: Int = 0 // Default is C3
-    var referenceNotePlayed: Bool = false
     
-    @IBAction func note1(_ sender: UIButton) {
-        print("\(1) Pressed")
-        if userIsResponder {
-            processInput(note: 0)
-        }
-    }
-    @IBAction func note2(_ sender: UIButton) {
-        print("\(2) Pressed")
-        if userIsResponder {
-            processInput(note: 1)
-        }
-    }
-    @IBAction func note3(_ sender: UIButton) {
-        print("\(3) Pressed")
-        if userIsResponder {
-            processInput(note: 2)
-        }
-    }
-    @IBAction func note4(_ sender: UIButton) {
-        print("\(4) Pressed")
-        if userIsResponder {
-            processInput(note: 3)
-        }
-    }
-    @IBAction func note5(_ sender: UIButton) {
-        print("\(6) Pressed")
-        if userIsResponder {
-            processInput(note: 4)
-        }
-    }
-    @IBAction func note6(_ sender: UIButton) {
-        print("\(6) Pressed")
-        if userIsResponder {
-            processInput(note: 5)
-        }
-    }
-    @IBAction func note7(_ sender: UIButton) {
-        print("\(7) Pressed")
-        if userIsResponder {
-            processInput(note: 6)
-        }
-    }
-    @IBAction func note8(_ sender: UIButton) {
-        print("\(8) Pressed")
-        if userIsResponder {
-            processInput(note: 7)
-        }
-    }
-    @IBAction func note9(_ sender: UIButton) {
-        print("\(9) Pressed")
-        if userIsResponder {
-            processInput(note: 8)
-        }
-    }
-    @IBAction func note10(_ sender: UIButton) {
-        print("\(10) Pressed")
-        if userIsResponder {
-            processInput(note: 9)
-        }
-    }
-    @IBAction func note11(_ sender: UIButton) {
-        print("\(11) Pressed")
-        if userIsResponder {
-            processInput(note: 10)
-        }
-    }
-    @IBAction func note12(_ sender: UIButton) {
-        print("\(12) Pressed")
-        if userIsResponder {
-            processInput(note: 11)
-        }
-    }
-    @IBOutlet var note1Button: UIButton!
-    @IBOutlet var note2Button: UIButton!
-    @IBOutlet var note3Button: UIButton!
-    @IBOutlet var note4Button: UIButton!
-    @IBOutlet var note5Button: UIButton!
-    @IBOutlet var note6Button: UIButton!
-    @IBOutlet var note7Button: UIButton!
-    @IBOutlet var note8Button: UIButton!
-    @IBOutlet var note9Button: UIButton!
-    @IBOutlet var note10Button: UIButton!
-    @IBOutlet var note11Button: UIButton!
-    @IBOutlet var note12Button: UIButton!
+    @IBOutlet var majorScaleButton: UIButton!
+    @IBOutlet var minorScaleButton: UIButton!
+    @IBOutlet var harmonicScaleButton: UIButton!
+    @IBOutlet var melodicScaleButton: UIButton!
     var noteButtons: [UIButton] = []
     
-    @IBAction func referenceNoteButtonAction(_ sender: UIButton) {
+    @IBAction func majorScaleButtonAction(_ sender: UIButton) {
         if userIsResponder {
-            userIsResponder = false
-            playReferenceNote()
+            
         }
     }
+    @IBAction func minorScaleButtonAction(_ sender: UIButton) {
+        if userIsResponder {
+            
+        }
+    }
+    @IBAction func harmonicScaleButtonAction(_ sender: UIButton) {
+        if userIsResponder {
+            
+        }
+    }
+    @IBAction func melodicScaleButtonAction(_ sender: UIButton) {
+        if userIsResponder {
+            
+        }
+    }
+    
     @IBAction func currentNoteButtonAction(_ sender: UIButton) {
         if userIsResponder {
             userIsResponder = false
@@ -154,37 +86,35 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    @IBOutlet var referenceNoteButton: UIButton!
     @IBOutlet var currentNoteButton: UIButton!
     
-    @IBOutlet var referenceNoteLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var progressLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Note Ear Training"
+        navigationItem.title = "Scale Ear Training"
         
         // Determine what notes to play
-        if thirdOctaveOnly {
-            notesToPlay = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11]
-            notesToPlay.shuffle()
+        if playHarmonicMinor {
+            scalesToPlay = Array(0...23)
+            scalesToPlay.shuffle()
         } else {
-            notesToPlay = notes
-            notesToPlay.shuffle()
+            scalesToPlay = notes
+            scalesToPlay.shuffle()
         }
         
         progressLabel.text = "Progress: 1/\(numberOfQuestions)"
         scoreLabel.text = "Score: 0/\(numberOfQuestions)"
         
-        noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
+        noteButtons = [majorScaleButton, minorScaleButton, harmonicScaleButton, melodicScaleButton]
         
-        print("Current Note \(notesToPlay[progress])")
+        print("Current Note \(scalesToPlay[progress])")
         
-        // Play reference note and current note after using AVAudioPlayer delegate
+        // Play current scale
         do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[referenceNoteIndex].data, fileTypeHint: "mp3")
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToPlay[progress]].data, fileTypeHint: "mp3")
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
             try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer.delegate = self
@@ -192,41 +122,19 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             print(error)
         }
         audioPlayer.play()
-        referenceNotePlayed = true
         
-        userIsResponder = false
+        userIsResponder = true
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         print("Audio did finish playing")
         currentNoteButton.imageView?.image = UIImage(named: "icons8-play_filled.png")
-        referenceNoteButton.imageView?.image = UIImage(named: "icons8-play_filled.png")
-        if referenceNotePlayed {
-            guard progress <= 24 else {
-                return
-            }
-            playCurrentNote()
-            referenceNotePlayed = false
-        } else {
-            userIsResponder = true
-        }
     }
     
     func playCurrentNote() {
         currentNoteButton.imageView?.image = UIImage(named: "icons8-stop_filled.png")
         do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToPlay[progress]].data, fileTypeHint: "mp3")
-            audioPlayer.delegate = self
-        } catch {
-            print(error)
-        }
-        audioPlayer.play()
-    }
-    
-    func playReferenceNote() {
-        referenceNoteButton.imageView?.image = UIImage(named: "icons8-stop_filled.png")
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[referenceNoteIndex].data, fileTypeHint: "mp3")
+            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToPlay[progress]].data, fileTypeHint: "mp3")
             audioPlayer.delegate = self
         } catch {
             print(error)
@@ -238,7 +146,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
-        let correctButtonIndex: Int = self.findNoteIndex(self.notesToPlay[progress])
+        let correctButtonIndex: Int = self.findNoteIndex(self.scalesToPlay[progress])
         
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
@@ -261,7 +169,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
                 self.progress += 1
                 self.audioPlayer.stop()
                 if self.progress < 24 {
-                    self.playReferenceNote()
+                    //self.playReferenceNote()
                 }
             })
         }
@@ -270,25 +178,16 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     func processInput(note: Int) {
         userIsResponder = false
         
-        // Play selected note
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[note].data, fileTypeHint: "mp3")
-            audioPlayer.delegate = self
-        } catch {
-            print(error)
-        }
-        audioPlayer.play()
-        
         func correctAnswerSelected(_ correct: Bool) {
             if correct {
                 print("Correct Note Selected!")
                 correctAnswers += 1
-                scoreLabel.text = "Score: \(correctAnswers)/\(notesToPlay.count)"
+                scoreLabel.text = "Score: \(correctAnswers)/\(scalesToPlay.count)"
             }
             animateFeedback(answer: correct, selectedButtonIndex: note)
         }
         
-        if findNoteIndex(notesToPlay[progress]) == findNoteIndex(note) {
+        if findNoteIndex(scalesToPlay[progress]) == findNoteIndex(note) {
             correctAnswerSelected(true)
         } else {
             correctAnswerSelected(false)
@@ -301,38 +200,22 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         case "completion"?:
             let destinationViewController = segue.destination as! CompletionVC
             destinationViewController.finalScore = self.correctAnswers
-            destinationViewController.optionsIndex = 6
+            destinationViewController.optionsIndex = 7
         default:
             print("Unexpected segue selected")
         }
     }
     
-    func findNoteIndex(_ note: Int) -> Int { // This function can be easily replaced by a computed variable to make code cleaner.
+    func findNoteIndex(_ note: Int) -> Int {
         switch note {
-        case 0,12,24:
-            return 0 // C
-        case 1,13,25:
-            return 1 // C#
-        case 2,14,26:
-            return 2 // D
-        case 3,15,27:
-            return 3 // D#
-        case 4,16,28:
-            return 4 // E
-        case 5,17,29:
-            return 5 // F
-        case 6,18,30:
-            return 6 // F#
-        case 7,19,31:
-            return 7 // G
-        case 8,20,32:
-            return 8 // G#
-        case 9,21,33:
-            return 9 // A
-        case 10,22,34:
-            return 10 // A#
-        case 11,23,35:
-            return 11 // B
+        case 0...11:
+            return 0 // Major
+        case 12...23:
+            return 1 // Minor
+        case 24...35:
+            return 2 // Harmonic Minor
+        case 36...47:
+            return 3 // Melodic Minor
         default:
             print("Unexpected note index")
             return 0
