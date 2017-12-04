@@ -78,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="2028" y="-546.47676161919048"/>
         </scene>
-        <!--View Controller-->
+        <!--Chord Ear Training OptionsVC-->
         <scene sceneID="Njf-Q9-G2d">
             <objects>
-                <viewController id="FkD-1Z-exl" sceneMemberID="viewController">
+                <viewController id="FkD-1Z-exl" customClass="ChordEarTrainingOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z2t-Wn-mwH"/>
                         <viewControllerLayoutGuide type="bottom" id="LdQ-7V-TZj"/>
@@ -144,6 +144,9 @@
                             <constraint firstItem="JGw-tk-8OR" firstAttribute="centerX" secondItem="Tk4-Ri-VmD" secondAttribute="centerX" id="wwl-SZ-d2Y"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playHarmonicMinor" destination="8UA-fK-obU" id="RRn-6R-90S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ug9-2Z-yBV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -539,7 +542,7 @@ Minor</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="harmonicScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="C5y-kN-GLD"/>
+                                    <action selector="harmonicScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="G1C-9U-2Aw"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ti5-Xf-6hG">
@@ -555,7 +558,7 @@ Minor</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="melodicScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="VOl-08-ffQ"/>
+                                    <action selector="melodicScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="5fN-6D-2yA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alp-Wg-Mom">
@@ -563,8 +566,7 @@ Minor</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
-                                    <action selector="majorScaleButton:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="Ai2-1K-bNB"/>
-                                    <action selector="majorScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="2AS-mz-Fx1"/>
+                                    <action selector="majorScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="afk-qh-3wN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKF-FJ-ObO">
@@ -572,8 +574,7 @@ Minor</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
-                                    <action selector="minorScaleButton:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="7EV-Gh-ZCT"/>
-                                    <action selector="minorScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="HqN-wE-YDo"/>
+                                    <action selector="minorScaleButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="tre-vL-JR3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -601,10 +602,10 @@ Minor</string>
                     </view>
                     <connections>
                         <outlet property="currentNoteButton" destination="Aje-5w-sZN" id="H5r-sb-VYj"/>
-                        <outlet property="harmonicScaleButton" destination="Jqp-pr-GTE" id="Gqn-6P-vHg"/>
-                        <outlet property="majorScaleButton" destination="alp-Wg-Mom" id="2aQ-0e-r8d"/>
-                        <outlet property="melodicScaleButton" destination="Ti5-Xf-6hG" id="nJX-1k-stD"/>
-                        <outlet property="minorScaleButton" destination="KKF-FJ-ObO" id="36Z-ah-6mp"/>
+                        <outlet property="harmonicScaleButton" destination="Jqp-pr-GTE" id="UUn-8g-a0o"/>
+                        <outlet property="majorScaleButton" destination="alp-Wg-Mom" id="Iu9-GU-brf"/>
+                        <outlet property="melodicScaleButton" destination="Ti5-Xf-6hG" id="TXk-3f-qck"/>
+                        <outlet property="minorScaleButton" destination="KKF-FJ-ObO" id="rJX-HS-rQp"/>
                         <outlet property="progressLabel" destination="v2i-PF-Mjy" id="g4Q-K6-ETG"/>
                         <outlet property="scoreLabel" destination="1fo-9p-B1O" id="M1h-dD-rns"/>
                     </connections>
@@ -612,6 +613,134 @@ Minor</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBs-bC-IWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3804" y="-1957"/>
+        </scene>
+        <!--Chord Ear TrainingVC-->
+        <scene sceneID="wfi-m4-Svl">
+            <objects>
+                <viewController id="e2f-Ff-uHA" customClass="ChordEarTrainingVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oX3-V8-Ciu"/>
+                        <viewControllerLayoutGuide type="bottom" id="kzU-v2-9xo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="hXd-c4-ufc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected the Chord Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nce-M2-oZc">
+                                <rect key="frame" x="50" y="76" width="275" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-4m-gQl">
+                                <rect key="frame" x="115.66666666666669" y="570" width="144" height="31"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-UP-gsZ">
+                                <rect key="frame" x="132.66666666666666" y="541" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoH-5H-1Dw">
+                                <rect key="frame" x="120" y="172" width="135" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-vo-iTO">
+                                <rect key="frame" x="162.66666666666666" y="204" width="50" height="50"/>
+                                <state key="normal" image="icons8-stop_filled"/>
+                                <connections>
+                                    <action selector="currentNoteButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="o8w-p5-Qa3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rl-OO-l22">
+                                <rect key="frame" x="64" y="681" width="93" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal">
+                                    <string key="title">Harmonic
+Minor</string>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.textAlignment">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="harmonicScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="Q1d-Zc-nWO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-jx-zUL">
+                                <rect key="frame" x="235" y="681" width="76" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal">
+                                    <string key="title">Melodic
+Minor</string>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.textAlignment">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="melodicScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="mjy-cH-saY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juB-t4-kTA">
+                                <rect key="frame" x="80" y="610" width="54" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Major"/>
+                                <connections>
+                                    <action selector="majorScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="WbD-zU-iRY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-Oa-rFa">
+                                <rect key="frame" x="240" y="610" width="55" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Minor"/>
+                                <connections>
+                                    <action selector="minorScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="ehb-82-dh9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="juB-t4-kTA" firstAttribute="leading" secondItem="hXd-c4-ufc" secondAttribute="leadingMargin" constant="64" id="20t-ET-dzc"/>
+                            <constraint firstItem="3rl-OO-l22" firstAttribute="top" secondItem="juB-t4-kTA" secondAttribute="bottom" constant="32" id="9dm-uw-G3f"/>
+                            <constraint firstItem="3rl-OO-l22" firstAttribute="top" secondItem="Rtu-4m-gQl" secondAttribute="bottom" constant="80" id="AHi-0Z-azz"/>
+                            <constraint firstItem="Nce-M2-oZc" firstAttribute="top" secondItem="oX3-V8-Ciu" secondAttribute="bottom" constant="32" id="AhC-Qj-IFQ"/>
+                            <constraint firstItem="3rl-OO-l22" firstAttribute="leading" secondItem="hXd-c4-ufc" secondAttribute="leadingMargin" constant="48" id="CAn-Dk-vaR"/>
+                            <constraint firstItem="kzU-v2-9xo" firstAttribute="top" secondItem="3rl-OO-l22" secondAttribute="bottom" constant="32" id="DHk-dU-H4x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Qh-jx-zUL" secondAttribute="trailing" constant="48" id="GkQ-xI-pUK"/>
+                            <constraint firstItem="Rtu-4m-gQl" firstAttribute="centerX" secondItem="hXd-c4-ufc" secondAttribute="centerX" id="Pd7-7x-rgj"/>
+                            <constraint firstItem="Rtu-4m-gQl" firstAttribute="top" secondItem="vQd-UP-gsZ" secondAttribute="bottom" constant="8" id="PsO-hq-tgX"/>
+                            <constraint firstItem="Nce-M2-oZc" firstAttribute="centerX" secondItem="hXd-c4-ufc" secondAttribute="centerX" id="Q91-Nt-3hA"/>
+                            <constraint firstItem="4Qh-jx-zUL" firstAttribute="top" secondItem="hmn-Oa-rFa" secondAttribute="bottom" constant="32" id="QC6-Hj-OTZ"/>
+                            <constraint firstItem="hoH-5H-1Dw" firstAttribute="top" secondItem="Nce-M2-oZc" secondAttribute="bottom" constant="64" id="ZMF-Lt-UYs"/>
+                            <constraint firstItem="kzV-vo-iTO" firstAttribute="top" secondItem="hoH-5H-1Dw" secondAttribute="bottom" constant="8" id="ew3-dN-ELn"/>
+                            <constraint firstItem="kzU-v2-9xo" firstAttribute="top" secondItem="4Qh-jx-zUL" secondAttribute="bottom" constant="32" id="hXV-aC-mso"/>
+                            <constraint firstItem="vQd-UP-gsZ" firstAttribute="centerX" secondItem="hXd-c4-ufc" secondAttribute="centerX" id="oA0-d7-ViT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hmn-Oa-rFa" secondAttribute="trailing" constant="64" id="qbS-fn-Usr"/>
+                            <constraint firstItem="hoH-5H-1Dw" firstAttribute="centerX" secondItem="hXd-c4-ufc" secondAttribute="centerX" id="wf3-dn-2z3"/>
+                            <constraint firstItem="kzV-vo-iTO" firstAttribute="centerX" secondItem="hXd-c4-ufc" secondAttribute="centerX" id="z4D-Uz-lnK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentNoteButton" destination="kzV-vo-iTO" id="H4N-SC-Oiz"/>
+                        <outlet property="harmonicScaleButton" destination="3rl-OO-l22" id="OLg-uE-BDC"/>
+                        <outlet property="majorScaleButton" destination="juB-t4-kTA" id="6dx-Zb-pgO"/>
+                        <outlet property="melodicScaleButton" destination="4Qh-jx-zUL" id="xnt-Pb-tfq"/>
+                        <outlet property="minorScaleButton" destination="hmn-Oa-rFa" id="e21-Aa-a4P"/>
+                        <outlet property="progressLabel" destination="vQd-UP-gsZ" id="0YE-NF-Z3b"/>
+                        <outlet property="scoreLabel" destination="Rtu-4m-gQl" id="Qc2-m9-C9T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pZm-GI-brd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3804" y="-2665"/>
         </scene>
         <!--Piano Note Identification OptionsVC-->
         <scene sceneID="tf0-lt-9Sg">
@@ -755,10 +884,10 @@ Minor</string>
             </objects>
             <point key="canvasLocation" x="1089" y="913"/>
         </scene>
-        <!--View Controller-->
+        <!--Staff Chord Identification OptionsVC-->
         <scene sceneID="vEx-XW-Ogn">
             <objects>
-                <viewController id="6bz-8X-eZ2" sceneMemberID="viewController">
+                <viewController id="6bz-8X-eZ2" customClass="StaffChordIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lex-is-Hie"/>
                         <viewControllerLayoutGuide type="bottom" id="OhB-9U-TkJ"/>
@@ -1807,6 +1936,154 @@ Minor</string>
             </objects>
             <point key="canvasLocation" x="190" y="913"/>
         </scene>
+        <!--Staff Chord IdentificationVC-->
+        <scene sceneID="0cq-ox-8Hg">
+            <objects>
+                <viewController id="0rr-Jt-xYA" customClass="StaffChordIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CAK-el-eff"/>
+                        <viewControllerLayoutGuide type="bottom" id="4jf-CS-hNb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="center" id="IsI-Ao-zG6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEi-Mc-stV">
+                                <rect key="frame" x="282.66666666666669" y="689" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="A"/>
+                                <connections>
+                                    <action selector="note10:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="7cl-wd-aiq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHT-cu-7mF">
+                                <rect key="frame" x="62.666666666666657" y="689" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="D"/>
+                                <connections>
+                                    <action selector="note3:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="QeY-kd-8wd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddn-MI-GSd">
+                                <rect key="frame" x="117.66666666666669" y="689" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="E"/>
+                                <connections>
+                                    <action selector="note5:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="Zb4-ez-812"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXE-3c-k6F">
+                                <rect key="frame" x="227.66666666666666" y="689" width="29.999999999999972" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="G"/>
+                                <connections>
+                                    <action selector="note8:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="nD5-Qp-YlE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7r-if-AI4">
+                                <rect key="frame" x="172.66666666666666" y="628" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="F#"/>
+                                <connections>
+                                    <action selector="note7:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="Ry8-Bt-6jI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-pE-ghg">
+                                <rect key="frame" x="237.66666666666666" y="628" width="32.999999999999972" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="G#"/>
+                                <connections>
+                                    <action selector="note9:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="6zB-zz-mHV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkr-kd-jgU">
+                                <rect key="frame" x="172.66666666666666" y="689" width="30" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="F"/>
+                                <connections>
+                                    <action selector="note6:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="tBm-4e-1RB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tF-gvH">
+                                <rect key="frame" x="105.66666666666667" y="628" width="32.000000000000014" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="D#"/>
+                                <connections>
+                                    <action selector="note4:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="X5T-Yy-ZHy"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK1-5K-HrN">
+                                <rect key="frame" x="35.666666666666657" y="76" width="304" height="32"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-xe-MgO">
+                                <rect key="frame" x="115" y="580.66666666666663" width="145" height="31.333333333333371"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jJe-TM-aLU">
+                                <rect key="frame" x="36" y="140" width="303" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="AhP-7u-GZp"/>
+                                    <constraint firstAttribute="width" constant="303" id="s77-bg-zOG"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-Vh-msc">
+                                <rect key="frame" x="132.66666666666666" y="551" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="OEi-Mc-stV" secondAttribute="bottom" constant="48" id="7JM-yE-ua8"/>
+                            <constraint firstItem="BhM-xe-MgO" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="8Xu-iN-Myw"/>
+                            <constraint firstItem="iXE-3c-k6F" firstAttribute="leading" secondItem="wkr-kd-jgU" secondAttribute="trailing" constant="25" id="A7a-S7-ycD"/>
+                            <constraint firstItem="r6W-tF-gvH" firstAttribute="top" secondItem="BhM-xe-MgO" secondAttribute="bottom" constant="16" id="AEz-qN-r5g"/>
+                            <constraint firstItem="Hr3-pE-ghg" firstAttribute="leading" secondItem="V7r-if-AI4" secondAttribute="trailing" constant="35" id="Cht-eg-zIt"/>
+                            <constraint firstItem="iXE-3c-k6F" firstAttribute="top" secondItem="Hr3-pE-ghg" secondAttribute="bottom" constant="20" id="E4f-vE-S2y"/>
+                            <constraint firstItem="CIu-Vh-msc" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="ENC-z6-u59"/>
+                            <constraint firstItem="V7r-if-AI4" firstAttribute="leading" secondItem="r6W-tF-gvH" secondAttribute="trailing" constant="35" id="Geq-ac-SJz"/>
+                            <constraint firstItem="jJe-TM-aLU" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="I92-Ue-wdB"/>
+                            <constraint firstItem="wkr-kd-jgU" firstAttribute="top" secondItem="V7r-if-AI4" secondAttribute="bottom" constant="20" id="IK8-J0-Y8c"/>
+                            <constraint firstItem="wkr-kd-jgU" firstAttribute="leading" secondItem="ddn-MI-GSd" secondAttribute="trailing" constant="25" id="KRA-R0-GrP"/>
+                            <constraint firstItem="wkr-kd-jgU" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="MD9-Zf-gac"/>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="wkr-kd-jgU" secondAttribute="bottom" constant="48" id="PUf-Z6-jD3"/>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="iXE-3c-k6F" secondAttribute="bottom" constant="48" id="SuG-IW-Cee"/>
+                            <constraint firstItem="BhM-xe-MgO" firstAttribute="top" secondItem="CIu-Vh-msc" secondAttribute="bottom" constant="8" id="aB6-9B-lsB"/>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="mHT-cu-7mF" secondAttribute="bottom" constant="48" id="aNA-4c-cjA"/>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="ddn-MI-GSd" secondAttribute="bottom" constant="48" id="cf9-8j-O70"/>
+                            <constraint firstItem="VK1-5K-HrN" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="cnI-Qg-add"/>
+                            <constraint firstItem="jJe-TM-aLU" firstAttribute="top" secondItem="VK1-5K-HrN" secondAttribute="bottom" constant="32" id="fno-4T-ZCe"/>
+                            <constraint firstItem="OEi-Mc-stV" firstAttribute="leading" secondItem="iXE-3c-k6F" secondAttribute="trailing" constant="25" id="jqc-Sy-d9R"/>
+                            <constraint firstItem="VK1-5K-HrN" firstAttribute="top" secondItem="CAK-el-eff" secondAttribute="bottom" constant="32" id="m7B-Aw-Uov"/>
+                            <constraint firstItem="ddn-MI-GSd" firstAttribute="top" secondItem="r6W-tF-gvH" secondAttribute="bottom" constant="20" id="sRR-he-JZj"/>
+                            <constraint firstItem="V7r-if-AI4" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="toA-wP-Fsz"/>
+                            <constraint firstItem="ddn-MI-GSd" firstAttribute="leading" secondItem="mHT-cu-7mF" secondAttribute="trailing" constant="25" id="yk9-lf-fp4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="note10Button" destination="OEi-Mc-stV" id="GDG-mp-gy4"/>
+                        <outlet property="note3Button" destination="mHT-cu-7mF" id="FDO-v6-iIF"/>
+                        <outlet property="note4Button" destination="r6W-tF-gvH" id="WXu-5N-4Uh"/>
+                        <outlet property="note5Button" destination="ddn-MI-GSd" id="klJ-dK-3pL"/>
+                        <outlet property="note6Button" destination="wkr-kd-jgU" id="NBb-fX-2y5"/>
+                        <outlet property="note7Button" destination="V7r-if-AI4" id="0HS-YT-4K5"/>
+                        <outlet property="note8Button" destination="iXE-3c-k6F" id="GjY-zi-HKb"/>
+                        <outlet property="note9Button" destination="Hr3-pE-ghg" id="pcb-zf-WcG"/>
+                        <outlet property="pianoImageView" destination="jJe-TM-aLU" id="6p9-jA-8Fc"/>
+                        <outlet property="progressLabel" destination="CIu-Vh-msc" id="iZK-Ms-FCh"/>
+                        <outlet property="scoreLabel" destination="BhM-xe-MgO" id="0V9-lT-iuu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lSW-3d-4mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="1663"/>
+        </scene>
         <!--Staff Note Identification OptionsVC-->
         <scene sceneID="Wg1-BV-rKp">
             <objects>
@@ -1876,6 +2153,6 @@ Minor</string>
         <image name="icons8-stop_filled" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7PF-Aa-b3Q"/>
+        <segue reference="fxb-wA-sJM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -25,6 +25,8 @@
 		63A684131F3AAA1600B17DE5 /* MusicTheoryHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A684121F3AAA1600B17DE5 /* MusicTheoryHelperTests.swift */; };
 		63A6841E1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6841D1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift */; };
 		63A6842C1F3AAB4400B17DE5 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */; };
+		63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */; };
+		63FEB47B1FD3189600204335 /* ChordEarTrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		63A6841D1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTheoryHelperUITests.swift; sourceTree = "<group>"; };
 		63A6841F1F3AAA1600B17DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
+		63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffChordIdentificationVC.swift; sourceTree = "<group>"; };
+		63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordEarTrainingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +134,10 @@
 				63966D301F66F0D6005940C1 /* PianoChordIdentificationVC.swift */,
 				6339D5431FA296D7001C7A77 /* StaffNoteIdentificationVC.swift */,
 				633A77FF1FB3472000E42B60 /* StaffKeyIdentificationVC.swift */,
+				63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */,
 				6361DFB41F965608003F0CA7 /* NoteEarTrainingVC.swift */,
 				631EB2431FC33DE300D43F13 /* ScaleEarTrainingVC.swift */,
+				63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */,
 				63531C3E1F3FAE9F003BD606 /* GlobalSettings.swift */,
 				638691FC1F8591DB0096100C /* MenuCell.swift */,
 				63819B901F8E49C100FB4D61 /* CompletionVC.swift */,
@@ -300,12 +306,14 @@
 			files = (
 				63819B911F8E49C100FB4D61 /* CompletionVC.swift in Sources */,
 				638691FD1F8591DB0096100C /* MenuCell.swift in Sources */,
+				63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */,
 				63A6842C1F3AAB4400B17DE5 /* MainMenuTableViewController.swift in Sources */,
 				63531C3F1F3FAE9F003BD606 /* GlobalSettings.swift in Sources */,
 				6361DFB51F965608003F0CA7 /* NoteEarTrainingVC.swift in Sources */,
 				633A78001FB3472000E42B60 /* StaffKeyIdentificationVC.swift in Sources */,
 				6339D5441FA296D7001C7A77 /* StaffNoteIdentificationVC.swift in Sources */,
 				63A683FE1F3AAA1600B17DE5 /* AppDelegate.swift in Sources */,
+				63FEB47B1FD3189600204335 /* ChordEarTrainingVC.swift in Sources */,
 				63531C3D1F3F9579003BD606 /* PianoNoteIdentificationVC.swift in Sources */,
 				631EB2441FC33DE400D43F13 /* ScaleEarTrainingVC.swift in Sources */,
 				6394646F1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift in Sources */,

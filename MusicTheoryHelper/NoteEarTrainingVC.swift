@@ -178,6 +178,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         
         progressLabel.text = "Progress: 1/\(numberOfQuestions)"
         scoreLabel.text = "Score: 0/\(numberOfQuestions)"
+        referenceNoteLabel.text = "Refence Note: \(referenceNoteDictionary[referenceNoteIndex] ?? "C3")"
         
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
@@ -341,14 +342,14 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     }
 }
 
+let referenceNoteDictionary: [Int:String] = [
+    0 : "C3", 1 : "C#3", 2 : "D3", 3 : "D#3", 4 : "E3", 5 : "F3", 6 : "F#3", 7 : "G3",
+    8 : "G#3", 9 : "A3", 10 : "A#3", 11 : "B3", 12 : "C2", 13 : "C#2", 14 : "D2", 15 : "D#2",
+    16 : "E2", 17 : "F2", 18 : "F#2", 19 : "G2", 20 : "G#2", 21 : "A2", 22 : "A#2", 23 : "B2",
+    24 : "C4", 25 : "C#4", 26 : "D4", 27 : "D#4", 28 : "E4", 29 : "F4", 30 : "F#4", 31 : "G4",
+    32 : "G#4", 33 : "A4", 34 : "A#4", 35 : "B4"]
+
 class NoteEarTrainingOptionsVC: UIViewController {
-    
-    let referenceNoteDictionary: [Int:String] = [
-        0 : "C3", 1 : "C#3", 2 : "D3", 3 : "D#3", 4 : "E3", 5 : "F3", 6 : "F#3", 7 : "G3",
-        8 : "G#3", 9 : "A3", 10 : "A#3", 11 : "B3", 12 : "C2", 13 : "C#2", 14 : "D2", 15 : "D#2",
-        16 : "E2", 17 : "F2", 18 : "F#2", 19 : "G2", 20 : "G#2", 21 : "A2", 22 : "A#2", 23 : "B2",
-        24 : "C4", 25 : "C#4", 26 : "D4", 27 : "D#4", 28 : "E4", 29 : "F4", 30 : "F#4", 31 : "G4",
-        32 : "G#4", 33 : "A4", 34 : "A#4", 35 : "B4"]
     
     var referenceNote: Int = 0 {
         didSet {

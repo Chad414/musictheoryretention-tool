@@ -12,24 +12,28 @@ import AVFoundation
 class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     var pianoAudioURL: [NSDataAsset] = [
-        NSDataAsset(name: "C3")!, NSDataAsset(name: "C#3")!, NSDataAsset(name: "D3")!,
-        NSDataAsset(name: "D#3")!, NSDataAsset(name: "E3")!, NSDataAsset(name: "F3")!,
-        NSDataAsset(name: "F#3")!, NSDataAsset(name: "G3")!, NSDataAsset(name: "G#3")!,
-        NSDataAsset(name: "A3")!, NSDataAsset(name: "A#3")!, NSDataAsset(name: "B3")!,
-        NSDataAsset(name: "C2")!, NSDataAsset(name: "C#2")!, NSDataAsset(name: "D2")!,
-        NSDataAsset(name: "D#2")!, NSDataAsset(name: "E2")!, NSDataAsset(name: "F2")!,
-        NSDataAsset(name: "F#2")!, NSDataAsset(name: "G2")!, NSDataAsset(name: "G#2")!,
-        NSDataAsset(name: "A2")!, NSDataAsset(name: "A#2")!, NSDataAsset(name: "B2")!,
-        NSDataAsset(name: "C4")!, NSDataAsset(name: "C#4")!, NSDataAsset(name: "D4")!,
-        NSDataAsset(name: "D#4")!, NSDataAsset(name: "E4")!, NSDataAsset(name: "F4")!,
-        NSDataAsset(name: "F#4")!, NSDataAsset(name: "G4")!, NSDataAsset(name: "G#4")!,
-        NSDataAsset(name: "A4")!, NSDataAsset(name: "A#4")!, NSDataAsset(name: "B4")!,
+        NSDataAsset(name: "C_Major")!, NSDataAsset(name: "C#_Major")!, NSDataAsset(name: "D_Major")!,
+        NSDataAsset(name: "D#_Major")!, NSDataAsset(name: "E_Major")!, NSDataAsset(name: "F3")!,
+        NSDataAsset(name: "F#_Major")!, NSDataAsset(name: "G_Major")!, NSDataAsset(name: "G#_Major")!,
+        NSDataAsset(name: "A_Major")!, NSDataAsset(name: "A#_Major")!, NSDataAsset(name: "B_Major")!,
+        NSDataAsset(name: "C_Minor")!, NSDataAsset(name: "C#_Minor")!, NSDataAsset(name: "D_Minor")!,
+        NSDataAsset(name: "D#_Minor")!, NSDataAsset(name: "E_Minor")!, NSDataAsset(name: "F_Minor")!,
+        NSDataAsset(name: "F#_Minor")!, NSDataAsset(name: "G_Minor")!, NSDataAsset(name: "G#_Minor")!,
+        NSDataAsset(name: "A_Minor")!, NSDataAsset(name: "A#_Minor")!, NSDataAsset(name: "B_Minor")!,
+        NSDataAsset(name: "C_hMinor")!, NSDataAsset(name: "C#_hMinor")!, NSDataAsset(name: "D_hMinor")!,
+        NSDataAsset(name: "D#_hMinor")!, NSDataAsset(name: "E_hMinor")!, NSDataAsset(name: "F_hMinor")!,
+        NSDataAsset(name: "F#_hMinor")!, NSDataAsset(name: "G_hMinor")!, NSDataAsset(name: "G#_hMinor")!,
+        NSDataAsset(name: "A_hMinor")!, NSDataAsset(name: "A#_hMinor")!, NSDataAsset(name: "B_hMinor")!,
+        NSDataAsset(name: "C_mMinor")!, NSDataAsset(name: "C#_mMinor")!, NSDataAsset(name: "D_mMinor")!,
+        NSDataAsset(name: "D#_mMinor")!, NSDataAsset(name: "E_mMinor")!, NSDataAsset(name: "F_mMinor")!,
+        NSDataAsset(name: "F#_mMinor")!, NSDataAsset(name: "G_mMinor")!, NSDataAsset(name: "G#_mMinor")!,
+        NSDataAsset(name: "A_mMinor")!, NSDataAsset(name: "A#_mMinor")!, NSDataAsset(name: "B_mMinor")!,
         ]
     
     var audioPlayer = AVAudioPlayer()
     let notes: [Int] = Array(0...47) // 12 major scales, 12 minor scales, 12 harmonic minor, 12 melodic minor
     var scalesToPlay: [Int] = [] // Determine notes to be played in viewDidLoad()
-    var playHarmonicMinor: Bool = true // This means play melodic minor too
+    var playHarmonicMinor: Bool = false // This means play melodic minor too
     var userIsResponder: Bool = false {
         didSet {
             print("User Is Responder: \(userIsResponder)")
@@ -60,30 +64,27 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func majorScaleButtonAction(_ sender: UIButton) {
         if userIsResponder {
-            
+            processInput(note: 0)
         }
     }
     @IBAction func minorScaleButtonAction(_ sender: UIButton) {
         if userIsResponder {
-            
+            processInput(note: 1)
         }
     }
     @IBAction func harmonicScaleButtonAction(_ sender: UIButton) {
         if userIsResponder {
-            
+            processInput(note: 2)
         }
     }
     @IBAction func melodicScaleButtonAction(_ sender: UIButton) {
         if userIsResponder {
-            
+            processInput(note: 3)
         }
     }
     
     @IBAction func currentNoteButtonAction(_ sender: UIButton) {
-        if userIsResponder {
-            userIsResponder = false
-            playCurrentNote()
-        }
+        playCurrentNote()
     }
     
     @IBOutlet var currentNoteButton: UIButton!
@@ -98,10 +99,12 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         
         // Determine what notes to play
         if playHarmonicMinor {
-            scalesToPlay = Array(0...23)
+            scalesToPlay = notes
             scalesToPlay.shuffle()
         } else {
-            scalesToPlay = notes
+            scalesToPlay = Array(0...23)
+            harmonicScaleButton.isHidden = true
+            melodicScaleButton.isHidden = true
             scalesToPlay.shuffle()
         }
         
@@ -132,14 +135,21 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     }
     
     func playCurrentNote() {
-        currentNoteButton.imageView?.image = UIImage(named: "icons8-stop_filled.png")
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToPlay[progress]].data, fileTypeHint: "mp3")
-            audioPlayer.delegate = self
-        } catch {
-            print(error)
+        if audioPlayer.isPlaying {
+            OperationQueue.main.addOperation {
+                self.currentNoteButton.imageView?.image = UIImage(named: "icons8-play_filled.png")
+            }
+            audioPlayer.stop()
+        } else {
+            currentNoteButton.imageView?.image = UIImage(named: "icons8-stop_filled.png")
+            do {
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToPlay[progress]].data, fileTypeHint: "mp3")
+                audioPlayer.delegate = self
+            } catch {
+                print(error)
+            }
+            audioPlayer.play()
         }
-        audioPlayer.play()
     }
     
     func animateFeedback(answer correct: Bool, selectedButtonIndex: Int) {
@@ -169,7 +179,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
                 self.progress += 1
                 self.audioPlayer.stop()
                 if self.progress < 24 {
-                    //self.playReferenceNote()
+                    self.playCurrentNote()
                 }
             })
         }
@@ -182,12 +192,12 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             if correct {
                 print("Correct Note Selected!")
                 correctAnswers += 1
-                scoreLabel.text = "Score: \(correctAnswers)/\(scalesToPlay.count)"
+                scoreLabel.text = "Score: \(correctAnswers)/\(numberOfQuestions)"
             }
             animateFeedback(answer: correct, selectedButtonIndex: note)
         }
         
-        if findNoteIndex(scalesToPlay[progress]) == findNoteIndex(note) {
+        if findNoteIndex(scalesToPlay[progress]) == note {
             correctAnswerSelected(true)
         } else {
             correctAnswerSelected(false)
@@ -224,5 +234,15 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
 }
 
 class ScaleEarTrainingOptionsVC: UIViewController {
+    @IBOutlet var playHarmonicMinor: UISwitch!
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "start"?:
+            let destinationViewController = segue.destination as! ScaleEarTrainingVC
+            destinationViewController.playHarmonicMinor = playHarmonicMinor.isOn
+        default:
+            print("Unexpected segue selected")
+        }
+    }
 }
