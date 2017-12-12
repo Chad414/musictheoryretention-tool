@@ -28,7 +28,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         NSDataAsset(name: "D#_mMinor")!, NSDataAsset(name: "E_mMinor")!, NSDataAsset(name: "F_mMinor")!,
         NSDataAsset(name: "F#_mMinor")!, NSDataAsset(name: "G_mMinor")!, NSDataAsset(name: "G#_mMinor")!,
         NSDataAsset(name: "A_mMinor")!, NSDataAsset(name: "A#_mMinor")!, NSDataAsset(name: "B_mMinor")!,
-        ]
+    ]
     
     var audioPlayer = AVAudioPlayer()
     let notes: [Int] = Array(0...47) // 12 major scales, 12 minor scales, 12 harmonic minor, 12 melodic minor

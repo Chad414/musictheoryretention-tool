@@ -54,9 +54,27 @@ class CompletionVC: UIViewController {
                     optionsView = i
                 }
             }
+        case 5:
+            for i in viewControllers {
+                if i is StaffChordIdentificationOptionsVC {
+                    optionsView = i
+                }
+            }
         case 6:
             for i in viewControllers {
                 if i is NoteEarTrainingOptionsVC {
+                    optionsView = i
+                }
+            }
+        case 7:
+            for i in viewControllers {
+                if i is ScaleEarTrainingOptionsVC {
+                    optionsView = i
+                }
+            }
+        case 8:
+            for i in viewControllers {
+                if i is ChordEarTrainingOptionsVC {
                     optionsView = i
                 }
             }

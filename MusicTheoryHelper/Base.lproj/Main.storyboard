@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -653,9 +653,6 @@ Minor</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-vo-iTO">
                                 <rect key="frame" x="162.66666666666666" y="204" width="50" height="50"/>
                                 <state key="normal" image="icons8-stop_filled"/>
-                                <connections>
-                                    <action selector="currentNoteButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="o8w-p5-Qa3"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rl-OO-l22">
                                 <rect key="frame" x="64" y="681" width="93" height="65"/>
@@ -670,7 +667,7 @@ Minor</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="harmonicScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="Q1d-Zc-nWO"/>
+                                    <action selector="harmonicButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="cSt-Z7-IaR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-jx-zUL">
@@ -686,7 +683,7 @@ Minor</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="melodicScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="mjy-cH-saY"/>
+                                    <action selector="melodicButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="Sxo-Rl-JjI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juB-t4-kTA">
@@ -694,7 +691,7 @@ Minor</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
-                                    <action selector="majorScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="WbD-zU-iRY"/>
+                                    <action selector="majorButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="bzM-k3-XkI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-Oa-rFa">
@@ -702,7 +699,7 @@ Minor</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
-                                    <action selector="minorScaleButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="ehb-82-dh9"/>
+                                    <action selector="minorButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="kd7-tD-12J"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -730,10 +727,10 @@ Minor</string>
                     </view>
                     <connections>
                         <outlet property="currentNoteButton" destination="kzV-vo-iTO" id="H4N-SC-Oiz"/>
-                        <outlet property="harmonicScaleButton" destination="3rl-OO-l22" id="OLg-uE-BDC"/>
-                        <outlet property="majorScaleButton" destination="juB-t4-kTA" id="6dx-Zb-pgO"/>
-                        <outlet property="melodicScaleButton" destination="4Qh-jx-zUL" id="xnt-Pb-tfq"/>
-                        <outlet property="minorScaleButton" destination="hmn-Oa-rFa" id="e21-Aa-a4P"/>
+                        <outlet property="harmonicButton" destination="3rl-OO-l22" id="Ie6-dA-yhy"/>
+                        <outlet property="majorButton" destination="juB-t4-kTA" id="u8G-mo-Dko"/>
+                        <outlet property="melodicButton" destination="4Qh-jx-zUL" id="l4Y-tx-boj"/>
+                        <outlet property="minorButton" destination="hmn-Oa-rFa" id="rBu-VB-wZE"/>
                         <outlet property="progressLabel" destination="vQd-UP-gsZ" id="0YE-NF-Z3b"/>
                         <outlet property="scoreLabel" destination="Rtu-4m-gQl" id="Qc2-m9-C9T"/>
                     </connections>
@@ -895,7 +892,21 @@ Minor</string>
                     <view key="view" contentMode="scaleToFill" id="gU3-zi-MmS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-Pe-CpL">
+                                <rect key="frame" x="160" y="606" width="54" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="0rr-Jt-xYA" kind="show" identifier="start" id="zsU-W4-cXd"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JUS-Pe-CpL" firstAttribute="centerX" secondItem="gU3-zi-MmS" secondAttribute="centerX" id="9ed-He-wfO"/>
+                            <constraint firstItem="OhB-9U-TkJ" firstAttribute="top" secondItem="JUS-Pe-CpL" secondAttribute="bottom" constant="128" id="Klx-YV-R16"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gjp-3U-Vkl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1948,136 +1959,92 @@ Minor</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OEi-Mc-stV">
-                                <rect key="frame" x="282.66666666666669" y="689" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="A"/>
-                                <connections>
-                                    <action selector="note10:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="7cl-wd-aiq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mHT-cu-7mF">
-                                <rect key="frame" x="62.666666666666657" y="689" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="D"/>
-                                <connections>
-                                    <action selector="note3:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="QeY-kd-8wd"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddn-MI-GSd">
-                                <rect key="frame" x="117.66666666666669" y="689" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="E"/>
-                                <connections>
-                                    <action selector="note5:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="Zb4-ez-812"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXE-3c-k6F">
-                                <rect key="frame" x="227.66666666666666" y="689" width="29.999999999999972" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="G"/>
-                                <connections>
-                                    <action selector="note8:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="nD5-Qp-YlE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7r-if-AI4">
-                                <rect key="frame" x="172.66666666666666" y="628" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="F#"/>
-                                <connections>
-                                    <action selector="note7:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="Ry8-Bt-6jI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hr3-pE-ghg">
-                                <rect key="frame" x="237.66666666666666" y="628" width="32.999999999999972" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="G#"/>
-                                <connections>
-                                    <action selector="note9:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="6zB-zz-mHV"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wkr-kd-jgU">
-                                <rect key="frame" x="172.66666666666666" y="689" width="30" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="F"/>
-                                <connections>
-                                    <action selector="note6:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="tBm-4e-1RB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6W-tF-gvH">
-                                <rect key="frame" x="105.66666666666667" y="628" width="32.000000000000014" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="D#"/>
-                                <connections>
-                                    <action selector="note4:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="X5T-Yy-ZHy"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK1-5K-HrN">
-                                <rect key="frame" x="35.666666666666657" y="76" width="304" height="32"/>
+                                <rect key="frame" x="35.666666666666657" y="120" width="304" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-xe-MgO">
-                                <rect key="frame" x="115" y="580.66666666666663" width="145" height="31.333333333333371"/>
+                                <rect key="frame" x="115" y="563.66666666666663" width="145" height="31.333333333333371"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jJe-TM-aLU">
-                                <rect key="frame" x="36" y="140" width="303" height="200"/>
+                                <rect key="frame" x="36" y="184" width="303" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AhP-7u-GZp"/>
                                     <constraint firstAttribute="width" constant="303" id="s77-bg-zOG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-Vh-msc">
-                                <rect key="frame" x="132.66666666666666" y="551" width="110" height="21"/>
+                                <rect key="frame" x="132.66666666666666" y="534" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-OZ-5sO">
+                                <rect key="frame" x="48" y="675" width="99" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Agmented"/>
+                                <connections>
+                                    <action selector="augmentedButtonPressed:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="GO9-vC-8o6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k4-96-Lor">
+                                <rect key="frame" x="220" y="675" width="107" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Diminished"/>
+                                <connections>
+                                    <action selector="diminishedButtonPressed:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="yMN-1C-8i3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-zH-sN5">
+                                <rect key="frame" x="80" y="604" width="54" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Major"/>
+                                <connections>
+                                    <action selector="majorButtonPressed:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="Q9a-iJ-gof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsA-Ec-dYf">
+                                <rect key="frame" x="240" y="604" width="55" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Minor"/>
+                                <connections>
+                                    <action selector="minorButtonPressed:" destination="0rr-Jt-xYA" eventType="touchUpInside" id="Zsa-Wq-gXf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="OEi-Mc-stV" secondAttribute="bottom" constant="48" id="7JM-yE-ua8"/>
+                            <constraint firstItem="KWH-OZ-5sO" firstAttribute="leading" secondItem="IsI-Ao-zG6" secondAttribute="leadingMargin" constant="32" id="2de-z2-W4b"/>
                             <constraint firstItem="BhM-xe-MgO" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="8Xu-iN-Myw"/>
-                            <constraint firstItem="iXE-3c-k6F" firstAttribute="leading" secondItem="wkr-kd-jgU" secondAttribute="trailing" constant="25" id="A7a-S7-ycD"/>
-                            <constraint firstItem="r6W-tF-gvH" firstAttribute="top" secondItem="BhM-xe-MgO" secondAttribute="bottom" constant="16" id="AEz-qN-r5g"/>
-                            <constraint firstItem="Hr3-pE-ghg" firstAttribute="leading" secondItem="V7r-if-AI4" secondAttribute="trailing" constant="35" id="Cht-eg-zIt"/>
-                            <constraint firstItem="iXE-3c-k6F" firstAttribute="top" secondItem="Hr3-pE-ghg" secondAttribute="bottom" constant="20" id="E4f-vE-S2y"/>
                             <constraint firstItem="CIu-Vh-msc" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="ENC-z6-u59"/>
-                            <constraint firstItem="V7r-if-AI4" firstAttribute="leading" secondItem="r6W-tF-gvH" secondAttribute="trailing" constant="35" id="Geq-ac-SJz"/>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="3k4-96-Lor" secondAttribute="bottom" constant="64" id="GDm-Nk-VPn"/>
                             <constraint firstItem="jJe-TM-aLU" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="I92-Ue-wdB"/>
-                            <constraint firstItem="wkr-kd-jgU" firstAttribute="top" secondItem="V7r-if-AI4" secondAttribute="bottom" constant="20" id="IK8-J0-Y8c"/>
-                            <constraint firstItem="wkr-kd-jgU" firstAttribute="leading" secondItem="ddn-MI-GSd" secondAttribute="trailing" constant="25" id="KRA-R0-GrP"/>
-                            <constraint firstItem="wkr-kd-jgU" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="MD9-Zf-gac"/>
-                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="wkr-kd-jgU" secondAttribute="bottom" constant="48" id="PUf-Z6-jD3"/>
-                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="iXE-3c-k6F" secondAttribute="bottom" constant="48" id="SuG-IW-Cee"/>
+                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="KWH-OZ-5sO" secondAttribute="bottom" constant="64" id="IEq-N7-6U3"/>
+                            <constraint firstItem="KWH-OZ-5sO" firstAttribute="top" secondItem="BhM-xe-MgO" secondAttribute="bottom" constant="80" id="OzO-36-BJQ"/>
+                            <constraint firstItem="KWH-OZ-5sO" firstAttribute="top" secondItem="WCr-zH-sN5" secondAttribute="bottom" constant="32" id="Ure-gO-fgG"/>
                             <constraint firstItem="BhM-xe-MgO" firstAttribute="top" secondItem="CIu-Vh-msc" secondAttribute="bottom" constant="8" id="aB6-9B-lsB"/>
-                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="mHT-cu-7mF" secondAttribute="bottom" constant="48" id="aNA-4c-cjA"/>
-                            <constraint firstItem="4jf-CS-hNb" firstAttribute="top" secondItem="ddn-MI-GSd" secondAttribute="bottom" constant="48" id="cf9-8j-O70"/>
                             <constraint firstItem="VK1-5K-HrN" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="cnI-Qg-add"/>
+                            <constraint firstItem="WCr-zH-sN5" firstAttribute="leading" secondItem="IsI-Ao-zG6" secondAttribute="leadingMargin" constant="64" id="eRL-Vq-1fd"/>
                             <constraint firstItem="jJe-TM-aLU" firstAttribute="top" secondItem="VK1-5K-HrN" secondAttribute="bottom" constant="32" id="fno-4T-ZCe"/>
-                            <constraint firstItem="OEi-Mc-stV" firstAttribute="leading" secondItem="iXE-3c-k6F" secondAttribute="trailing" constant="25" id="jqc-Sy-d9R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3k4-96-Lor" secondAttribute="trailing" constant="32" id="l8y-L0-GIe"/>
                             <constraint firstItem="VK1-5K-HrN" firstAttribute="top" secondItem="CAK-el-eff" secondAttribute="bottom" constant="32" id="m7B-Aw-Uov"/>
-                            <constraint firstItem="ddn-MI-GSd" firstAttribute="top" secondItem="r6W-tF-gvH" secondAttribute="bottom" constant="20" id="sRR-he-JZj"/>
-                            <constraint firstItem="V7r-if-AI4" firstAttribute="centerX" secondItem="IsI-Ao-zG6" secondAttribute="centerX" id="toA-wP-Fsz"/>
-                            <constraint firstItem="ddn-MI-GSd" firstAttribute="leading" secondItem="mHT-cu-7mF" secondAttribute="trailing" constant="25" id="yk9-lf-fp4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BsA-Ec-dYf" secondAttribute="trailing" constant="64" id="neo-gD-JGB"/>
+                            <constraint firstItem="3k4-96-Lor" firstAttribute="top" secondItem="BsA-Ec-dYf" secondAttribute="bottom" constant="32" id="yRS-PP-gBP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="note10Button" destination="OEi-Mc-stV" id="GDG-mp-gy4"/>
-                        <outlet property="note3Button" destination="mHT-cu-7mF" id="FDO-v6-iIF"/>
-                        <outlet property="note4Button" destination="r6W-tF-gvH" id="WXu-5N-4Uh"/>
-                        <outlet property="note5Button" destination="ddn-MI-GSd" id="klJ-dK-3pL"/>
-                        <outlet property="note6Button" destination="wkr-kd-jgU" id="NBb-fX-2y5"/>
-                        <outlet property="note7Button" destination="V7r-if-AI4" id="0HS-YT-4K5"/>
-                        <outlet property="note8Button" destination="iXE-3c-k6F" id="GjY-zi-HKb"/>
-                        <outlet property="note9Button" destination="Hr3-pE-ghg" id="pcb-zf-WcG"/>
-                        <outlet property="pianoImageView" destination="jJe-TM-aLU" id="6p9-jA-8Fc"/>
+                        <outlet property="augmentedButton" destination="KWH-OZ-5sO" id="B0I-Dy-CW7"/>
+                        <outlet property="diminishedButton" destination="3k4-96-Lor" id="qGN-yK-mTk"/>
+                        <outlet property="majorButton" destination="WCr-zH-sN5" id="CXR-mr-L9y"/>
+                        <outlet property="minorButton" destination="BsA-Ec-dYf" id="jEN-79-eom"/>
                         <outlet property="progressLabel" destination="CIu-Vh-msc" id="iZK-Ms-FCh"/>
                         <outlet property="scoreLabel" destination="BhM-xe-MgO" id="0V9-lT-iuu"/>
+                        <outlet property="staffImageView" destination="jJe-TM-aLU" id="MIG-a4-GNh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSW-3d-4mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2153,6 +2120,6 @@ Minor</string>
         <image name="icons8-stop_filled" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="fxb-wA-sJM"/>
+        <segue reference="umw-O5-BsF"/>
     </inferredMetricsTieBreakers>
 </document>
