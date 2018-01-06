@@ -43,6 +43,8 @@ class StaffChordIdentificationVC: UIViewController {
     @IBOutlet var scoreLabel: UILabel!
     
     var chordsToDisplay: [Int] = Array(0...38) // Order will be randomized, only indicies 0..23 will be shown
+    var graphics: [String] = []
+    var displayTrebleClef: Bool = false
     var userIsResponder: Bool = false
     var correctAnswers: Int = 0
     var numberOfQuestions: Int = 24
@@ -52,7 +54,7 @@ class StaffChordIdentificationVC: UIViewController {
                 performSegue(withIdentifier: "completion", sender: self)
                 return
             }
-            staffImageView.image = UIImage(named: "StaffChordGraphic" + String(chordsToDisplay[progress]) + ".png")
+            staffImageView.image = UIImage(named: graphics[chordsToDisplay[progress]])
             progressLabel.text = "Progress: \(progress + 1)/\(numberOfQuestions)"
             userIsResponder = true
         }
@@ -62,15 +64,29 @@ class StaffChordIdentificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if displayTrebleClef {
+            var array: [String] = []
+            for i in 0...47 {
+                array.append("TrebleChordGraphic\(i).png")
+            }
+            graphics = array
+        } else {
+            var array: [String] = []
+            for i in 0...47 {
+                array.append("BassChordGraphic\(i).png")
+            }
+            graphics = array
+        }
+        
         navigationItem.title = "Staff Chord Identification"
         progressLabel.text = "Progress: 1/\(numberOfQuestions)"
         scoreLabel.text = "Score: 0/\(numberOfQuestions)"
         
         buttons = [majorButton, minorButton, augmentedButton, diminishedButton]
         
-        //chordsToDisplay.shuffle()
+        chordsToDisplay.shuffle()
         
-        staffImageView.image = UIImage(named: "StaffChordGraphic" + String(chordsToDisplay[progress]) + ".png")
+        staffImageView.image = UIImage(named: graphics[chordsToDisplay[progress]])
         
         userIsResponder = true
     }
@@ -182,6 +198,30 @@ class StaffChordIdentificationVC: UIViewController {
 }
 
 class StaffChordIdentificationOptionsVC: UIViewController {
-
+    
+    var displayTrebleClef: Bool = true
+    @IBAction func clefType(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            displayTrebleClef = true
+        } else if sender.selectedSegmentIndex == 1 {
+            displayTrebleClef = false
+        } else {
+            print("Unexpected segue selected")
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "start"?:
+            let destinationViewController = segue.destination as! StaffChordIdentificationVC
+            destinationViewController.displayTrebleClef = displayTrebleClef
+        default:
+            print("Unexpected segue selected")
+        }
+    }
     
 }

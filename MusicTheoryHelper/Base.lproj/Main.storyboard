@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--MTRT-->
+        <!--Music Theory Retention-->
         <scene sceneID="sx4-CQ-7jr">
             <objects>
                 <tableViewController id="6fe-Yi-R18" customClass="MainMenuTableViewController" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                             <outlet property="delegate" destination="6fe-Yi-R18" id="Lt7-xI-daj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="MTRT" id="hyO-Ji-1Fw">
+                    <navigationItem key="navigationItem" title="Music Theory Retention" id="hyO-Ji-1Fw">
                         <barButtonItem key="leftBarButtonItem" image="icons8-horizontal_settings_mixer" id="reF-HI-uxc">
                             <connections>
                                 <segue destination="lCe-Kb-dr1" kind="show" identifier="settings" id="jPO-Xq-PAI"/>
@@ -89,7 +89,42 @@
                     <view key="view" contentMode="scaleToFill" id="9qn-TD-VDE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxU-SL-tTA">
+                                <rect key="frame" x="160.66666666666666" y="606" width="54" height="44"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="e2f-Ff-uHA" kind="show" identifier="start" id="zjI-Yh-SUn"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Ear Training Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBN-mI-6cw">
+                                <rect key="frame" x="37.666666666666657" y="120.00000000000001" width="299.66666666666674" height="31.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Harmonic &amp; Melodic Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2y-rF-G68">
+                                <rect key="frame" x="52" y="215.66666666666666" width="271.66666666666669" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-XA-4NA">
+                                <rect key="frame" x="163" y="247.66666666666663" width="51" height="31"/>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ljk-XA-4NA" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="0FN-KL-8td"/>
+                            <constraint firstItem="GBN-mI-6cw" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="Tgg-rX-kuK"/>
+                            <constraint firstItem="E2y-rF-G68" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="ZgW-wA-3bm"/>
+                            <constraint firstItem="oxU-SL-tTA" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="eAt-tK-FoI"/>
+                            <constraint firstItem="Ljk-XA-4NA" firstAttribute="top" secondItem="E2y-rF-G68" secondAttribute="bottom" constant="8" id="g4U-py-FMK"/>
+                            <constraint firstItem="E2y-rF-G68" firstAttribute="top" secondItem="GBN-mI-6cw" secondAttribute="bottom" constant="64" id="nTA-AA-O9C"/>
+                            <constraint firstItem="LdQ-7V-TZj" firstAttribute="top" secondItem="oxU-SL-tTA" secondAttribute="bottom" constant="128" id="tvl-Hy-LMT"/>
+                            <constraint firstItem="GBN-mI-6cw" firstAttribute="top" secondItem="Z2t-Wn-mwH" secondAttribute="bottom" constant="32" id="vjX-ld-p9L"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p74-XJ-mNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -627,7 +662,7 @@ Minor</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected the Chord Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nce-M2-oZc">
-                                <rect key="frame" x="50" y="76" width="275" height="32"/>
+                                <rect key="frame" x="50" y="120" width="275" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -645,13 +680,13 @@ Minor</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoH-5H-1Dw">
-                                <rect key="frame" x="120" y="172" width="135" height="24"/>
+                                <rect key="frame" x="120" y="216" width="135" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-vo-iTO">
-                                <rect key="frame" x="162.66666666666666" y="204" width="50" height="50"/>
+                                <rect key="frame" x="162.66666666666666" y="248" width="50" height="50"/>
                                 <state key="normal" image="icons8-stop_filled"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rl-OO-l22">
@@ -733,6 +768,7 @@ Minor</string>
                         <outlet property="minorButton" destination="hmn-Oa-rFa" id="rBu-VB-wZE"/>
                         <outlet property="progressLabel" destination="vQd-UP-gsZ" id="0YE-NF-Z3b"/>
                         <outlet property="scoreLabel" destination="Rtu-4m-gQl" id="Qc2-m9-C9T"/>
+                        <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="IXs-Ct-pp7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZm-GI-brd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -894,18 +930,49 @@ Minor</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-Pe-CpL">
-                                <rect key="frame" x="160" y="606" width="54" height="44"/>
+                                <rect key="frame" x="160.66666666666666" y="606" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="0rr-Jt-xYA" kind="show" identifier="start" id="zsU-W4-cXd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Chord Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-l9-xec">
+                                <rect key="frame" x="76" y="120.00000000000001" width="223" height="31.666666666666671"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-HR-Ums">
+                                <rect key="frame" x="169.66666666666666" y="215.66666666666666" width="36" height="24"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kbn-qT-wGN">
+                                <rect key="frame" x="123.66666666666669" y="247" width="128" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="5gA-Re-qvk"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Treble"/>
+                                    <segment title="Bass"/>
+                                </segments>
+                                <connections>
+                                    <action selector="clefType:" destination="6bz-8X-eZ2" eventType="valueChanged" id="PrP-Ub-n6N"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JUS-Pe-CpL" firstAttribute="centerX" secondItem="gU3-zi-MmS" secondAttribute="centerX" id="9ed-He-wfO"/>
+                            <constraint firstItem="YFe-HR-Ums" firstAttribute="top" secondItem="vb0-l9-xec" secondAttribute="bottom" constant="64" id="FwD-xq-VJT"/>
+                            <constraint firstItem="kbn-qT-wGN" firstAttribute="top" secondItem="YFe-HR-Ums" secondAttribute="bottom" constant="8" id="Irt-rI-lWW"/>
                             <constraint firstItem="OhB-9U-TkJ" firstAttribute="top" secondItem="JUS-Pe-CpL" secondAttribute="bottom" constant="128" id="Klx-YV-R16"/>
+                            <constraint firstItem="vb0-l9-xec" firstAttribute="centerX" secondItem="gU3-zi-MmS" secondAttribute="centerX" id="ear-Yf-JnL"/>
+                            <constraint firstItem="vb0-l9-xec" firstAttribute="top" secondItem="lex-is-Hie" secondAttribute="bottom" constant="32" id="hIW-T9-Hn7"/>
+                            <constraint firstItem="YFe-HR-Ums" firstAttribute="centerX" secondItem="gU3-zi-MmS" secondAttribute="centerX" id="mdg-PP-HL3"/>
+                            <constraint firstItem="kbn-qT-wGN" firstAttribute="centerX" secondItem="gU3-zi-MmS" secondAttribute="centerX" id="s4s-Re-dmP"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -1341,9 +1408,9 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alc-Ff-pP5">
-                                <rect key="frame" x="169" y="614" width="37" height="36"/>
+                                <rect key="frame" x="139" y="614" width="97" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <state key="normal" title="Quit"/>
+                                <state key="normal" title="Main Menu"/>
                                 <connections>
                                     <action selector="quitButton:" destination="V8t-zC-p4p" eventType="touchUpInside" id="szA-XB-ckY"/>
                                 </connections>
@@ -2045,6 +2112,7 @@ Minor</string>
                         <outlet property="progressLabel" destination="CIu-Vh-msc" id="iZK-Ms-FCh"/>
                         <outlet property="scoreLabel" destination="BhM-xe-MgO" id="0V9-lT-iuu"/>
                         <outlet property="staffImageView" destination="jJe-TM-aLU" id="MIG-a4-GNh"/>
+                        <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="qWH-em-Zwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSW-3d-4mb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2120,6 +2188,6 @@ Minor</string>
         <image name="icons8-stop_filled" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="umw-O5-BsF"/>
+        <segue reference="IXs-Ct-pp7"/>
     </inferredMetricsTieBreakers>
 </document>
