@@ -126,6 +126,9 @@
                             <constraint firstItem="GBN-mI-6cw" firstAttribute="top" secondItem="Z2t-Wn-mwH" secondAttribute="bottom" constant="32" id="vjX-ld-p9L"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="playAugAndDim" destination="Ljk-XA-4NA" id="sTC-ji-AST"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p74-XJ-mNZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -688,6 +691,9 @@ Minor</string>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-vo-iTO">
                                 <rect key="frame" x="162.66666666666666" y="248" width="50" height="50"/>
                                 <state key="normal" image="icons8-stop_filled"/>
+                                <connections>
+                                    <action selector="currentNoteButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="xBy-xf-ydv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rl-OO-l22">
                                 <rect key="frame" x="64" y="681" width="93" height="65"/>

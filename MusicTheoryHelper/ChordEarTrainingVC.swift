@@ -11,22 +11,22 @@ import AVFoundation
 
 class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     var pianoAudioURL: [NSDataAsset] = [
-        NSDataAsset(name: "C_Major")!, NSDataAsset(name: "C#_Major")!, NSDataAsset(name: "D_Major")!,
-        NSDataAsset(name: "D#_Major")!, NSDataAsset(name: "E_Major")!, NSDataAsset(name: "F3")!,
-        NSDataAsset(name: "F#_Major")!, NSDataAsset(name: "G_Major")!, NSDataAsset(name: "G#_Major")!,
-        NSDataAsset(name: "A_Major")!, NSDataAsset(name: "A#_Major")!, NSDataAsset(name: "B_Major")!,
-        NSDataAsset(name: "C_Minor")!, NSDataAsset(name: "C#_Minor")!, NSDataAsset(name: "D_Minor")!,
-        NSDataAsset(name: "D#_Minor")!, NSDataAsset(name: "E_Minor")!, NSDataAsset(name: "F_Minor")!,
-        NSDataAsset(name: "F#_Minor")!, NSDataAsset(name: "G_Minor")!, NSDataAsset(name: "G#_Minor")!,
-        NSDataAsset(name: "A_Minor")!, NSDataAsset(name: "A#_Minor")!, NSDataAsset(name: "B_Minor")!,
-        NSDataAsset(name: "C_Aug")!, NSDataAsset(name: "C#_Aug")!, NSDataAsset(name: "D_Aug")!,
-        NSDataAsset(name: "D#_Aug")!, NSDataAsset(name: "E_Aug")!, NSDataAsset(name: "F_Aug")!,
-        NSDataAsset(name: "F#_Aug")!, NSDataAsset(name: "G_Aug")!, NSDataAsset(name: "G#_Aug")!,
-        NSDataAsset(name: "A_Aug")!, NSDataAsset(name: "A#_Aug")!, NSDataAsset(name: "B_Aug")!,
-        NSDataAsset(name: "C_Dim")!, NSDataAsset(name: "C#_Dim")!, NSDataAsset(name: "D_Dim")!,
-        NSDataAsset(name: "D#_Dim")!, NSDataAsset(name: "E_Dim")!, NSDataAsset(name: "F_Dim")!,
-        NSDataAsset(name: "F#_Dim")!, NSDataAsset(name: "G_Dim")!, NSDataAsset(name: "G#_Dim")!,
-        NSDataAsset(name: "A_Dim")!, NSDataAsset(name: "A#_Dim")!, NSDataAsset(name: "B_Dim")!,
+        NSDataAsset(name: "C_Major_Sample")!, NSDataAsset(name: "C#_Major_Sample")!, NSDataAsset(name: "D_Major_Sample")!,
+        NSDataAsset(name: "D#_Major_Sample")!, NSDataAsset(name: "E_Major_Sample")!, NSDataAsset(name: "F_Major_Sample")!,
+        NSDataAsset(name: "F#_Major_Sample")!, NSDataAsset(name: "G_Major_Sample")!, NSDataAsset(name: "G#_Major_Sample")!,
+        NSDataAsset(name: "A_Major_Sample")!, NSDataAsset(name: "A#_Major_Sample")!, NSDataAsset(name: "B_Major_Sample")!,
+        NSDataAsset(name: "C_Minor_Sample")!, NSDataAsset(name: "C#_Minor_Sample")!, NSDataAsset(name: "D_Minor_Sample")!,
+        NSDataAsset(name: "D#_Minor_Sample")!, NSDataAsset(name: "E_Minor_Sample")!, NSDataAsset(name: "F_Minor_Sample")!,
+        NSDataAsset(name: "F#_Minor_Sample")!, NSDataAsset(name: "G_Minor_Sample")!, NSDataAsset(name: "G#_Minor_Sample")!,
+        NSDataAsset(name: "A_Minor_Sample")!, NSDataAsset(name: "A#_Minor_Sample")!, NSDataAsset(name: "B_Minor_Sample")!,
+        NSDataAsset(name: "C_Aug_Sample")!, NSDataAsset(name: "C#_Aug_Sample")!, NSDataAsset(name: "D_Aug_Sample")!,
+        NSDataAsset(name: "D#_Aug_Sample")!, NSDataAsset(name: "E_Aug_Sample")!, NSDataAsset(name: "F_Aug_Sample")!,
+        NSDataAsset(name: "F#_Aug_Sample")!, NSDataAsset(name: "G_Aug_Sample")!, NSDataAsset(name: "G#_Aug_Sample")!,
+        NSDataAsset(name: "A_Aug_Sample")!, NSDataAsset(name: "A#_Aug_Sample")!, NSDataAsset(name: "B_Aug_Sample")!,
+        NSDataAsset(name: "C_Dim_Sample")!, NSDataAsset(name: "C#_Dim_Sample")!, NSDataAsset(name: "D_Dim_Sample")!,
+        NSDataAsset(name: "D#_Dim_Sample")!, NSDataAsset(name: "E_Dim_Sample")!, NSDataAsset(name: "F_Dim_Sample")!,
+        NSDataAsset(name: "F#_Dim_Sample")!, NSDataAsset(name: "G_Dim_Sample")!, NSDataAsset(name: "G#_Dim_Sample")!,
+        NSDataAsset(name: "A_Dim_Sample")!, NSDataAsset(name: "A#_Dim_Sample")!, NSDataAsset(name: "B_Dim_Sample")!,
     ]
     
     @IBAction func majorButtonAction(_ sender: UIButton) {
@@ -68,7 +68,7 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     var chords: [Int] = Array(0...47) // 12 major chords, 12 minor chrords, 12 augmented chords, 12 diminished chords
     var chordsToPlay: [Int] = []
     var numberOfQuestions: Int = 24
-    var playHarmonicMinor: Bool = false // This means play melodic minor too
+    var playAugAndDim: Bool = false // This means play melodic minor too
     var correctAnswers: Int = 0
     var userIsResponder: Bool = false {
         didSet {
@@ -97,7 +97,7 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         progressLabel.text = "Progress: 1/\(numberOfQuestions)"
         scoreLabel.text = "Score: 0/\(numberOfQuestions)"
         
-        if playHarmonicMinor {
+        if playAugAndDim {
             chordsToPlay = chords
             //chordsToPlay.shuffle()
         } else {
@@ -229,13 +229,13 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
 }
 
 class ChordEarTrainingOptionsVC: UIViewController {
-    @IBOutlet var playHarmonicMinor: UISwitch!
+    @IBOutlet var playAugAndDim: UISwitch!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "start"?:
             let destinationViewController = segue.destination as! ChordEarTrainingVC
-            destinationViewController.playHarmonicMinor = playHarmonicMinor.isOn
+            destinationViewController.playAugAndDim = playAugAndDim.isOn
         default:
             print("Unexpected segue selected")
         }
