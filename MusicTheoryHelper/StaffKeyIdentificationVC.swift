@@ -28,49 +28,49 @@ class StaffKeyIdentificationVC: UIViewController {
     @IBAction func note3(_ sender: UIButton) {
         print("\(0) Pressed")
         if userIsResponder {
-            processInput(note: 0)
+            processInput(note: buttonOrder[0], position: 0)
         }
     }
     @IBAction func note4(_ sender: UIButton) {
         print("\(1) Pressed")
         if userIsResponder {
-            processInput(note: 1)
+            processInput(note: buttonOrder[1], position: 1)
         }
     }
     @IBAction func note5(_ sender: UIButton) {
         print("\(2) Pressed")
         if userIsResponder {
-            processInput(note: 2)
+            processInput(note: buttonOrder[2], position: 2)
         }
     }
     @IBAction func note6(_ sender: UIButton) {
         print("\(3) Pressed")
         if userIsResponder {
-            processInput(note: 3)
+            processInput(note: buttonOrder[3], position: 3)
         }
     }
     @IBAction func note7(_ sender: UIButton) {
         print("\(4) Pressed")
         if userIsResponder {
-            processInput(note: 4)
+            processInput(note: buttonOrder[4], position: 4)
         }
     }
     @IBAction func note8(_ sender: UIButton) {
         print("\(5) Pressed")
         if userIsResponder {
-            processInput(note: 5)
+            processInput(note: buttonOrder[5], position: 5)
         }
     }
     @IBAction func note9(_ sender: UIButton) {
         print("\(6) Pressed")
         if userIsResponder {
-            processInput(note: 6)
+            processInput(note: buttonOrder[6], position: 6)
         }
     }
     @IBAction func note10(_ sender: UIButton) {
         print("\(7) Pressed")
         if userIsResponder {
-            processInput(note: 7)
+            processInput(note: buttonOrder[7], position: 7)
         }
     }
     @IBOutlet var note3Button: UIButton!
@@ -116,6 +116,7 @@ class StaffKeyIdentificationVC: UIViewController {
     var audioPlayer = AVAudioPlayer()
     // Display 16 signatures because there are 8 per clef
     var signaturesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] // Order will be randomized
+    var buttonOrder: [Int] = [0, 1, 2, 3, 4, 5, 6, 7]
     var graphicsArray: [String] = []
     var progress: Int = 0 {
         didSet {
@@ -145,11 +146,13 @@ class StaffKeyIdentificationVC: UIViewController {
         
         noteButtons = [note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button]
         
+        buttonOrder.shuffle()
+        
         func assignButtonLabels(labels: [String]) {
-            var labelIndex = 0
+            var labelPositionIndex = 0
             for i in noteButtons {
-                i.setTitle(labels[labelIndex], for: .normal)
-                labelIndex += 1
+                i.setTitle(labels[buttonOrder[labelPositionIndex]], for: .normal)
+                labelPositionIndex += 1
             }
         }
         
@@ -214,7 +217,7 @@ class StaffKeyIdentificationVC: UIViewController {
         userIsResponder = true
     }
     
-    func processInput(note: Int) {
+    func processInput(note: Int, position: Int) {
         userIsResponder = false
         
         do {
@@ -230,31 +233,31 @@ class StaffKeyIdentificationVC: UIViewController {
             print("Correct Key Signature Selected!")
             correctAnswers += 1
             scoreLabel.text = "Score: \(correctAnswers)/\(signaturesToDisplay.count)"
-            animateFeedback(answer: true, buttonIndex: note)
+            animateFeedback(answer: true, buttonIndex: note, position: position)
         } else {
             print("Incorrect Key Signature Selected!")
-            animateFeedback(answer: false, buttonIndex: note)
+            animateFeedback(answer: false, buttonIndex: note, position: position)
         }
     }
     
-    func animateFeedback(answer correct: Bool, buttonIndex: Int) {
+    func animateFeedback(answer correct: Bool, buttonIndex: Int, position: Int) {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
-        let indexOfCorrectButton = self.actualNoteIndex
+        let indexOfCorrectButton: Int = self.buttonOrder.index(of: actualNoteIndex) ?? 0
         
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
-                self.noteButtons[buttonIndex].tintColor = UIColor.green
+                self.noteButtons[position].tintColor = UIColor.green
                 self.scoreLabel.textColor = UIColor.green
             } else {
-                self.noteButtons[buttonIndex].tintColor = UIColor.red
+                self.noteButtons[position].tintColor = UIColor.red
                 self.noteButtons[indexOfCorrectButton].tintColor = UIColor.green
                 self.scoreLabel.textColor = UIColor.red
             }
         }, completion: { (finished: Bool) in
             UIView.animate(withDuration: 0.75, animations: {
-                self.noteButtons[buttonIndex].tintColor = UIColor.appleBlue()
+                self.noteButtons[position].tintColor = UIColor.appleBlue()
                 self.scoreLabel.textColor = UIColor.black
                 if !correct {
                     self.noteButtons[indexOfCorrectButton].tintColor = UIColor.appleBlue()

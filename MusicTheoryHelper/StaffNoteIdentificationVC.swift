@@ -12,16 +12,11 @@ import AVFoundation
 class StaffNoteIdentificationVC: UIViewController {
     var pianoAudioURL: [NSDataAsset] = [
         NSDataAsset(name: "C3")!,
-        NSDataAsset(name: "C#3")!,
         NSDataAsset(name: "D3")!,
-        NSDataAsset(name: "D#3")!,
         NSDataAsset(name: "E3")!,
         NSDataAsset(name: "F3")!,
-        NSDataAsset(name: "F#3")!,
         NSDataAsset(name: "G3")!,
-        NSDataAsset(name: "G#3")!,
         NSDataAsset(name: "A3")!,
-        NSDataAsset(name: "A#3")!,
         NSDataAsset(name: "B3")!,
         ]
     
@@ -67,36 +62,6 @@ class StaffNoteIdentificationVC: UIViewController {
             processInput(note: 6)
         }
     }
-    @IBAction func note8(_ sender: UIButton) {
-        print("\(8) Pressed")
-        if userIsResponder {
-            processInput(note: 7)
-        }
-    }
-    @IBAction func note9(_ sender: UIButton) {
-        print("\(9) Pressed")
-        if userIsResponder {
-            processInput(note: 8)
-        }
-    }
-    @IBAction func note10(_ sender: UIButton) {
-        print("\(10) Pressed")
-        if userIsResponder {
-            processInput(note: 9)
-        }
-    }
-    @IBAction func note11(_ sender: UIButton) {
-        print("\(11) Pressed")
-        if userIsResponder {
-            processInput(note: 10)
-        }
-    }
-    @IBAction func note12(_ sender: UIButton) {
-        print("\(12) Pressed")
-        if userIsResponder {
-            processInput(note: 11)
-        }
-    }
     @IBOutlet var note1Button: UIButton!
     @IBOutlet var note2Button: UIButton!
     @IBOutlet var note3Button: UIButton!
@@ -104,11 +69,6 @@ class StaffNoteIdentificationVC: UIViewController {
     @IBOutlet var note5Button: UIButton!
     @IBOutlet var note6Button: UIButton!
     @IBOutlet var note7Button: UIButton!
-    @IBOutlet var note8Button: UIButton!
-    @IBOutlet var note9Button: UIButton!
-    @IBOutlet var note10Button: UIButton!
-    @IBOutlet var note11Button: UIButton!
-    @IBOutlet var note12Button: UIButton!
     var noteButtons: [UIButton] = []
     
     @IBOutlet var scoreLabel: UILabel!
@@ -116,7 +76,7 @@ class StaffNoteIdentificationVC: UIViewController {
     @IBOutlet var pianoImageView: UIImageView!
 
     var audioPlayer = AVAudioPlayer()
-    var notesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23] // Order will be randomized
+    var notesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] // Order will be randomized
     var progress: Int = 0 {
         didSet {
             if (progress + 1) > notesToDisplay.count {
@@ -140,30 +100,20 @@ class StaffNoteIdentificationVC: UIViewController {
     var userIsResponder: Bool = false
     var actualNoteIndex: Int {
         switch notesToDisplay[progress] {
-        case 0,12:
+        case 0,7:
             return 0
-        case 1,13:
+        case 1,8:
             return 1
-        case 2,14:
+        case 2,9:
             return 2
-        case 3,15:
+        case 3,10:
             return 3
-        case 4,16:
+        case 4,11:
             return 4
-        case 5,17:
+        case 5,12:
             return 5
-        case 6,18:
+        case 6,13:
             return 6
-        case 7,19:
-            return 7
-        case 8,20:
-            return 8
-        case 9,21:
-            return 9
-        case 10,22:
-            return 10
-        case 11,23:
-            return 11
         default:
             print("Unexpected note index")
             return 0
@@ -177,7 +127,7 @@ class StaffNoteIdentificationVC: UIViewController {
         progressLabel.text = "Progress: 1/\(notesToDisplay.count)"
         scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
         
-        noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
+        noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button]
         
         // Randomize displayed notes
         notesToDisplay.shuffle()

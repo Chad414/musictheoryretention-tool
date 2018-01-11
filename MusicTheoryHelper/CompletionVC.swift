@@ -96,17 +96,32 @@ class CompletionVC: UIViewController {
         navigationItem.hidesBackButton = true
         navigationItem.title = "Results"
         
-        switch finalScore {
-        case 0...15:
-            headerLabel.text = "Better Luck Next Time!"
-            scoreLabel.textColor = UIColor.red
-        case 16...20:
-            headerLabel.text = "Not Bad!"
-        case 20...24:
-            headerLabel.text = "Well Done!"
-        default:
-            headerLabel.text = "Something's wrong here..."
-            headerLabel.textColor = UIColor.red
+        if optionsIndex == 3 || optionsIndex == 4 {
+            switch finalScore {
+            case 0...8:
+                headerLabel.text = "Better Luck Next Time!"
+                scoreLabel.textColor = UIColor.red
+            case 9...12:
+                headerLabel.text = "Not Bad!"
+            case 13...16:
+                headerLabel.text = "Well Done!"
+            default:
+                headerLabel.text = "Something's wrong here..."
+                headerLabel.textColor = UIColor.red
+            }
+        } else {
+            switch finalScore {
+            case 0...15:
+                headerLabel.text = "Better Luck Next Time!"
+                scoreLabel.textColor = UIColor.red
+            case 16...20:
+                headerLabel.text = "Not Bad!"
+            case 20...24:
+                headerLabel.text = "Well Done!"
+            default:
+                headerLabel.text = "Something's wrong here..."
+                headerLabel.textColor = UIColor.red
+            }
         }
         
         scoreLabel.text = "Score: \(finalScore)"
