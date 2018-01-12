@@ -134,6 +134,34 @@
             </objects>
             <point key="canvasLocation" x="2897" y="-2665"/>
         </scene>
+        <!--Note NamesVC-->
+        <scene sceneID="h0W-df-pqm">
+            <objects>
+                <tableViewController id="5qD-Nn-Hjy" customClass="NoteNamesVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D8M-Lo-fFd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteNamesCell" id="U3u-07-aLw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U3u-07-aLw" id="8da-Ck-Xk7">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5qD-Nn-Hjy" id="I4l-yW-bnQ"/>
+                            <outlet property="delegate" destination="5qD-Nn-Hjy" id="yWV-2q-kgh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctm-uc-EoJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2028" y="-1957"/>
+        </scene>
         <!--Scale Ear Training OptionsVC-->
         <scene sceneID="Eus-Wn-pER">
             <objects>
@@ -190,6 +218,24 @@
             </objects>
             <point key="canvasLocation" x="2897" y="-1956"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="WAN-Eb-yr4">
+            <objects>
+                <viewController id="EGg-ZL-A9v" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mHx-L7-Neg"/>
+                        <viewControllerLayoutGuide type="bottom" id="XON-VG-Z3x"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xxN-vS-zqp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9vd-lF-S0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="-1247"/>
+        </scene>
         <!--SettingsVC-->
         <scene sceneID="0wa-07-EnT">
             <objects>
@@ -212,13 +258,22 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AI0-Y6-6ZH">
+                                            <rect key="frame" x="310" y="6" width="51" height="31"/>
+                                            <connections>
+                                                <action selector="cellSwitchAction:" destination="9wk-Or-JPK" eventType="valueChanged" id="rY3-vL-aUF"/>
+                                            </connections>
+                                        </switch>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="0oU-E4-uDY" firstAttribute="leading" secondItem="mqm-B7-OaN" secondAttribute="leadingMargin" id="7q3-Yb-rc6"/>
+                                        <constraint firstAttribute="trailing" secondItem="AI0-Y6-6ZH" secondAttribute="trailing" constant="16" id="cST-3t-sNe"/>
                                         <constraint firstItem="0oU-E4-uDY" firstAttribute="centerY" secondItem="mqm-B7-OaN" secondAttribute="centerY" id="hCG-QZ-RLI"/>
+                                        <constraint firstItem="AI0-Y6-6ZH" firstAttribute="centerY" secondItem="mqm-B7-OaN" secondAttribute="centerY" id="oag-hs-ZWK"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="cellSwitch" destination="AI0-Y6-6ZH" id="9Zp-K6-Uti"/>
                                     <outlet property="settingLabel" destination="0oU-E4-uDY" id="yH7-xI-Dgp"/>
                                 </connections>
                             </tableViewCell>
@@ -228,6 +283,10 @@
                             <outlet property="delegate" destination="PZb-dJ-nx2" id="qkd-Fu-ncW"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="EGg-ZL-A9v" kind="show" identifier="About" id="SSN-5o-9ip"/>
+                        <segue destination="5qD-Nn-Hjy" kind="show" identifier="NoteNames" id="ECz-0l-vbO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XdY-Aa-l9n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

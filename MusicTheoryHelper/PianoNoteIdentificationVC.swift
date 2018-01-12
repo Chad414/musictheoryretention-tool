@@ -27,6 +27,7 @@ class PianoNoteIdentificationVC: UIViewController {
     ]
     
     var audioPlayer = AVAudioPlayer()
+    let playAudio: Bool = GlobalSettings.playAudio
     // Each note should be displayed twice per session, order will be randomized later.
     var notesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
     var noteButtonOrder: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] // Order will be randomized
@@ -185,15 +186,16 @@ class PianoNoteIdentificationVC: UIViewController {
         
         userIsResponder = true
         
-        // Audio can be loaded here if loading is causing issues
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print(error)
+        if playAudio {
+            // Audio can be loaded here if loading is causing issues
+            do {
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print(error)
+            }
         }
-        
     }
     
     func proccessNoteButtonAction(note: Int, buttonIndex: Int) {
@@ -203,15 +205,17 @@ class PianoNoteIdentificationVC: UIViewController {
         
         print("Note \(note) Selected!")
         
-        // Play selected note here with AVFoundation
-        do {
-            /*audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")*/
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[note].data, fileTypeHint: "mp3")
-        } catch {
-            print(error)
+        if playAudio {
+            // Play selected note here with AVFoundation
+            do {
+                /*audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")*/
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[note].data, fileTypeHint: "mp3")
+            } catch {
+                print(error)
+            }
+            audioPlayer.play()
         }
-        audioPlayer.play()
-        
+            
         // Check if it's correct and change score value that will update score label
         // Note passed will be compared to current note being shown from the notes array
         if note == notesToDisplay[progress] {

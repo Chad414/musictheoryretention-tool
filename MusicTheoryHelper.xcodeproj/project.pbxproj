@@ -26,6 +26,7 @@
 		63A684131F3AAA1600B17DE5 /* MusicTheoryHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A684121F3AAA1600B17DE5 /* MusicTheoryHelperTests.swift */; };
 		63A6841E1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6841D1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift */; };
 		63A6842C1F3AAB4400B17DE5 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */; };
+		63AAE98E2008354600778E7E /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAE98D2008354600778E7E /* AboutVC.swift */; };
 		63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */; };
 		63FEB47B1FD3189600204335 /* ChordEarTrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +74,7 @@
 		63A6841D1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicTheoryHelperUITests.swift; sourceTree = "<group>"; };
 		63A6841F1F3AAA1600B17DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
+		63AAE98D2008354600778E7E /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffChordIdentificationVC.swift; sourceTree = "<group>"; };
 		63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordEarTrainingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 				63819B901F8E49C100FB4D61 /* CompletionVC.swift */,
 				638F8C031FA0B924003668C2 /* SettingsVC.swift */,
 				633D1A4F20081768006AB473 /* SettingCell.swift */,
+				63AAE98D2008354600778E7E /* AboutVC.swift */,
 			);
 			path = MusicTheoryHelper;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				633D1A5020081768006AB473 /* SettingCell.swift in Sources */,
 				63531C3D1F3F9579003BD606 /* PianoNoteIdentificationVC.swift in Sources */,
 				631EB2441FC33DE400D43F13 /* ScaleEarTrainingVC.swift in Sources */,
+				63AAE98E2008354600778E7E /* AboutVC.swift in Sources */,
 				6394646F1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift in Sources */,
 				63966D311F66F0D6005940C1 /* PianoChordIdentificationVC.swift in Sources */,
 				638F8C041FA0B924003668C2 /* SettingsVC.swift in Sources */,

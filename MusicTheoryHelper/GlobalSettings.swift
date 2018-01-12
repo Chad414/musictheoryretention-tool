@@ -11,8 +11,9 @@ import UIKit
 
 struct GlobalSettings {
     static let noteNames1: [String] = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
-    static let noteName2: [String] = ["C", "DFlat", "D", "EFlat", "E", "F", "GFlat", "G", "AFlat", "A", "BFlat", "B"]
+    static let noteNames2: [String] = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
     static var noteNameOption: Int = 0
+    static var playAudio: Bool = true
 }
 
 extension MutableCollection {
