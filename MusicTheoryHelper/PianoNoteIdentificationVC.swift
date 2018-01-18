@@ -156,14 +156,14 @@ class PianoNoteIdentificationVC: UIViewController {
         // Define button array here
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
-        // Randomize placement of butons
+        // Randomize placement of buttons
         if randomizeButtons {
             noteButtonOrder.shuffle()
             
             var noteStringsToDisplay: [String] = []
             
             for i in noteButtonOrder {
-                noteStringsToDisplay.append(GlobalSettings.noteNames1[i])
+                noteStringsToDisplay.append(GlobalSettings.noteNames[i])
             }
             print("Note Button Order: \(noteButtonOrder)")
             

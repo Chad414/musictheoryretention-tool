@@ -76,6 +76,7 @@ class StaffNoteIdentificationVC: UIViewController {
     @IBOutlet var pianoImageView: UIImageView!
 
     var audioPlayer = AVAudioPlayer()
+    let playAudio = GlobalSettings.playAudio
     var notesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] // Order will be randomized
     var progress: Int = 0 {
         didSet {
@@ -139,12 +140,14 @@ class StaffNoteIdentificationVC: UIViewController {
             pianoImageView.image = UIImage(named: "BassStaff" + "\(actualNoteIndex)" + ".png")
         }
         
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[actualNoteIndex].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print(error)
+        if playAudio {
+            do {
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[actualNoteIndex].data, fileTypeHint: "mp3")
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print(error)
+            }
         }
         
         userIsResponder = true
@@ -154,12 +157,15 @@ class StaffNoteIdentificationVC: UIViewController {
         userIsResponder = false
         
         // Play selected note
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[selected].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print(error)
+        if playAudio {
+            do {
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[selected].data, fileTypeHint: "mp3")
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print(error)
+            }
+            audioPlayer.play()
         }
 
         

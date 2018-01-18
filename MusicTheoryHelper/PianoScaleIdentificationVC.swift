@@ -26,6 +26,7 @@ class PianoScaleIdentificationVC: UIViewController {
         ]
     
     var audioPlayer = AVAudioPlayer()
+    let playAudio: Bool = GlobalSettings.playAudio
     var scalesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized
     var scaleIsMajor: Bool = true
     let minorGraphicsIndex: [Int] = [3, 4, 5, 11, 7, 8, 9, 10, 6, 0, 1, 2]
@@ -154,6 +155,10 @@ class PianoScaleIdentificationVC: UIViewController {
         
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
+        for i in noteButtons {
+            i.setTitle(GlobalSettings.noteNames[noteButtons.index(of: i)!], for: .normal)
+        }
+        
         // Randomize order in which scale will be displayed
         scalesToDisplay.shuffle()
         
@@ -169,12 +174,14 @@ class PianoScaleIdentificationVC: UIViewController {
         print("Current Displayed Scale: \(scalesToDisplay[progress])")
         
         // Load audio here
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToDisplay[progress]].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
-            try AVAudioSession.sharedInstance().setActive(true)
-        } catch {
-            print(error)
+        if playAudio {
+            do {
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToDisplay[progress]].data, fileTypeHint: "mp3")
+                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setActive(true)
+            } catch {
+                print(error)
+            }
         }
         
     }
@@ -183,12 +190,14 @@ class PianoScaleIdentificationVC: UIViewController {
         userIsResponder = false
         
         // Play audio here
-        do {
-            audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scale].data, fileTypeHint: "mp3")
-        } catch {
-            print(error)
+        if playAudio {
+            do {
+                audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scale].data, fileTypeHint: "mp3")
+            } catch {
+                print(error)
+            }
+            audioPlayer.play()
         }
-        audioPlayer.play()
         
         if scale == scalesToDisplay[progress] {
             // Correct scale was selected

@@ -12,6 +12,17 @@ import UIKit
 struct GlobalSettings {
     static let noteNames1: [String] = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"]
     static let noteNames2: [String] = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
+    static var noteNames: [String] {
+        switch noteNameOption {
+        case 0:
+            return noteNames1
+        case 1:
+            return noteNames2
+        default:
+            print("Invalid note name option index")
+            return noteNames1
+        }
+    }
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
     

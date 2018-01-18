@@ -182,6 +182,10 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
+        for i in noteButtons {
+            i.setTitle(GlobalSettings.noteNames[noteButtons.index(of: i)!], for: .normal)
+        }
+        
         print("Current Note \(notesToPlay[progress])")
         
         // Play reference note and current note after using AVAudioPlayer delegate
