@@ -22,6 +22,8 @@ class SettingsVC: UITableViewController {
         tableView.reloadData()
     }
     
+    let emailURL: URL! = URL(string: "mailto:feedback@chadhamdan.me")
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
     }
@@ -60,7 +62,9 @@ class SettingsVC: UITableViewController {
         case 1:
             tableView.cellForRow(at: indexPath)?.isSelected = false
         case 2:
-            performSegue(withIdentifier: "Feedback", sender: self)
+            //performSegue(withIdentifier: "Feedback", sender: self)
+            tableView.cellForRow(at: indexPath)?.isSelected = false
+            UIApplication.shared.open(emailURL)
         case 3:
             performSegue(withIdentifier: "About", sender: self)
         default:

@@ -10,5 +10,18 @@ import UIKit
 
 class AboutVC: UIViewController {
     
+    
+    @IBAction func icons8Link(_ sender: UIButton) {
+        UIApplication.shared.open(URL(string: "https://icons8.com")!)
+    }
+    @IBOutlet var versionLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        versionLabel.text = "Version: \(GlobalSettings.version)"
+    }
+    
 }
+
 

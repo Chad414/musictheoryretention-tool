@@ -14,6 +14,8 @@ struct GlobalSettings {
     static let noteNames2: [String] = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"]
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
+    
+    static let version: String = "1.0"
 }
 
 extension MutableCollection {
