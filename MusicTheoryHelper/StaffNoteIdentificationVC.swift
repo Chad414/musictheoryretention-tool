@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class StaffNoteIdentificationVC: UIViewController {
     var pianoAudioURL: [NSDataAsset] = [
@@ -19,6 +20,9 @@ class StaffNoteIdentificationVC: UIViewController {
         NSDataAsset(name: "A3")!,
         NSDataAsset(name: "B3")!,
         ]
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     @IBAction func note1(_ sender: UIButton) {
         print("\(1) Pressed")
@@ -124,6 +128,11 @@ class StaffNoteIdentificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/9413783805")
+        
+        let request = GADRequest()
+        interstitial.load(request)
+        
         navigationItem.title = "Staff Note Identification"
         progressLabel.text = "Progress: 1/\(notesToDisplay.count)"
         scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
@@ -206,6 +215,12 @@ class StaffNoteIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
             })
         })

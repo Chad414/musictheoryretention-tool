@@ -8,8 +8,12 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class PianoChordIdentificationVC: UIViewController {
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     @IBAction func majorButtonAction(_ sender: UIButton) {
         print("Major Button Pressed!")
@@ -62,6 +66,11 @@ class PianoChordIdentificationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/4736172192")
+        
+        let request = GADRequest()
+        interstitial.load(request)
         
         navigationItem.title = "Piano Chord Identification"
         progressLabel.text = "Progress: 1/\(numberOfQuestions)"
@@ -166,6 +175,12 @@ class PianoChordIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
             })
         })

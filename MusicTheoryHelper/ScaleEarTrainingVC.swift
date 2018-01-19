@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
@@ -29,6 +30,9 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         NSDataAsset(name: "F#_mMinor")!, NSDataAsset(name: "G_mMinor")!, NSDataAsset(name: "G#_mMinor")!,
         NSDataAsset(name: "A_mMinor")!, NSDataAsset(name: "A#_mMinor")!, NSDataAsset(name: "B_mMinor")!,
     ]
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     var audioPlayer = AVAudioPlayer()
     let notes: [Int] = Array(0...47) // 12 major scales, 12 minor scales, 12 harmonic minor, 12 melodic minor
@@ -94,6 +98,10 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/2628883602")
+        let request = GADRequest()
+        interstitial.load(request)
         
         navigationItem.title = "Scale Ear Training"
         
@@ -176,6 +184,12 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
                 self.audioPlayer.stop()
                 if self.progress < 24 {

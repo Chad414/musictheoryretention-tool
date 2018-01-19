@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
@@ -25,6 +26,9 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         NSDataAsset(name: "F#4")!, NSDataAsset(name: "G4")!, NSDataAsset(name: "G#4")!,
         NSDataAsset(name: "A4")!, NSDataAsset(name: "A#4")!, NSDataAsset(name: "B4")!,
         ]
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     var audioPlayer = AVAudioPlayer()
     let notes: [Int] = Array(0...35) // 12 notes, 3 octaves - 3rd = (0...11) 2nd = (12...23), 4th = (24...35)
@@ -165,6 +169,10 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/4516680345")
+        let request = GADRequest()
+        interstitial.load(request)
+        
         navigationItem.title = "Note Ear Training"
         
         // Determine what notes to play
@@ -264,6 +272,12 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
                 self.audioPlayer.stop()
                 if self.progress < 24 {

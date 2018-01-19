@@ -29,6 +29,7 @@
 		63AAE98E2008354600778E7E /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAE98D2008354600778E7E /* AboutVC.swift */; };
 		63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */; };
 		63FEB47B1FD3189600204335 /* ChordEarTrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */; };
+		99DBB81415676733D7CB8280 /* Pods_MusicTheoryHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EDDD6F0AFD9E7CA93BA28B1 /* Pods-MusicTheoryHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicTheoryHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper.release.xcconfig"; sourceTree = "<group>"; };
 		631EB2431FC33DE300D43F13 /* ScaleEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEarTrainingVC.swift; sourceTree = "<group>"; };
 		6339D5431FA296D7001C7A77 /* StaffNoteIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffNoteIdentificationVC.swift; sourceTree = "<group>"; };
 		633A77FF1FB3472000E42B60 /* StaffKeyIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffKeyIdentificationVC.swift; sourceTree = "<group>"; };
@@ -77,6 +79,8 @@
 		63AAE98D2008354600778E7E /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffChordIdentificationVC.swift; sourceTree = "<group>"; };
 		63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordEarTrainingVC.swift; sourceTree = "<group>"; };
+		DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicTheoryHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC54005173F4891690362F4A /* Pods-MusicTheoryHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicTheoryHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DBB81415676733D7CB8280 /* Pods_MusicTheoryHelper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,8 @@
 				63A684111F3AAA1600B17DE5 /* MusicTheoryHelperTests */,
 				63A6841C1F3AAA1600B17DE5 /* MusicTheoryHelperUITests */,
 				63A683FB1F3AAA1600B17DE5 /* Products */,
+				D2405690ABD5230EA34514CD /* Pods */,
+				F0BAAE4F1D708180AC05CFA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +177,23 @@
 			path = MusicTheoryHelperUITests;
 			sourceTree = "<group>";
 		};
+		D2405690ABD5230EA34514CD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EC54005173F4891690362F4A /* Pods-MusicTheoryHelper.debug.xcconfig */,
+				3EDDD6F0AFD9E7CA93BA28B1 /* Pods-MusicTheoryHelper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F0BAAE4F1D708180AC05CFA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,9 +201,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 63A684221F3AAA1600B17DE5 /* Build configuration list for PBXNativeTarget "MusicTheoryHelper" */;
 			buildPhases = (
+				A5EF6865C9A4280C684B4E77 /* [CP] Check Pods Manifest.lock */,
 				63A683F61F3AAA1600B17DE5 /* Sources */,
 				63A683F71F3AAA1600B17DE5 /* Frameworks */,
 				63A683F81F3AAA1600B17DE5 /* Resources */,
+				3FB97D74839F072D86D3B15A /* [CP] Embed Pods Frameworks */,
+				46279ABE0290CC059C8C3EFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,6 +331,57 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3FB97D74839F072D86D3B15A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46279ABE0290CC059C8C3EFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5EF6865C9A4280C684B4E77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MusicTheoryHelper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		63A683F61F3AAA1600B17DE5 /* Sources */ = {
@@ -490,6 +568,7 @@
 		};
 		63A684231F3AAA1600B17DE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC54005173F4891690362F4A /* Pods-MusicTheoryHelper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZV5VY53F4X;
@@ -506,6 +585,7 @@
 		};
 		63A684241F3AAA1600B17DE5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EDDD6F0AFD9E7CA93BA28B1 /* Pods-MusicTheoryHelper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZV5VY53F4X;

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     var pianoAudioURL: [NSDataAsset] = [
@@ -28,6 +29,9 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         NSDataAsset(name: "F#_Dim_Sample")!, NSDataAsset(name: "G_Dim_Sample")!, NSDataAsset(name: "G#_Dim_Sample")!,
         NSDataAsset(name: "A_Dim_Sample")!, NSDataAsset(name: "A#_Dim_Sample")!, NSDataAsset(name: "B_Dim_Sample")!,
     ]
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     @IBAction func majorButtonAction(_ sender: UIButton) {
         if userIsResponder {
@@ -92,6 +96,10 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/1124230249")
+        let request = GADRequest()
+        interstitial.load(request)
         
         navigationItem.title = "Chord Ear Training"
         progressLabel.text = "Progress: 1/\(numberOfQuestions)"
@@ -170,6 +178,12 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
                 self.audioPlayer.stop()
                 if self.progress < 24 {

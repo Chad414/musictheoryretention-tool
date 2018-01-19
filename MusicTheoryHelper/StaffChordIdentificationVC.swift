@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class StaffChordIdentificationVC: UIViewController {
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     @IBAction func majorButtonPressed(_ sender: UIButton) {
         print("Major Button Pressed!")
@@ -63,6 +67,11 @@ class StaffChordIdentificationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/6021333701")
+        
+        let request = GADRequest()
+        interstitial.load(request)
         
         if displayTrebleClef {
             var array: [String] = []
@@ -179,6 +188,12 @@ class StaffChordIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
             })
         })

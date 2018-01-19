@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import GoogleMobileAds
 
 class PianoNoteIdentificationVC: UIViewController {
     
@@ -25,6 +26,9 @@ class PianoNoteIdentificationVC: UIViewController {
         NSDataAsset(name: "A#3")!,
         NSDataAsset(name: "B3")!,
     ]
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     var audioPlayer = AVAudioPlayer()
     let playAudio: Bool = GlobalSettings.playAudio
@@ -149,6 +153,10 @@ class PianoNoteIdentificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/9964803365")
+        let request = GADRequest()
+        interstitial.load(request)
+        
         navigationItem.title = "Piano Note Identification"
         progressLabel.text = "Progress: 1/\(notesToDisplay.count)"
         scoreLabel.text = "Score: 0/\(notesToDisplay.count)"
@@ -202,7 +210,6 @@ class PianoNoteIdentificationVC: UIViewController {
         userIsResponder = false
         
         // Process specific note passed here
-        
         print("Note \(note) Selected!")
         
         if playAudio {
@@ -258,6 +265,12 @@ class PianoNoteIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
+                if self.interstitial.isReady && self.adShown == false {
+                    self.interstitial.present(fromRootViewController: self)
+                    self.adShown = true
+                } else {
+                    print("Ad wasn't ready")
+                }
                 self.progress += 1
             })
         })
@@ -278,6 +291,10 @@ class PianoNoteIdentificationVC: UIViewController {
 
 class PianoNoteIdentificationOptionsVC: UIViewController {
     @IBOutlet var randomizeButtons: UISwitch!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {

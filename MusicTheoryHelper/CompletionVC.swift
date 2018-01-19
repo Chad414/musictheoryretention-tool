@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class CompletionVC: UIViewController {
     var finalScore: Int = 0
@@ -14,6 +15,9 @@ class CompletionVC: UIViewController {
     
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
+    
+    var interstitial: GADInterstitial!
+    var adShown: Bool = false
     
     @IBAction func quitButton(_ sender: UIButton) {
         // Return to menu here
@@ -92,6 +96,10 @@ class CompletionVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        let request = GADRequest()
+        interstitial.load(request)
         
         navigationItem.hidesBackButton = true
         navigationItem.title = "Results"
