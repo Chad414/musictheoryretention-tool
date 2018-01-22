@@ -18,13 +18,13 @@
         <!--Music Theory Retention-->
         <scene sceneID="sx4-CQ-7jr">
             <objects>
-                <tableViewController id="6fe-Yi-R18" customClass="MainMenuTableViewController" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="6fe-Yi-R18" customClass="MainMenuTableViewController" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="p9a-yQ-csN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="oCM-Xa-JEt" customClass="MenuCell" customModule="MusicTheoryHelper" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="oCM-Xa-JEt" customClass="MenuCell" customModule="Music_Theory_Retention" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCM-Xa-JEt" id="3iI-Xv-jTP">
@@ -81,7 +81,7 @@
         <!--Chord Ear Training OptionsVC-->
         <scene sceneID="Njf-Q9-G2d">
             <objects>
-                <viewController id="FkD-1Z-exl" customClass="ChordEarTrainingOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FkD-1Z-exl" customClass="ChordEarTrainingOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z2t-Wn-mwH"/>
                         <viewControllerLayoutGuide type="bottom" id="LdQ-7V-TZj"/>
@@ -113,10 +113,18 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-XA-4NA">
                                 <rect key="frame" x="163" y="247.66666666666663" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: Make sure your device isn't silenced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-kD-gNI">
+                                <rect key="frame" x="72.666666666666671" y="759.66666666666663" width="229.33333333333331" height="14.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Ljk-XA-4NA" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="0FN-KL-8td"/>
+                            <constraint firstItem="eRy-kD-gNI" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="7xv-89-Pbk"/>
+                            <constraint firstItem="LdQ-7V-TZj" firstAttribute="top" secondItem="eRy-kD-gNI" secondAttribute="bottom" constant="4" id="HBa-q8-by3"/>
                             <constraint firstItem="GBN-mI-6cw" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="Tgg-rX-kuK"/>
                             <constraint firstItem="E2y-rF-G68" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="ZgW-wA-3bm"/>
                             <constraint firstItem="oxU-SL-tTA" firstAttribute="centerX" secondItem="9qn-TD-VDE" secondAttribute="centerX" id="eAt-tK-FoI"/>
@@ -137,7 +145,7 @@
         <!--Note NamesVC-->
         <scene sceneID="h0W-df-pqm">
             <objects>
-                <tableViewController id="5qD-Nn-Hjy" customClass="NoteNamesVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="5qD-Nn-Hjy" customClass="NoteNamesVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D8M-Lo-fFd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,7 +173,7 @@
         <!--Scale Ear Training OptionsVC-->
         <scene sceneID="Eus-Wn-pER">
             <objects>
-                <viewController id="Ev4-OT-iEp" customClass="ScaleEarTrainingOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ev4-OT-iEp" customClass="ScaleEarTrainingOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QsK-Ii-1R3"/>
                         <viewControllerLayoutGuide type="bottom" id="7J0-6y-Bt2"/>
@@ -197,9 +205,16 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UA-fK-obU">
                                 <rect key="frame" x="163" y="247" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: Make sure your device isn't silenced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-JM-Bo3">
+                                <rect key="frame" x="73.333333333333329" y="760.66666666666663" width="229.33333333333337" height="13.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7J0-6y-Bt2" firstAttribute="top" secondItem="vCk-JM-Bo3" secondAttribute="bottom" constant="4" id="AMW-lo-eJk"/>
                             <constraint firstItem="ns8-MG-hyV" firstAttribute="centerX" secondItem="Tk4-Ri-VmD" secondAttribute="centerX" id="Fgv-sx-sxC"/>
                             <constraint firstItem="8UA-fK-obU" firstAttribute="centerX" secondItem="Tk4-Ri-VmD" secondAttribute="centerX" id="KFf-tJ-HAo"/>
                             <constraint firstItem="7J0-6y-Bt2" firstAttribute="top" secondItem="nCp-lX-8kB" secondAttribute="bottom" constant="128" id="SuW-ox-9w6"/>
@@ -208,6 +223,7 @@
                             <constraint firstItem="JGw-tk-8OR" firstAttribute="top" secondItem="QsK-Ii-1R3" secondAttribute="bottom" constant="32" id="nAp-4L-77w"/>
                             <constraint firstItem="ns8-MG-hyV" firstAttribute="top" secondItem="JGw-tk-8OR" secondAttribute="bottom" constant="64" id="nG0-LG-MkJ"/>
                             <constraint firstItem="JGw-tk-8OR" firstAttribute="centerX" secondItem="Tk4-Ri-VmD" secondAttribute="centerX" id="wwl-SZ-d2Y"/>
+                            <constraint firstItem="vCk-JM-Bo3" firstAttribute="centerX" secondItem="Tk4-Ri-VmD" secondAttribute="centerX" id="xfd-iX-yue"/>
                         </constraints>
                     </view>
                     <connections>
@@ -221,7 +237,7 @@
         <!--AboutVC-->
         <scene sceneID="WAN-Eb-yr4">
             <objects>
-                <viewController id="EGg-ZL-A9v" customClass="AboutVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EGg-ZL-A9v" customClass="AboutVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mHx-L7-Neg"/>
                         <viewControllerLayoutGuide type="bottom" id="XON-VG-Z3x"/>
@@ -321,13 +337,13 @@
         <!--SettingsVC-->
         <scene sceneID="0wa-07-EnT">
             <objects>
-                <tableViewController id="PZb-dJ-nx2" customClass="SettingsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="PZb-dJ-nx2" customClass="SettingsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wYX-Gh-zHm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingCell" id="9wk-Or-JPK" customClass="SettingCell" customModule="MusicTheoryHelper" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingCell" id="9wk-Or-JPK" customClass="SettingCell" customModule="Music_Theory_Retention" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wk-Or-JPK" id="mqm-B7-OaN">
@@ -377,7 +393,7 @@
         <!--Note Ear Training OptionsVC-->
         <scene sceneID="yEo-PP-cVI">
             <objects>
-                <viewController id="6Qa-K3-YdP" customClass="NoteEarTrainingOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Qa-K3-YdP" customClass="NoteEarTrainingOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B39-vt-AHG"/>
                         <viewControllerLayoutGuide type="bottom" id="eL6-oj-Nif"/>
@@ -430,6 +446,12 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTG-0C-Qr3">
                                 <rect key="frame" x="163" y="354.66666666666669" width="51" height="31"/>
                             </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: Make sure your device isn't silenced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-xz-Z2h">
+                                <rect key="frame" x="73.000000000000014" y="760.66666666666663" width="229.33333333333337" height="13.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -446,7 +468,9 @@
                             <constraint firstItem="26K-jD-UWX" firstAttribute="top" secondItem="ngj-Ze-9Ox" secondAttribute="bottom" constant="64" id="hbm-0W-JGj"/>
                             <constraint firstItem="fR2-h8-afz" firstAttribute="top" secondItem="26K-jD-UWX" secondAttribute="bottom" constant="8" id="jpX-bs-QYU"/>
                             <constraint firstItem="0bo-eE-gLc" firstAttribute="top" secondItem="rla-90-Y8P" secondAttribute="bottom" constant="16" id="nsF-2S-cgu"/>
+                            <constraint firstItem="6w8-xz-Z2h" firstAttribute="centerX" secondItem="UGt-1L-M3Y" secondAttribute="centerX" id="tNy-FS-W7y"/>
                             <constraint firstItem="tTG-0C-Qr3" firstAttribute="centerX" secondItem="UGt-1L-M3Y" secondAttribute="centerX" id="wAR-oZ-reU"/>
+                            <constraint firstItem="eL6-oj-Nif" firstAttribute="top" secondItem="6w8-xz-Z2h" secondAttribute="bottom" constant="4" id="yz9-RH-g25"/>
                         </constraints>
                     </view>
                     <connections>
@@ -462,7 +486,7 @@
         <!--Note Ear TrainingVC-->
         <scene sceneID="dM8-XZ-KN1">
             <objects>
-                <viewController id="UD8-r2-qt1" customClass="NoteEarTrainingVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UD8-r2-qt1" customClass="NoteEarTrainingVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hvY-0x-S7F"/>
                         <viewControllerLayoutGuide type="bottom" id="IxD-H2-7iT"/>
@@ -682,7 +706,7 @@
         <!--Scale Ear TrainingVC-->
         <scene sceneID="xBf-wB-pVQ">
             <objects>
-                <viewController id="VTB-4x-WjJ" customClass="ScaleEarTrainingVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="VTB-4x-WjJ" customClass="ScaleEarTrainingVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xWz-WI-luZ"/>
                         <viewControllerLayoutGuide type="bottom" id="6N1-mI-Swh"/>
@@ -810,7 +834,7 @@ Minor</string>
         <!--Chord Ear TrainingVC-->
         <scene sceneID="wfi-m4-Svl">
             <objects>
-                <viewController id="e2f-Ff-uHA" customClass="ChordEarTrainingVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e2f-Ff-uHA" customClass="ChordEarTrainingVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oX3-V8-Ciu"/>
                         <viewControllerLayoutGuide type="bottom" id="kzU-v2-9xo"/>
@@ -939,7 +963,7 @@ Minor</string>
         <!--Piano Note Identification OptionsVC-->
         <scene sceneID="tf0-lt-9Sg">
             <objects>
-                <viewController id="dqX-AP-WKv" customClass="PianoNoteIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dqX-AP-WKv" customClass="PianoNoteIdentificationOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3oa-Qn-lXi"/>
                         <viewControllerLayoutGuide type="bottom" id="DHN-Jp-Mz0"/>
@@ -995,7 +1019,7 @@ Minor</string>
         <!--Staff Key Identification OptionsVC-->
         <scene sceneID="MIn-T3-4mU">
             <objects>
-                <viewController id="AT4-Gq-ZNg" customClass="StaffKeyIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="AT4-Gq-ZNg" customClass="StaffKeyIdentificationOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vew-eN-fqo"/>
                         <viewControllerLayoutGuide type="bottom" id="qbr-su-xQk"/>
@@ -1081,7 +1105,7 @@ Minor</string>
         <!--Staff Chord Identification OptionsVC-->
         <scene sceneID="vEx-XW-Ogn">
             <objects>
-                <viewController id="6bz-8X-eZ2" customClass="StaffChordIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6bz-8X-eZ2" customClass="StaffChordIdentificationOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lex-is-Hie"/>
                         <viewControllerLayoutGuide type="bottom" id="OhB-9U-TkJ"/>
@@ -1144,7 +1168,7 @@ Minor</string>
         <!--Piano Scale Identification OptionsVC-->
         <scene sceneID="U01-Ol-gXB">
             <objects>
-                <viewController id="Sg2-pD-nU1" customClass="PianoScaleIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Sg2-pD-nU1" customClass="PianoScaleIdentificationOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2QP-Z5-Wpa"/>
                         <viewControllerLayoutGuide type="bottom" id="NpX-iI-N1y"/>
@@ -1207,7 +1231,7 @@ Minor</string>
         <!--Piano Chord Identification OptionsVC-->
         <scene sceneID="qln-gd-Q3x">
             <objects>
-                <viewController id="evg-2R-0fS" customClass="PianoChordIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="evg-2R-0fS" customClass="PianoChordIdentificationOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lrS-ki-wYP"/>
                         <viewControllerLayoutGuide type="bottom" id="zWd-oO-Y15"/>
@@ -1247,7 +1271,7 @@ Minor</string>
         <!--Piano Chord IdentificationVC-->
         <scene sceneID="vJX-X7-CaK">
             <objects>
-                <viewController id="ca9-ep-E9G" customClass="PianoChordIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ca9-ep-E9G" customClass="PianoChordIdentificationVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mfz-qN-4hU"/>
                         <viewControllerLayoutGuide type="bottom" id="twU-EV-1Mc"/>
@@ -1352,7 +1376,7 @@ Minor</string>
         <!--Piano Note IdentificationVC-->
         <scene sceneID="0Nw-MO-2cn">
             <objects>
-                <viewController id="fCP-pQ-SxT" customClass="PianoNoteIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fCP-pQ-SxT" customClass="PianoNoteIdentificationVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fm4-IU-hZC"/>
                         <viewControllerLayoutGuide type="bottom" id="cXC-fm-efw"/>
@@ -1545,7 +1569,7 @@ Minor</string>
         <!--CompletionVC-->
         <scene sceneID="KeH-8m-NKE">
             <objects>
-                <viewController id="V8t-zC-p4p" customClass="CompletionVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V8t-zC-p4p" customClass="CompletionVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QrS-Z6-irT"/>
                         <viewControllerLayoutGuide type="bottom" id="Jig-Sf-JhY"/>
@@ -1625,7 +1649,7 @@ Minor</string>
         <!--Piano Scale IdentificationVC-->
         <scene sceneID="hcE-i8-ixl">
             <objects>
-                <viewController id="OcL-7y-iPk" customClass="PianoScaleIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OcL-7y-iPk" customClass="PianoScaleIdentificationVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M6h-gA-U4x"/>
                         <viewControllerLayoutGuide type="bottom" id="sac-Z1-EQK"/>
@@ -1827,7 +1851,7 @@ Minor</string>
         <!--Staff Note IdentificationVC-->
         <scene sceneID="XKf-nf-HmV">
             <objects>
-                <viewController id="tWp-37-7co" customClass="StaffNoteIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tWp-37-7co" customClass="StaffNoteIdentificationVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7HL-ZR-Am4"/>
                         <viewControllerLayoutGuide type="bottom" id="Xjf-gK-zjN"/>
@@ -1965,7 +1989,7 @@ Minor</string>
         <!--Staff Key IdentificationVC-->
         <scene sceneID="9lX-jW-mNx">
             <objects>
-                <viewController id="qwf-TU-5BK" customClass="StaffKeyIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="qwf-TU-5BK" customClass="StaffKeyIdentificationVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K1D-12-DiE"/>
                         <viewControllerLayoutGuide type="bottom" id="50V-mS-u9e"/>
@@ -2123,7 +2147,7 @@ Minor</string>
         <!--Staff Chord IdentificationVC-->
         <scene sceneID="0cq-ox-8Hg">
             <objects>
-                <viewController id="0rr-Jt-xYA" customClass="StaffChordIdentificationVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0rr-Jt-xYA" customClass="StaffChordIdentificationVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CAK-el-eff"/>
                         <viewControllerLayoutGuide type="bottom" id="4jf-CS-hNb"/>
@@ -2228,7 +2252,7 @@ Minor</string>
         <!--Staff Note Identification OptionsVC-->
         <scene sceneID="Wg1-BV-rKp">
             <objects>
-                <viewController id="ZpL-rX-hEv" customClass="StaffNoteIdentificationOptionsVC" customModule="MusicTheoryHelper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ZpL-rX-hEv" customClass="StaffNoteIdentificationOptionsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mjo-ht-APx"/>
                         <viewControllerLayoutGuide type="bottom" id="3Kp-2i-w9t"/>

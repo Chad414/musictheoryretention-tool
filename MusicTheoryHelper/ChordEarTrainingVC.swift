@@ -107,12 +107,12 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         
         if playAugAndDim {
             chordsToPlay = chords
-            //chordsToPlay.shuffle()
+            chordsToPlay.shuffle()
         } else {
             chordsToPlay = Array(0...23)
             harmonicButton.isHidden = true
             melodicButton.isHidden = true
-            //chordsToPlay.shuffle()
+            chordsToPlay.shuffle()
         }
         
         buttons = [majorButton, minorButton, harmonicButton, melodicButton]

@@ -26,7 +26,7 @@ struct GlobalSettings {
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
     
-    static let version: String = "1.0"
+    static let version: String = "1.0.1"
 }
 
 extension MutableCollection {
@@ -64,5 +64,14 @@ extension UIColor {
     static func appleBlue() -> UIColor {
         //return UIColor.init(colorLiteralRed: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
         return UIColor(red: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
+    }
+}
+
+func firstTimeLaunchingApp() -> Bool {
+    if let _ = UserDefaults.standard.string(forKey: "firstTimeLaunchingApp"){
+        return false
+    } else {
+        UserDefaults.standard.set(true, forKey: "firstTimeLaunchingApp")
+        return true
     }
 }

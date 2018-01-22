@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "63A683F91F3AAA1600B17DE5"
-               BuildableName = "MusicTheoryHelper.app"
-               BlueprintName = "MusicTheoryHelper"
+               BuildableName = "Music Theory Retention.app"
+               BlueprintName = "Music Theory Retention"
                ReferencedContainer = "container:MusicTheoryHelper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -54,8 +54,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63A683F91F3AAA1600B17DE5"
-            BuildableName = "MusicTheoryHelper.app"
-            BlueprintName = "MusicTheoryHelper"
+            BuildableName = "Music Theory Retention.app"
+            BlueprintName = "Music Theory Retention"
             ReferencedContainer = "container:MusicTheoryHelper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -78,8 +78,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63A683F91F3AAA1600B17DE5"
-            BuildableName = "MusicTheoryHelper.app"
-            BlueprintName = "MusicTheoryHelper"
+            BuildableName = "Music Theory Retention.app"
+            BlueprintName = "Music Theory Retention"
             ReferencedContainer = "container:MusicTheoryHelper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -97,8 +97,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "63A683F91F3AAA1600B17DE5"
-            BuildableName = "MusicTheoryHelper.app"
-            BlueprintName = "MusicTheoryHelper"
+            BuildableName = "Music Theory Retention.app"
+            BlueprintName = "Music Theory Retention"
             ReferencedContainer = "container:MusicTheoryHelper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

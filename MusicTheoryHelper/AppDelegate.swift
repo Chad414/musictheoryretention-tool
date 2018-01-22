@@ -18,10 +18,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        if firstTimeLaunchingApp() {
+            GlobalSettings.playAudio = true
+            UserDefaults.standard.set(true, forKey: "playAudio")
+        }
+        
         GlobalSettings.noteNameOption = UserDefaults.standard.integer(forKey: "noteNameOption")
         GlobalSettings.playAudio = UserDefaults.standard.bool(forKey: "playAudio")
         
         GADMobileAds.configure(withApplicationID: "ca-app-pub-4468715439448322~9817872822")
+        
+        print("Audio Enabled: \(GlobalSettings.playAudio)")
         
         return true
     }

@@ -63,7 +63,7 @@
 		638F8C031FA0B924003668C2 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		6394646E1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PianoScaleIdentificationVC.swift; sourceTree = "<group>"; };
 		63966D301F66F0D6005940C1 /* PianoChordIdentificationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PianoChordIdentificationVC.swift; sourceTree = "<group>"; };
-		63A683FA1F3AAA1600B17DE5 /* MusicTheoryHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicTheoryHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		63A683FA1F3AAA1600B17DE5 /* Music Theory Retention.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Music Theory Retention.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		63A683FD1F3AAA1600B17DE5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		63A684021F3AAA1600B17DE5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		63A684041F3AAA1600B17DE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		63A683FB1F3AAA1600B17DE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				63A683FA1F3AAA1600B17DE5 /* MusicTheoryHelper.app */,
+				63A683FA1F3AAA1600B17DE5 /* Music Theory Retention.app */,
 				63A6840E1F3AAA1600B17DE5 /* MusicTheoryHelperTests.xctest */,
 				63A684191F3AAA1600B17DE5 /* MusicTheoryHelperUITests.xctest */,
 			);
@@ -197,9 +197,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		63A683F91F3AAA1600B17DE5 /* MusicTheoryHelper */ = {
+		63A683F91F3AAA1600B17DE5 /* Music Theory Retention */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 63A684221F3AAA1600B17DE5 /* Build configuration list for PBXNativeTarget "MusicTheoryHelper" */;
+			buildConfigurationList = 63A684221F3AAA1600B17DE5 /* Build configuration list for PBXNativeTarget "Music Theory Retention" */;
 			buildPhases = (
 				A5EF6865C9A4280C684B4E77 /* [CP] Check Pods Manifest.lock */,
 				63A683F61F3AAA1600B17DE5 /* Sources */,
@@ -212,9 +212,9 @@
 			);
 			dependencies = (
 			);
-			name = MusicTheoryHelper;
+			name = "Music Theory Retention";
 			productName = MusicTheoryHelper;
-			productReference = 63A683FA1F3AAA1600B17DE5 /* MusicTheoryHelper.app */;
+			productReference = 63A683FA1F3AAA1600B17DE5 /* Music Theory Retention.app */;
 			productType = "com.apple.product-type.application";
 		};
 		63A6840D1F3AAA1600B17DE5 /* MusicTheoryHelperTests */ = {
@@ -298,7 +298,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				63A683F91F3AAA1600B17DE5 /* MusicTheoryHelper */,
+				63A683F91F3AAA1600B17DE5 /* Music Theory Retention */,
 				63A6840D1F3AAA1600B17DE5 /* MusicTheoryHelperTests */,
 				63A684181F3AAA1600B17DE5 /* MusicTheoryHelperUITests */,
 			);
@@ -429,12 +429,12 @@
 /* Begin PBXTargetDependency section */
 		63A684101F3AAA1600B17DE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63A683F91F3AAA1600B17DE5 /* MusicTheoryHelper */;
+			target = 63A683F91F3AAA1600B17DE5 /* Music Theory Retention */;
 			targetProxy = 63A6840F1F3AAA1600B17DE5 /* PBXContainerItemProxy */;
 		};
 		63A6841B1F3AAA1600B17DE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 63A683F91F3AAA1600B17DE5 /* MusicTheoryHelper */;
+			target = 63A683F91F3AAA1600B17DE5 /* Music Theory Retention */;
 			targetProxy = 63A6841A1F3AAA1600B17DE5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -575,11 +575,11 @@
 				INFOPLIST_FILE = MusicTheoryHelper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chadhamdan.MusicTheoryHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = chadhamdan.MusicTheoryRetention;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -592,11 +592,11 @@
 				INFOPLIST_FILE = MusicTheoryHelper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chadhamdan.MusicTheoryHelper;
+				PRODUCT_BUNDLE_IDENTIFIER = chadhamdan.MusicTheoryRetention;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -674,7 +674,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		63A684221F3AAA1600B17DE5 /* Build configuration list for PBXNativeTarget "MusicTheoryHelper" */ = {
+		63A684221F3AAA1600B17DE5 /* Build configuration list for PBXNativeTarget "Music Theory Retention" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				63A684231F3AAA1600B17DE5 /* Debug */,
