@@ -185,13 +185,13 @@ class StaffKeyIdentificationVC: UIViewController {
             // Sharp, Minor
             displaySharpGraphics = true
             scaleLabel.text = "Scale: Minor"
-            let buttonLabels = ["A", "E", "B", "F#", "C#", "G#", "D#", "A#"]
+            let buttonLabels = ["a", "e", "b", "f#", "c#", "g#", "d#", "a#"]
             assignButtonLabels(labels: buttonLabels)
         case 3:
             // Flat, Minor
             displaySharpGraphics = false
             scaleLabel.text = "Scale: Minor"
-            let buttonLabels = ["A", "D", "G", "C", "F", "Bb", "Eb", "Ab"]
+            let buttonLabels = ["a", "d", "g", "c", "f", "bb", "eb", "ab"]
             assignButtonLabels(labels: buttonLabels)
         default:
             print("Unknown configuration selected in options menu")
