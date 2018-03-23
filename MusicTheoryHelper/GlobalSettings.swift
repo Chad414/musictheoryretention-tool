@@ -26,7 +26,16 @@ struct GlobalSettings {
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
     
-    static let version: String = "1.0.1"
+    static let version: String = "1.0.3"
+    
+    static func displayIsCompact() -> Bool {
+        if UIScreen.main.nativeBounds.height <= 1136 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }
 
 extension MutableCollection {

@@ -14,6 +14,7 @@ class PianoChordIdentificationVC: UIViewController {
     
     var interstitial: GADInterstitial!
     var adShown: Bool = false
+    let displayAD = arc4random_uniform(18)
     
     @IBAction func majorButtonAction(_ sender: UIButton) {
         print("Major Button Pressed!")
@@ -176,8 +177,10 @@ class PianoChordIdentificationVC: UIViewController {
             }, completion: { (finished: Bool) in
                 // Completion of second animation
                 if self.interstitial.isReady && self.adShown == false {
-                    self.interstitial.present(fromRootViewController: self)
-                    self.adShown = true
+                    if self.progress == self.displayAD {
+                        self.interstitial.present(fromRootViewController: self)
+                        self.adShown = true
+                    }
                 } else {
                     print("Ad wasn't ready")
                 }

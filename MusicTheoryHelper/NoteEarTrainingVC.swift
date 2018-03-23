@@ -29,6 +29,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     var interstitial: GADInterstitial!
     var adShown: Bool = false
+    let displayAD = arc4random_uniform(18)
     
     var audioPlayer = AVAudioPlayer()
     let notes: [Int] = Array(0...35) // 12 notes, 3 octaves - 3rd = (0...11) 2nd = (12...23), 4th = (24...35)
@@ -273,8 +274,10 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             }, completion: { (finished: Bool) in
                 // Completion of second animation
                 if self.interstitial.isReady && self.adShown == false {
-                    self.interstitial.present(fromRootViewController: self)
-                    self.adShown = true
+                    if self.progress == self.displayAD {
+                        self.interstitial.present(fromRootViewController: self)
+                        self.adShown = true
+                    }
                 } else {
                     print("Ad wasn't ready")
                 }

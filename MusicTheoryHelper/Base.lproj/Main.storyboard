@@ -283,7 +283,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sararoff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-vr-odr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Safaroff" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-vr-odr">
                                 <rect key="frame" x="154" y="455" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -2236,6 +2236,8 @@ Minor</string>
                     </view>
                     <connections>
                         <outlet property="augmentedButton" destination="KWH-OZ-5sO" id="B0I-Dy-CW7"/>
+                        <outlet property="bottomLeftConst" destination="IEq-N7-6U3" id="vv1-0S-c6k"/>
+                        <outlet property="bottomRightConst" destination="GDm-Nk-VPn" id="zbx-Dl-heS"/>
                         <outlet property="diminishedButton" destination="3k4-96-Lor" id="qGN-yK-mTk"/>
                         <outlet property="majorButton" destination="WCr-zH-sN5" id="CXR-mr-L9y"/>
                         <outlet property="minorButton" destination="BsA-Ec-dYf" id="jEN-79-eom"/>
@@ -2319,6 +2321,6 @@ Minor</string>
         <image name="icons8-stop_filled" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IXs-Ct-pp7"/>
+        <segue reference="qWH-em-Zwe"/>
     </inferredMetricsTieBreakers>
 </document>

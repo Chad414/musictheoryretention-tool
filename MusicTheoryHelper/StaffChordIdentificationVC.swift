@@ -13,6 +13,7 @@ class StaffChordIdentificationVC: UIViewController {
     
     var interstitial: GADInterstitial!
     var adShown: Bool = false
+    let displayAD = arc4random_uniform(18)
     
     @IBAction func majorButtonPressed(_ sender: UIButton) {
         print("Major Button Pressed!")
@@ -46,6 +47,10 @@ class StaffChordIdentificationVC: UIViewController {
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     
+    // Constraints
+    @IBOutlet var bottomRightConst: NSLayoutConstraint!
+    @IBOutlet var bottomLeftConst: NSLayoutConstraint!
+    
     var chordsToDisplay: [Int] = Array(0...38) // Order will be randomized, only indicies 0..23 will be shown
     var graphics: [String] = []
     var displayTrebleClef: Bool = false
@@ -67,6 +72,11 @@ class StaffChordIdentificationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if GlobalSettings.displayIsCompact() {
+            bottomLeftConst.constant = 32
+            bottomRightConst.constant = 32
+        }
         
         interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/6021333701")
         
@@ -189,8 +199,10 @@ class StaffChordIdentificationVC: UIViewController {
             }, completion: { (finished: Bool) in
                 // Completion of second animation
                 if self.interstitial.isReady && self.adShown == false {
-                    self.interstitial.present(fromRootViewController: self)
-                    self.adShown = true
+                    if self.progress == self.displayAD {
+                        self.interstitial.present(fromRootViewController: self)
+                        self.adShown = true
+                    }
                 } else {
                     print("Ad wasn't ready")
                 }

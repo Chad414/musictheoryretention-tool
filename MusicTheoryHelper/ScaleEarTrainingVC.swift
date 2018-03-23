@@ -33,6 +33,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     
     var interstitial: GADInterstitial!
     var adShown: Bool = false
+    let displayAD = arc4random_uniform(18)
     
     var audioPlayer = AVAudioPlayer()
     let notes: [Int] = Array(0...47) // 12 major scales, 12 minor scales, 12 harmonic minor, 12 melodic minor
@@ -185,8 +186,10 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
             }, completion: { (finished: Bool) in
                 // Completion of second animation
                 if self.interstitial.isReady && self.adShown == false {
-                    self.interstitial.present(fromRootViewController: self)
-                    self.adShown = true
+                    if self.progress == self.displayAD {
+                        self.interstitial.present(fromRootViewController: self)
+                        self.adShown = true
+                    }
                 } else {
                     print("Ad wasn't ready")
                 }
