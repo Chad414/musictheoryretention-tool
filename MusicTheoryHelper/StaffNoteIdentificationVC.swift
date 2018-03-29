@@ -216,7 +216,7 @@ class StaffNoteIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
-                if self.interstitial.isReady && self.adShown == false {
+                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
                     if self.progress == self.displayAD {
                         self.interstitial.present(fromRootViewController: self)
                         self.adShown = true

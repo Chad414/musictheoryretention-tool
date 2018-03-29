@@ -21,8 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if firstTimeLaunchingApp() {
             GlobalSettings.playAudio = true
             UserDefaults.standard.set(true, forKey: "playAudio")
+            UserDefaults.standard.set(true, forKey: "showAds")
         }
         
+        GlobalSettings.showAds = UserDefaults.standard.bool(forKey: "showAds")
         GlobalSettings.noteNameOption = UserDefaults.standard.integer(forKey: "noteNameOption")
         GlobalSettings.playAudio = UserDefaults.standard.bool(forKey: "playAudio")
         

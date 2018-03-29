@@ -176,7 +176,7 @@ class PianoChordIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
-                if self.interstitial.isReady && self.adShown == false {
+                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
                     if self.progress == self.displayAD {
                         self.interstitial.present(fromRootViewController: self)
                         self.adShown = true
@@ -203,5 +203,29 @@ class PianoChordIdentificationVC: UIViewController {
 }
 
 class PianoChordIdentificationOptionsVC: UIViewController {
+    
+    @IBOutlet var secretButton: UIButton!
+    
+    @IBAction func secretButtonPressed(_ sender: UIButton) {
+        GlobalSettings.showAds = false
+        UserDefaults.standard.set(false, forKey: "showAds")
+        
+        let message = "You've managed to remove Ads from MTR!"
+        let ac = UIAlertController(title: "Congratulations!", message: message, preferredStyle: .alert)
+        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        ac.addAction(closeAction)
+        self.present(ac, animated: true, completion: nil)
+        
+        secretButton.isHidden = true
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if GlobalSettings.chadHamdan == true {
+            secretButton.isHidden = false
+        }
+        
+    }
     
 }
