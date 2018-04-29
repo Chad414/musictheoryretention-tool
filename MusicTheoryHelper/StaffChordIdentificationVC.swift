@@ -133,21 +133,21 @@ class StaffChordIdentificationVC: UIViewController {
             }
         case 1:
             if chordDisplayed >= 10 && chordDisplayed <= 19 {
-                // Correct answer because all chords 12...23 are minor
+                // Correct answer because all chords 10...19 are minor
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)
             }
         case 2:
             if chordDisplayed >= 20 && chordDisplayed <= 27 {
-                // Correct answer because all chords 20...29 are augmented
+                // Correct answer because all chords 20...27 are augmented
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)
             }
         case 3:
             if chordDisplayed >= 28 && chordDisplayed <= 38 {
-                // Correct answer because all chords 20...29 are augmented
+                // Correct answer because all chords 28...38 are augmented
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)

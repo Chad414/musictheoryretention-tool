@@ -222,7 +222,7 @@ class PianoChordIdentificationOptionsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if GlobalSettings.chadHamdan == true {
+        if GlobalSettings.chadHamdan == true && GlobalSettings.showAds == true {
             secretButton.isHidden = false
         }
         
