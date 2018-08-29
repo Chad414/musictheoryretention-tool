@@ -125,29 +125,29 @@ class StaffChordIdentificationVC: UIViewController {
         
         switch button {
         case 0:
-            if chordDisplayed <= 9 {
-                // Correct answer because all chords 0...9 are major
+            if chordDisplayed <= 11 {
+                // Correct answer because all chords 0...11 are major
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)
             }
         case 1:
-            if chordDisplayed >= 10 && chordDisplayed <= 19 {
-                // Correct answer because all chords 10...19 are minor
+            if chordDisplayed >= 12 && chordDisplayed <= 23 {
+                // Correct answer because all chords 12...23 are minor
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)
             }
         case 2:
-            if chordDisplayed >= 20 && chordDisplayed <= 27 {
-                // Correct answer because all chords 20...27 are augmented
+            if chordDisplayed >= 24 && chordDisplayed <= 35 {
+                // Correct answer because all chords 24...35 are augmented
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)
             }
         case 3:
             if chordDisplayed >= 28 && chordDisplayed <= 38 {
-                // Correct answer because all chords 28...38 are augmented
+                // Correct answer because all chords 36...47 are diminished
                 correctAnswerSelected(true)
             } else {
                 correctAnswerSelected(false)

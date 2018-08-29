@@ -26,7 +26,7 @@ struct GlobalSettings {
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
     
-    static let version: String = "1.0.4"
+    static let version: String = "1.0.5"
     static var showAds: Bool = true
     static var chadHamdan: Bool = false
     
@@ -47,7 +47,7 @@ extension MutableCollection {
         guard c > 1 else { return }
         
         for (firstUnshuffled, unshuffledCount) in zip(indices, stride(from: c, to: 1, by: -1)) {
-            let d: IndexDistance = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
+            let d: Int = numericCast(arc4random_uniform(numericCast(unshuffledCount)))
             let i = index(firstUnshuffled, offsetBy: d)
             swapAt(firstUnshuffled, i)
         }

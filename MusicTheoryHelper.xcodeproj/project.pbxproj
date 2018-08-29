@@ -27,6 +27,8 @@
 		63A6841E1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6841D1F3AAA1600B17DE5 /* MusicTheoryHelperUITests.swift */; };
 		63A6842C1F3AAB4400B17DE5 /* MainMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */; };
 		63AAE98E2008354600778E7E /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AAE98D2008354600778E7E /* AboutVC.swift */; };
+		63AFDB1720C60B8F00EE6EC5 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63AFDB1620C60B8F00EE6EC5 /* StoreKit.framework */; };
+		63AFDB1B20C61ADB00EE6EC5 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFDB1A20C61ADB00EE6EC5 /* IAPHandler.swift */; };
 		63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */; };
 		63FEB47B1FD3189600204335 /* ChordEarTrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */; };
 		99DBB81415676733D7CB8280 /* Pods_MusicTheoryHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */; };
@@ -77,6 +79,8 @@
 		63A6841F1F3AAA1600B17DE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuTableViewController.swift; sourceTree = "<group>"; };
 		63AAE98D2008354600778E7E /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
+		63AFDB1620C60B8F00EE6EC5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		63AFDB1A20C61ADB00EE6EC5 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffChordIdentificationVC.swift; sourceTree = "<group>"; };
 		63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordEarTrainingVC.swift; sourceTree = "<group>"; };
 		DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicTheoryHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99DBB81415676733D7CB8280 /* Pods_MusicTheoryHelper.framework in Frameworks */,
+				63AFDB1720C60B8F00EE6EC5 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +160,7 @@
 				638F8C031FA0B924003668C2 /* SettingsVC.swift */,
 				633D1A4F20081768006AB473 /* SettingCell.swift */,
 				63AAE98D2008354600778E7E /* AboutVC.swift */,
+				63AFDB1A20C61ADB00EE6EC5 /* IAPHandler.swift */,
 			);
 			path = MusicTheoryHelper;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 		F0BAAE4F1D708180AC05CFA6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				63AFDB1620C60B8F00EE6EC5 /* StoreKit.framework */,
 				DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */,
 			);
 			name = Frameworks;
@@ -268,6 +275,11 @@
 						DevelopmentTeam = ZV5VY53F4X;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					63A6840D1F3AAA1600B17DE5 = {
 						CreatedOnToolsVersion = 8.3.3;
@@ -391,6 +403,7 @@
 				63819B911F8E49C100FB4D61 /* CompletionVC.swift in Sources */,
 				638691FD1F8591DB0096100C /* MenuCell.swift in Sources */,
 				63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */,
+				63AFDB1B20C61ADB00EE6EC5 /* IAPHandler.swift in Sources */,
 				63A6842C1F3AAB4400B17DE5 /* MainMenuTableViewController.swift in Sources */,
 				63531C3F1F3FAE9F003BD606 /* GlobalSettings.swift in Sources */,
 				6361DFB51F965608003F0CA7 /* NoteEarTrainingVC.swift in Sources */,

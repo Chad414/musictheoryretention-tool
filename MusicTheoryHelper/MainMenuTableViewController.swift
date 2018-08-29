@@ -10,18 +10,58 @@ import UIKit
 
 class MainMenuTableViewController: UITableViewController {
     
+    @IBOutlet var settingsButton: UIBarButtonItem!
+    @IBOutlet weak var purchaseButton: UIBarButtonItem!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if UIScreen.main.nativeBounds.height <= 1136 {
+            navigationItem.title = "MTR"
+        }
+        
         tableView.reloadData()
+    
+        /*if GlobalSettings.showAds == false {
+            navigationItem.rightBarButtonItem = nil
+        }*/
+        
+        // Remove purchase button until feature is tested
+        navigationItem.rightBarButtonItem = nil
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        IAPHandler.shared.purchaseStatusBlock = { [weak self] (type) in
+            guard let strongSelf = self else { return }
+            if type == .purchased {
+                let alertView = UIAlertController(title: "", message: type.message(), preferredStyle: .alert)
+                let action = UIAlertAction(title: "OK", style: .default, handler: { (alert) in
+                    
+                })
+                alertView.addAction(action)
+                strongSelf.present(alertView, animated: true, completion: nil)
+            }
+        }
     }
-    @IBOutlet var settingsButton: UIBarButtonItem!
+    
+    @IBAction func removeAdsButton(_ sender: UIBarButtonItem) {
+        let ac = UIAlertController(title: "Purchase MTR", message: "Remove annoying pop-up ads from Music Theory Retnetion", preferredStyle: .alert)
+        
+        let restoreAction = UIAlertAction(title: "Restore Purchase", style: .default) { (sender) in
+            print("Restoreing Purchase...")
+        }
+        let purchaseAction = UIAlertAction(title: "Remove Ads - $1.99", style: .cancel) { (sender) in
+            print("Removing Ads...")
+        }
+        let closeAction = UIAlertAction(title: "Close", style: .default, handler: nil)
+        
+        ac.addAction(restoreAction)
+        ac.addAction(purchaseAction)
+        ac.addAction(closeAction)
+        self.present(ac, animated: true, completion: nil)
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MenuCell", for: indexPath) as! MenuCell
@@ -150,5 +190,32 @@ class MainMenuTableViewController: UITableViewController {
             print("Unexpected cell selected")
         }
     }
+    
+    func purchaseMTR(_ sender: UIAlertAction) -> Void {
+        IAPHandler.shared.purchaseProduct(index: 0)
+    }
+    
+    @IBAction func purchaseButtonPressed(_ sender: UIBarButtonItem) {
+        guard IAPHandler.shared.canMakePurchases() else {
+            let message = "This Device Cannot make Purchases"
+            let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+            let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+            ac.addAction(closeAction)
+            self.present(ac, animated: true, completion: nil)
+            return
+        }
+        
+        let message = "Remove Annoying Ads from Music Theory Retention"
+        let ac = UIAlertController(title: "Remove Ads", message: message, preferredStyle: .alert)
+        let purchaseAction = UIAlertAction(title: "Purchase MTR for $1.99", style: .default, handler: purchaseMTR)
+        let restoreAction = UIAlertAction(title: "Restore Purchase", style: .default, handler: nil)
+        let closeAction = UIAlertAction(title: "Close", style: .cancel, handler: nil)
+        ac.addAction(purchaseAction)
+        ac.addAction(restoreAction)
+        ac.addAction(closeAction)
+        self.present(ac, animated: true, completion: nil)
+        
+    }
+    
     
 }
