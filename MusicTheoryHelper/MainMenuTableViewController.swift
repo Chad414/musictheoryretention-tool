@@ -20,6 +20,10 @@ class MainMenuTableViewController: UITableViewController {
             navigationItem.title = "MTR"
         }
         
+        if GlobalSettings.deviceIsiPad() {
+            tableView.rowHeight = 95
+        }
+        
         tableView.reloadData()
     
         /*if GlobalSettings.showAds == false {
@@ -28,6 +32,10 @@ class MainMenuTableViewController: UITableViewController {
         
         // Remove purchase button until feature is tested
         navigationItem.rightBarButtonItem = nil
+        
+        if GlobalSettings.deviceIsiPad() {
+            
+        }
     }
     
     override func viewDidLoad() {

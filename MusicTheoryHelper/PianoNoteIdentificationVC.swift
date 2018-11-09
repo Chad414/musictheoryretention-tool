@@ -145,10 +145,16 @@ class PianoNoteIdentificationVC: UIViewController {
     @IBOutlet var pianoImageView: UIImageView!
     var noteButtons: [UIButton] = []
     
+    @IBOutlet var imageViewWidth: NSLayoutConstraint!
+    @IBOutlet var imageViewHeight: NSLayoutConstraint!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
+        if GlobalSettings.deviceIsiPad() {
+            imageViewWidth.constant *= 2
+            imageViewHeight.constant *= 2
+        }
     }
     
     override func viewDidLoad() {

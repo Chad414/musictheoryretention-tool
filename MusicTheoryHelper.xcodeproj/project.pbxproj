@@ -31,7 +31,7 @@
 		63AFDB1B20C61ADB00EE6EC5 /* IAPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AFDB1A20C61ADB00EE6EC5 /* IAPHandler.swift */; };
 		63FEB4791FD3185100204335 /* StaffChordIdentificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */; };
 		63FEB47B1FD3189600204335 /* ChordEarTrainingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */; };
-		99DBB81415676733D7CB8280 /* Pods_MusicTheoryHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */; };
+		FECF1A453A9E4666D54E34C8 /* Pods_Music_Theory_Retention.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61909971D63F84103C298A50 /* Pods_Music_Theory_Retention.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		3EDDD6F0AFD9E7CA93BA28B1 /* Pods-MusicTheoryHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicTheoryHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper.release.xcconfig"; sourceTree = "<group>"; };
+		61909971D63F84103C298A50 /* Pods_Music_Theory_Retention.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Music_Theory_Retention.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		631EB2431FC33DE300D43F13 /* ScaleEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEarTrainingVC.swift; sourceTree = "<group>"; };
 		6339D5431FA296D7001C7A77 /* StaffNoteIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffNoteIdentificationVC.swift; sourceTree = "<group>"; };
 		633A77FF1FB3472000E42B60 /* StaffKeyIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffKeyIdentificationVC.swift; sourceTree = "<group>"; };
@@ -83,7 +84,9 @@
 		63AFDB1A20C61ADB00EE6EC5 /* IAPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHandler.swift; sourceTree = "<group>"; };
 		63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaffChordIdentificationVC.swift; sourceTree = "<group>"; };
 		63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChordEarTrainingVC.swift; sourceTree = "<group>"; };
+		65A148FD1E76924BC66258EA /* Pods-Music Theory Retention.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Theory Retention.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Music Theory Retention/Pods-Music Theory Retention.debug.xcconfig"; sourceTree = "<group>"; };
 		DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MusicTheoryHelper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E737718AEB19DBD2ED169B1E /* Pods-Music Theory Retention.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Music Theory Retention.release.xcconfig"; path = "Pods/Target Support Files/Pods-Music Theory Retention/Pods-Music Theory Retention.release.xcconfig"; sourceTree = "<group>"; };
 		EC54005173F4891690362F4A /* Pods-MusicTheoryHelper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MusicTheoryHelper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,8 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99DBB81415676733D7CB8280 /* Pods_MusicTheoryHelper.framework in Frameworks */,
 				63AFDB1720C60B8F00EE6EC5 /* StoreKit.framework in Frameworks */,
+				FECF1A453A9E4666D54E34C8 /* Pods_Music_Theory_Retention.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +191,8 @@
 			children = (
 				EC54005173F4891690362F4A /* Pods-MusicTheoryHelper.debug.xcconfig */,
 				3EDDD6F0AFD9E7CA93BA28B1 /* Pods-MusicTheoryHelper.release.xcconfig */,
+				65A148FD1E76924BC66258EA /* Pods-Music Theory Retention.debug.xcconfig */,
+				E737718AEB19DBD2ED169B1E /* Pods-Music Theory Retention.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			children = (
 				63AFDB1620C60B8F00EE6EC5 /* StoreKit.framework */,
 				DEA35D8B383A436251E23652 /* Pods_MusicTheoryHelper.framework */,
+				61909971D63F84103C298A50 /* Pods_Music_Theory_Retention.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,8 +218,6 @@
 				63A683F61F3AAA1600B17DE5 /* Sources */,
 				63A683F71F3AAA1600B17DE5 /* Frameworks */,
 				63A683F81F3AAA1600B17DE5 /* Resources */,
-				3FB97D74839F072D86D3B15A /* [CP] Embed Pods Frameworks */,
-				46279ABE0290CC059C8C3EFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,7 +271,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "Chad Hamdan";
 				TargetAttributes = {
 					63A683F91F3AAA1600B17DE5 = {
@@ -345,36 +349,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FB97D74839F072D86D3B15A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46279ABE0290CC059C8C3EFA /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MusicTheoryHelper/Pods-MusicTheoryHelper-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		A5EF6865C9A4280C684B4E77 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -386,7 +360,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MusicTheoryHelper-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Music Theory Retention-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -486,6 +460,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -493,6 +468,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -543,6 +519,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -550,6 +527,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -581,7 +559,7 @@
 		};
 		63A684231F3AAA1600B17DE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EC54005173F4891690362F4A /* Pods-MusicTheoryHelper.debug.xcconfig */;
+			baseConfigurationReference = 65A148FD1E76924BC66258EA /* Pods-Music Theory Retention.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -601,7 +579,7 @@
 		};
 		63A684241F3AAA1600B17DE5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EDDD6F0AFD9E7CA93BA28B1 /* Pods-MusicTheoryHelper.release.xcconfig */;
+			baseConfigurationReference = E737718AEB19DBD2ED169B1E /* Pods-Music Theory Retention.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

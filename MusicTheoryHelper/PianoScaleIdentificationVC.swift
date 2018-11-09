@@ -146,6 +146,18 @@ class PianoScaleIdentificationVC: UIViewController {
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var pianoImageView: UIImageView!
     
+    @IBOutlet var imageViewWidth: NSLayoutConstraint!
+    @IBOutlet var imageViewHeight: NSLayoutConstraint!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if GlobalSettings.deviceIsiPad() {
+            imageViewWidth.constant *= 2
+            imageViewHeight.constant *= 2
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

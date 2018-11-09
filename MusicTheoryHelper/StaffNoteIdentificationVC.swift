@@ -126,6 +126,18 @@ class StaffNoteIdentificationVC: UIViewController {
         }
     }
     
+    @IBOutlet var imageViewWidth: NSLayoutConstraint!
+    @IBOutlet var imageViewHeight: NSLayoutConstraint!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if GlobalSettings.deviceIsiPad() {
+            imageViewWidth.constant *= 1.5
+            imageViewHeight.constant *= 1.5
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

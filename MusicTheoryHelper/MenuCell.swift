@@ -11,12 +11,22 @@ import UIKit
 class MenuCell: UITableViewCell {
     @IBOutlet var iconView: UIImageView!
     
+    
     func updateIconView(image: UIImage?) {
         self.contentView.addSubview(iconView)
         if let icon = image {
             iconView.image = icon
         } else {
             iconView.image = nil
+        }
+        
+        if GlobalSettings.deviceIsiPad() {
+            if GlobalSettings.deviceIs129InchiPad() {
+                self.textLabel?.font = self.textLabel?.font.withSize(26.0)
+            } else {
+                self.textLabel?.font = self.textLabel?.font.withSize(22.0)
+            }
+            
         }
     }
     

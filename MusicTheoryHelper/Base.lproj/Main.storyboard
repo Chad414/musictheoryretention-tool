@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
-    <device id="retina4_0" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9e7-1V-gaW">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,19 +14,19 @@
             <objects>
                 <tableViewController id="6fe-Yi-R18" customClass="MainMenuTableViewController" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" id="p9a-yQ-csN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="oCM-Xa-JEt" customClass="MenuCell" customModule="Music_Theory_Retention" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="64"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oCM-Xa-JEt" id="3iI-Xv-jTP">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="63.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R1P-Oj-YFh" userLabel="icon">
-                                            <rect key="frame" x="238" y="6.5" width="50" height="50"/>
+                                            <rect key="frame" x="332" y="7" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="AEu-Ef-z5W"/>
                                                 <constraint firstAttribute="width" constant="50" id="zw3-qh-P9h"/>
@@ -88,11 +87,11 @@
                         <viewControllerLayoutGuide type="bottom" id="LdQ-7V-TZj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9qn-TD-VDE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxU-SL-tTA">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -100,22 +99,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chord Ear Training Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBN-mI-6cw">
-                                <rect key="frame" x="10" y="96" width="300" height="31.5"/>
+                                <rect key="frame" x="57" y="120" width="300" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Harmonic &amp; Melodic Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2y-rF-G68">
-                                <rect key="frame" x="24" y="191.5" width="272" height="24"/>
+                                <rect key="frame" x="71" y="215.5" width="272" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ljk-XA-4NA">
-                                <rect key="frame" x="135.5" y="223.5" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="247.5" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: Make sure your device isn't silenced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eRy-kD-gNI">
-                                <rect key="frame" x="45.5" y="549.5" width="229" height="14.5"/>
+                                <rect key="frame" x="92.5" y="843.5" width="229" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -148,15 +147,15 @@
             <objects>
                 <tableViewController id="5qD-Nn-Hjy" customClass="NoteNamesVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="D8M-Lo-fFd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteNamesCell" id="U3u-07-aLw">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U3u-07-aLw" id="8da-Ck-Xk7">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -180,17 +179,17 @@
                         <viewControllerLayoutGuide type="bottom" id="7J0-6y-Bt2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tk4-Ri-VmD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale Ear Training Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGw-tk-8OR">
-                                <rect key="frame" x="14" y="96" width="292" height="31.5"/>
+                                <rect key="frame" x="61" y="120" width="292" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-lX-8kB">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -198,16 +197,16 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Harmonic &amp; Melodic Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ns8-MG-hyV">
-                                <rect key="frame" x="24" y="191.5" width="272" height="24"/>
+                                <rect key="frame" x="71" y="215.5" width="272" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8UA-fK-obU">
-                                <rect key="frame" x="135.5" y="223" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="247.5" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: Make sure your device isn't silenced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vCk-JM-Bo3">
-                                <rect key="frame" x="45.5" y="549.5" width="229" height="14.5"/>
+                                <rect key="frame" x="92.5" y="843.5" width="229" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -244,60 +243,60 @@
                         <viewControllerLayoutGuide type="bottom" id="XON-VG-Z3x"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xxN-vS-zqp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music Theory Retention" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP0-0e-te5">
-                                <rect key="frame" x="27.5" y="96" width="265" height="31.5"/>
+                                <rect key="frame" x="74.5" y="120" width="265" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Version: 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrT-M1-J9y">
-                                <rect key="frame" x="116" y="135.5" width="88" height="21"/>
+                                <rect key="frame" x="163" y="159.5" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developed By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rwq-PD-2xT">
-                                <rect key="frame" x="97" y="172.5" width="126" height="24"/>
+                                <rect key="frame" x="144" y="196.5" width="126" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chad Hamdan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rE1-ip-3zZ">
-                                <rect key="frame" x="86.5" y="212.5" width="147" height="26.5"/>
+                                <rect key="frame" x="133.5" y="236.5" width="147" height="26.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chad" translatesAutoresizingMaskIntoConstraints="NO" id="Hxx-X8-zhC">
-                                <rect key="frame" x="100" y="255" width="120" height="120"/>
+                                <rect key="frame" x="147" y="279" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="R4N-PZ-rxm"/>
                                     <constraint firstAttribute="width" constant="120" id="f9q-C1-Pul"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="App Icon By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaD-tN-JFz">
-                                <rect key="frame" x="105" y="391" width="110" height="24"/>
+                                <rect key="frame" x="152" y="415" width="110" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elyor Safarov" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6R-vr-odr">
-                                <rect key="frame" x="106" y="431" width="108" height="21"/>
+                                <rect key="frame" x="153" y="455" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu Icons From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9A-F3-i4f">
-                                <rect key="frame" x="82.5" y="468" width="155" height="24"/>
+                                <rect key="frame" x="129.5" y="492" width="155" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJR-vt-gyV">
-                                <rect key="frame" x="68.5" y="508" width="183" height="36"/>
+                                <rect key="frame" x="115.5" y="532" width="183" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="https://icons8.com"/>
                                 <connections>
@@ -350,25 +349,25 @@
             <objects>
                 <tableViewController id="PZb-dJ-nx2" customClass="SettingsVC" customModule="Music_Theory_Retention" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="wYX-Gh-zHm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SettingCell" id="9wk-Or-JPK" customClass="SettingCell" customModule="Music_Theory_Retention" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9wk-Or-JPK" id="mqm-B7-OaN">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oU-E4-uDY">
-                                            <rect key="frame" x="16" y="10.5" width="48" height="24"/>
+                                            <rect key="frame" x="20" y="10" width="48" height="24"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AI0-Y6-6ZH">
-                                            <rect key="frame" x="255" y="6" width="51" height="31"/>
+                                            <rect key="frame" x="349" y="6.5" width="51" height="31"/>
                                             <connections>
                                                 <action selector="cellSwitchAction:" destination="9wk-Or-JPK" eventType="valueChanged" id="rY3-vL-aUF"/>
                                             </connections>
@@ -410,11 +409,11 @@
                         <viewControllerLayoutGuide type="bottom" id="eL6-oj-Nif"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UGt-1L-M3Y">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LQs-x3-nl5">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -422,19 +421,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Ear Training Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngj-Ze-9Ox">
-                                <rect key="frame" x="17.5" y="96" width="285" height="31.5"/>
+                                <rect key="frame" x="64.5" y="120" width="285" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reference Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26K-jD-UWX">
-                                <rect key="frame" x="92.5" y="191.5" width="135" height="24"/>
+                                <rect key="frame" x="139.5" y="215.5" width="135" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="fR2-h8-afz">
-                                <rect key="frame" x="13" y="223.5" width="294" height="31"/>
+                                <rect key="frame" x="60" y="247.5" width="294" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="290" id="fua-9Q-1wM"/>
                                 </constraints>
@@ -443,22 +442,22 @@
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="C3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rla-90-Y8P">
-                                <rect key="frame" x="148.5" y="261.5" width="23" height="21"/>
+                                <rect key="frame" x="195.5" y="285.5" width="23" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Third Octave Only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bo-eE-gLc">
-                                <rect key="frame" x="81.5" y="298.5" width="157" height="24"/>
+                                <rect key="frame" x="128.5" y="322.5" width="157" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTG-0C-Qr3">
-                                <rect key="frame" x="135.5" y="330.5" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="354.5" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip: Make sure your device isn't silenced" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6w8-xz-Z2h">
-                                <rect key="frame" x="45.5" y="549.5" width="229" height="14.5"/>
+                                <rect key="frame" x="92.5" y="843.5" width="229" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -503,11 +502,11 @@
                         <viewControllerLayoutGuide type="bottom" id="IxD-H2-7iT"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="oc2-2x-h8D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PO3-2A-ocl">
-                                <rect key="frame" x="10" y="479" width="30" height="41"/>
+                                <rect key="frame" x="57" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C"/>
                                 <connections>
@@ -515,7 +514,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="274-Kc-Do6">
-                                <rect key="frame" x="235" y="479" width="30" height="41"/>
+                                <rect key="frame" x="282" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A"/>
                                 <connections>
@@ -523,7 +522,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8m0-hT-M99">
-                                <rect key="frame" x="55" y="479" width="30" height="41"/>
+                                <rect key="frame" x="102" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D"/>
                                 <connections>
@@ -531,7 +530,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qmj-fx-eK2">
-                                <rect key="frame" x="100" y="479" width="30" height="41"/>
+                                <rect key="frame" x="147" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="E"/>
                                 <connections>
@@ -539,7 +538,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5f-gB-btb">
-                                <rect key="frame" x="190" y="479" width="30" height="41"/>
+                                <rect key="frame" x="237" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G"/>
                                 <connections>
@@ -547,7 +546,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="506-Ek-9Tc">
-                                <rect key="frame" x="280" y="479" width="30" height="41"/>
+                                <rect key="frame" x="327" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="B"/>
                                 <connections>
@@ -555,7 +554,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnP-Wo-H4h">
-                                <rect key="frame" x="31" y="418" width="32" height="41"/>
+                                <rect key="frame" x="78" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C#"/>
                                 <connections>
@@ -563,7 +562,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3K2-0B-6HU">
-                                <rect key="frame" x="145" y="418" width="30" height="41"/>
+                                <rect key="frame" x="192" y="712" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F#"/>
                                 <connections>
@@ -571,7 +570,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YYU-JZ-QwE">
-                                <rect key="frame" x="200" y="418" width="33" height="41"/>
+                                <rect key="frame" x="247" y="712" width="33" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G#"/>
                                 <connections>
@@ -579,7 +578,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-YA-LZK">
-                                <rect key="frame" x="258" y="418" width="31" height="41"/>
+                                <rect key="frame" x="305" y="712" width="31" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A#"/>
                                 <connections>
@@ -587,7 +586,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bez-1U-bFF">
-                                <rect key="frame" x="145" y="479" width="30" height="41"/>
+                                <rect key="frame" x="192" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F"/>
                                 <connections>
@@ -595,7 +594,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePH-5D-HQx">
-                                <rect key="frame" x="88" y="418" width="32" height="41"/>
+                                <rect key="frame" x="135" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D#"/>
                                 <connections>
@@ -603,44 +602,44 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected the Current Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ar-2d-TFN">
-                                <rect key="frame" x="14.5" y="96" width="291" height="32"/>
+                                <rect key="frame" x="61.5" y="120" width="291" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JQA-Qh-IUh">
-                                <rect key="frame" x="88" y="367" width="144" height="31"/>
+                                <rect key="frame" x="135" y="661" width="144" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svf-vl-m9S">
-                                <rect key="frame" x="105" y="338" width="110" height="21"/>
+                                <rect key="frame" x="152" y="632" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reference Note: C3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9H-mX-6Ma">
-                                <rect key="frame" x="80" y="175.5" width="160" height="21"/>
+                                <rect key="frame" x="127" y="200" width="160" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GJF-Q4-9pr">
-                                <rect key="frame" x="99" y="262" width="122" height="24"/>
+                                <rect key="frame" x="146" y="337" width="122" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qif-ps-tRF">
-                                <rect key="frame" x="135" y="294" width="50" height="50"/>
+                                <rect key="frame" x="157" y="369" width="100" height="100"/>
                                 <state key="normal" image="icons8-stop_filled"/>
                                 <connections>
                                     <action selector="currentNoteButtonAction:" destination="UD8-r2-qt1" eventType="touchUpInside" id="gF9-59-Ggd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6I0-Or-91a">
-                                <rect key="frame" x="135" y="204" width="50" height="50"/>
+                                <rect key="frame" x="157" y="229" width="100" height="100"/>
                                 <state key="normal" image="icons8-stop_filled"/>
                                 <connections>
                                     <action selector="referenceNoteButtonAction:" destination="UD8-r2-qt1" eventType="touchUpInside" id="eho-in-wj2"/>
@@ -723,42 +722,42 @@
                         <viewControllerLayoutGuide type="bottom" id="6N1-mI-Swh"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="Ede-UZ-9Q3">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected the Current Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUc-Ls-bAN">
-                                <rect key="frame" x="11" y="96" width="298" height="32"/>
+                                <rect key="frame" x="58" y="120" width="298" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fo-9p-B1O">
-                                <rect key="frame" x="88" y="360" width="144" height="31"/>
+                                <rect key="frame" x="135" y="654" width="144" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2i-PF-Mjy">
-                                <rect key="frame" x="105" y="331" width="110" height="21"/>
+                                <rect key="frame" x="152" y="625" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mx0-vv-yfk">
-                                <rect key="frame" x="95.5" y="192" width="129" height="24"/>
+                                <rect key="frame" x="142.5" y="216" width="129" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aje-5w-sZN">
-                                <rect key="frame" x="135" y="224" width="50" height="50"/>
+                                <rect key="frame" x="157" y="248" width="100" height="100"/>
                                 <state key="normal" image="icons8-stop_filled"/>
                                 <connections>
                                     <action selector="currentNoteButtonAction:" destination="VTB-4x-WjJ" eventType="touchUpInside" id="hR8-lY-yXo"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Jqp-pr-GTE">
-                                <rect key="frame" x="64" y="471" width="93" height="65"/>
+                                <rect key="frame" x="68" y="765" width="93" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal">
                                     <string key="title">Harmonic
@@ -774,7 +773,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ti5-Xf-6hG">
-                                <rect key="frame" x="180" y="471" width="76" height="65"/>
+                                <rect key="frame" x="270" y="765" width="76" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal">
                                     <string key="title">Melodic
@@ -790,7 +789,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="alp-Wg-Mom">
-                                <rect key="frame" x="80" y="400" width="54" height="39"/>
+                                <rect key="frame" x="84" y="694" width="54" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
@@ -798,7 +797,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KKF-FJ-ObO">
-                                <rect key="frame" x="185" y="400" width="55" height="39"/>
+                                <rect key="frame" x="275" y="694" width="55" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
@@ -851,42 +850,42 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="kzU-v2-9xo"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="hXd-c4-ufc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Selected the Chord Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nce-M2-oZc">
-                                <rect key="frame" x="22.5" y="96" width="275" height="32"/>
+                                <rect key="frame" x="69.5" y="120" width="275" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtu-4m-gQl">
-                                <rect key="frame" x="88" y="360" width="144" height="31"/>
+                                <rect key="frame" x="135" y="654" width="144" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQd-UP-gsZ">
-                                <rect key="frame" x="105" y="331" width="110" height="21"/>
+                                <rect key="frame" x="152" y="625" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoH-5H-1Dw">
-                                <rect key="frame" x="92.5" y="192" width="135" height="24"/>
+                                <rect key="frame" x="139.5" y="216" width="135" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzV-vo-iTO">
-                                <rect key="frame" x="135" y="224" width="50" height="50"/>
+                                <rect key="frame" x="157" y="248" width="100" height="100"/>
                                 <state key="normal" image="icons8-stop_filled"/>
                                 <connections>
                                     <action selector="currentNoteButtonAction:" destination="e2f-Ff-uHA" eventType="touchUpInside" id="xBy-xf-ydv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="3rl-OO-l22">
-                                <rect key="frame" x="64" y="471" width="93" height="65"/>
+                                <rect key="frame" x="68" y="765" width="93" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal">
                                     <string key="title">Harmonic
@@ -902,7 +901,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="4Qh-jx-zUL">
-                                <rect key="frame" x="180" y="471" width="76" height="65"/>
+                                <rect key="frame" x="270" y="765" width="76" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal">
                                     <string key="title">Melodic
@@ -918,7 +917,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juB-t4-kTA">
-                                <rect key="frame" x="80" y="400" width="54" height="39"/>
+                                <rect key="frame" x="84" y="694" width="54" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
@@ -926,7 +925,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmn-Oa-rFa">
-                                <rect key="frame" x="185" y="400" width="55" height="39"/>
+                                <rect key="frame" x="275" y="694" width="55" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
@@ -959,10 +958,14 @@ Minor</string>
                     <connections>
                         <outlet property="currentNoteButton" destination="kzV-vo-iTO" id="H4N-SC-Oiz"/>
                         <outlet property="harmonicButton" destination="3rl-OO-l22" id="Ie6-dA-yhy"/>
+                        <outlet property="leftAugConst" destination="CAn-Dk-vaR" id="KJH-XR-BB5"/>
+                        <outlet property="leftMajorConst" destination="20t-ET-dzc" id="GfH-2u-4kV"/>
                         <outlet property="majorButton" destination="juB-t4-kTA" id="u8G-mo-Dko"/>
                         <outlet property="melodicButton" destination="4Qh-jx-zUL" id="l4Y-tx-boj"/>
                         <outlet property="minorButton" destination="hmn-Oa-rFa" id="rBu-VB-wZE"/>
                         <outlet property="progressLabel" destination="vQd-UP-gsZ" id="0YE-NF-Z3b"/>
+                        <outlet property="rightDimConst" destination="GkQ-xI-pUK" id="vBE-Xa-P0z"/>
+                        <outlet property="rightMinorConst" destination="qbS-fn-Usr" id="d80-Cc-5Hg"/>
                         <outlet property="scoreLabel" destination="Rtu-4m-gQl" id="Qc2-m9-C9T"/>
                         <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="IXs-Ct-pp7"/>
                     </connections>
@@ -980,17 +983,17 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="DHN-Jp-Mz0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fdW-hy-MzY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano Note Options" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bAV-Tl-qh9">
-                                <rect key="frame" x="51.5" y="96" width="217" height="31.5"/>
+                                <rect key="frame" x="98.5" y="120" width="217" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyZ-Rk-PBz">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -998,13 +1001,13 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomize Placement of Buttons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fko-ps-aPw">
-                                <rect key="frame" x="16.5" y="191" width="287" height="24"/>
+                                <rect key="frame" x="63.5" y="215.5" width="287" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a7n-k1-ZOD">
-                                <rect key="frame" x="135.5" y="223" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="247.5" width="51" height="31"/>
                             </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1036,23 +1039,23 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="qbr-su-xQk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="raf-Sp-h74">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Key Signature Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzo-Y4-HxC">
-                                <rect key="frame" x="35" y="96" width="250" height="31.5"/>
+                                <rect key="frame" x="82" y="120" width="250" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ktn-Ka-nGC">
-                                <rect key="frame" x="118" y="191.5" width="84" height="24"/>
+                                <rect key="frame" x="165" y="215.5" width="84" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="epQ-2x-8vc">
-                                <rect key="frame" x="96" y="223" width="128" height="29"/>
+                                <rect key="frame" x="143" y="247.5" width="128" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="1kd-uW-Q8o"/>
                                 </constraints>
@@ -1065,13 +1068,13 @@ Minor</string>
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xr0-iF-HM3">
-                                <rect key="frame" x="136" y="267" width="48" height="24"/>
+                                <rect key="frame" x="183" y="291.5" width="48" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QKw-y6-Udu">
-                                <rect key="frame" x="96" y="299" width="128" height="29"/>
+                                <rect key="frame" x="143" y="323.5" width="128" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="94W-Jk-PLY"/>
                                 </constraints>
@@ -1084,7 +1087,7 @@ Minor</string>
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r7C-CR-zDB">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -1122,11 +1125,11 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="OhB-9U-TkJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="gU3-zi-MmS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JUS-Pe-CpL">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -1134,19 +1137,19 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Chord Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vb0-l9-xec">
-                                <rect key="frame" x="48.5" y="96" width="223" height="31.5"/>
+                                <rect key="frame" x="95.5" y="120" width="223" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YFe-HR-Ums">
-                                <rect key="frame" x="142" y="191.5" width="36" height="24"/>
+                                <rect key="frame" x="189" y="215.5" width="36" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kbn-qT-wGN">
-                                <rect key="frame" x="96" y="223" width="128" height="29"/>
+                                <rect key="frame" x="143" y="247.5" width="128" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="5gA-Re-qvk"/>
                                 </constraints>
@@ -1185,17 +1188,17 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="NpX-iI-N1y"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XCY-G0-mf1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano Scale Options" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQq-eC-EUK">
-                                <rect key="frame" x="48" y="96" width="224" height="32"/>
+                                <rect key="frame" x="95" y="120" width="224" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1dR-bV-aCb">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -1203,13 +1206,13 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wje-jA-VI3">
-                                <rect key="frame" x="136" y="191.5" width="48" height="24"/>
+                                <rect key="frame" x="183" y="216" width="48" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cBC-G2-8CW">
-                                <rect key="frame" x="96" y="223.5" width="128" height="29"/>
+                                <rect key="frame" x="143" y="248" width="128" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="dI1-RM-ANo"/>
                                 </constraints>
@@ -1248,17 +1251,17 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="zWd-oO-Y15"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9AH-wu-Q3w">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Piano Chord Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T53-9Z-SOf">
-                                <rect key="frame" x="44" y="96" width="232" height="31.5"/>
+                                <rect key="frame" x="91" y="120" width="232" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvN-h6-1qu">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -1266,7 +1269,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAw-zX-Kvi">
-                                <rect key="frame" x="78.5" y="191.5" width="163" height="46"/>
+                                <rect key="frame" x="125.5" y="215.5" width="163" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <state key="normal" title="Remove Ads"/>
                                 <connections>
@@ -1301,17 +1304,17 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="twU-EV-1Mc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="541-NG-UGA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Type of Triad Displayed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ma-Py-DwY">
-                                <rect key="frame" x="5" y="96" width="310" height="29"/>
+                                <rect key="frame" x="52" y="120" width="310" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lBo-Tv-zJO">
-                                <rect key="frame" x="48" y="465" width="111" height="39"/>
+                                <rect key="frame" x="52" y="759" width="111" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Augmented"/>
                                 <connections>
@@ -1319,7 +1322,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-Tr-T7Z">
-                                <rect key="frame" x="180" y="392" width="60" height="41"/>
+                                <rect key="frame" x="270" y="686" width="60" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
@@ -1327,7 +1330,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VC2-LD-5B9">
-                                <rect key="frame" x="165" y="465" width="107" height="39"/>
+                                <rect key="frame" x="255" y="759" width="107" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Diminished"/>
                                 <connections>
@@ -1335,7 +1338,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHK-aq-DAn">
-                                <rect key="frame" x="80" y="392" width="59" height="41"/>
+                                <rect key="frame" x="84" y="686" width="59" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
@@ -1343,19 +1346,19 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TNf-UW-wKj">
-                                <rect key="frame" x="87.5" y="353.5" width="145" height="32"/>
+                                <rect key="frame" x="134.5" y="647" width="145" height="32"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TC-h1-4GB">
-                                <rect key="frame" x="105" y="324.5" width="110" height="21"/>
+                                <rect key="frame" x="152" y="618" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="C8q-lu-16S">
-                                <rect key="frame" x="3.5" y="188.5" width="313" height="128"/>
+                                <rect key="frame" x="50.5" y="213" width="313" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="313" id="0XD-ml-DTO"/>
                                     <constraint firstAttribute="height" constant="128" id="giU-8v-mfG"/>
@@ -1385,10 +1388,16 @@ Minor</string>
                     <connections>
                         <outlet property="augmentedButton" destination="lBo-Tv-zJO" id="kST-zI-hQ2"/>
                         <outlet property="diminishedButton" destination="VC2-LD-5B9" id="Aba-Qy-d5N"/>
+                        <outlet property="imageViewHeight" destination="giU-8v-mfG" id="UTc-Zb-njP"/>
+                        <outlet property="imageViewWidth" destination="0XD-ml-DTO" id="lSQ-wd-F2C"/>
+                        <outlet property="leftAugConst" destination="xDF-cg-KMU" id="dXL-aq-67s"/>
+                        <outlet property="leftMajorConst" destination="3NH-LQ-VHm" id="iDr-77-lKK"/>
                         <outlet property="majorButton" destination="AHK-aq-DAn" id="E6a-QR-hQV"/>
                         <outlet property="minorButton" destination="pYT-Tr-T7Z" id="KeM-d3-rPj"/>
                         <outlet property="pianoImageView" destination="C8q-lu-16S" id="p1Y-d0-pUP"/>
                         <outlet property="progressLabel" destination="2TC-h1-4GB" id="AhU-Xu-3CB"/>
+                        <outlet property="rightDimConst" destination="bCC-3g-KL9" id="EBH-nG-Que"/>
+                        <outlet property="rightMinorConst" destination="fd5-VE-qf6" id="v3k-DE-ODT"/>
                         <outlet property="scoreLabel" destination="TNf-UW-wKj" id="Fj0-6h-986"/>
                         <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="umw-O5-BsF"/>
                     </connections>
@@ -1406,11 +1415,11 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="cXC-fm-efw"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="o18-Af-FCR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AgM-UM-fbf">
-                                <rect key="frame" x="10" y="479" width="30" height="41"/>
+                                <rect key="frame" x="57" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C"/>
                                 <connections>
@@ -1418,7 +1427,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toc-mI-i3v">
-                                <rect key="frame" x="235" y="479" width="30" height="41"/>
+                                <rect key="frame" x="282" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A"/>
                                 <connections>
@@ -1426,7 +1435,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQG-vZ-2Qa">
-                                <rect key="frame" x="55" y="479" width="30" height="41"/>
+                                <rect key="frame" x="102" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D"/>
                                 <connections>
@@ -1434,7 +1443,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qtH-u6-qnl">
-                                <rect key="frame" x="100" y="479" width="30" height="41"/>
+                                <rect key="frame" x="147" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="E"/>
                                 <connections>
@@ -1442,7 +1451,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="35f-n5-xNS">
-                                <rect key="frame" x="190" y="479" width="30" height="41"/>
+                                <rect key="frame" x="237" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G"/>
                                 <connections>
@@ -1450,7 +1459,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kaZ-i9-Wmi">
-                                <rect key="frame" x="280" y="479" width="30" height="41"/>
+                                <rect key="frame" x="327" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="B"/>
                                 <connections>
@@ -1458,7 +1467,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOA-6h-2Uf">
-                                <rect key="frame" x="31" y="418" width="32" height="41"/>
+                                <rect key="frame" x="78" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C#"/>
                                 <connections>
@@ -1466,7 +1475,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-R2-FN3">
-                                <rect key="frame" x="145" y="418" width="30" height="41"/>
+                                <rect key="frame" x="192" y="712" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F#"/>
                                 <connections>
@@ -1474,7 +1483,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-iA-G90">
-                                <rect key="frame" x="200" y="418" width="33" height="41"/>
+                                <rect key="frame" x="247" y="712" width="33" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G#"/>
                                 <connections>
@@ -1482,7 +1491,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dfa-6h-Z2P">
-                                <rect key="frame" x="258" y="418" width="31" height="41"/>
+                                <rect key="frame" x="305" y="712" width="31" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A#"/>
                                 <connections>
@@ -1490,7 +1499,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIw-Ze-Vyn">
-                                <rect key="frame" x="145" y="479" width="30" height="41"/>
+                                <rect key="frame" x="192" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F"/>
                                 <connections>
@@ -1498,7 +1507,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1o-H4-gTV">
-                                <rect key="frame" x="88" y="418" width="32" height="41"/>
+                                <rect key="frame" x="135" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D#"/>
                                 <connections>
@@ -1506,26 +1515,26 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hu9-6D-ozY">
-                                <rect key="frame" x="15.5" y="96" width="289" height="31.5"/>
+                                <rect key="frame" x="62.5" y="120" width="289" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-sV-NDY">
-                                <rect key="frame" x="88" y="367" width="144" height="31"/>
+                                <rect key="frame" x="135" y="661" width="144" height="31"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QQD-bU-lAa">
-                                <rect key="frame" x="8.5" y="191.5" width="303" height="128"/>
+                                <rect key="frame" x="55.5" y="215.5" width="303" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="K8a-ih-Dhh"/>
                                     <constraint firstAttribute="width" constant="303" id="vHb-wB-h8S"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-C4-DJa">
-                                <rect key="frame" x="105" y="338" width="110" height="21"/>
+                                <rect key="frame" x="152" y="632" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1568,6 +1577,8 @@ Minor</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewHeight" destination="K8a-ih-Dhh" id="LVz-0z-G6H"/>
+                        <outlet property="imageViewWidth" destination="vHb-wB-h8S" id="EZg-81-pBJ"/>
                         <outlet property="note10Button" destination="toc-mI-i3v" id="08Z-wr-eUw"/>
                         <outlet property="note11Button" destination="Dfa-6h-Z2P" id="12a-f0-Q2A"/>
                         <outlet property="note12Button" destination="kaZ-i9-Wmi" id="JQh-lK-Eq2"/>
@@ -1599,17 +1610,17 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="Jig-Sf-JhY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JJ2-Hl-rRX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Well Done!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nue-1M-St2">
-                                <rect key="frame" x="99.5" y="96" width="121" height="31.5"/>
+                                <rect key="frame" x="146.5" y="120" width="121" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pd7-DC-C6I">
-                                <rect key="frame" x="120" y="296" width="80" height="44"/>
+                                <rect key="frame" x="167" y="590" width="80" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Restart"/>
                                 <connections>
@@ -1617,7 +1628,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alc-Ff-pP5">
-                                <rect key="frame" x="111.5" y="404" width="97" height="36"/>
+                                <rect key="frame" x="158.5" y="698" width="97" height="36"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                 <state key="normal" title="Main Menu"/>
                                 <connections>
@@ -1625,7 +1636,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0J-EQ-u1L">
-                                <rect key="frame" x="94" y="255.5" width="132" height="41"/>
+                                <rect key="frame" x="141" y="279.5" width="132" height="41"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1658,7 +1669,7 @@ Minor</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9e7-1V-gaW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="EQP-Ua-l20">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1679,11 +1690,11 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="sac-Z1-EQK"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="6Dv-b2-iiH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZ2-aa-hri">
-                                <rect key="frame" x="10" y="479" width="30" height="41"/>
+                                <rect key="frame" x="57" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C"/>
                                 <connections>
@@ -1691,7 +1702,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z9l-X0-zMa">
-                                <rect key="frame" x="235" y="479" width="30" height="41"/>
+                                <rect key="frame" x="282" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A"/>
                                 <connections>
@@ -1699,7 +1710,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Re4-KD-LeY">
-                                <rect key="frame" x="55" y="479" width="30" height="41"/>
+                                <rect key="frame" x="102" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D"/>
                                 <connections>
@@ -1707,7 +1718,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prF-Ht-V7U">
-                                <rect key="frame" x="100" y="479" width="30" height="41"/>
+                                <rect key="frame" x="147" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="E"/>
                                 <connections>
@@ -1715,7 +1726,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0u-4V-115">
-                                <rect key="frame" x="190" y="479" width="30" height="41"/>
+                                <rect key="frame" x="237" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G"/>
                                 <connections>
@@ -1723,7 +1734,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kJb-a3-pfb">
-                                <rect key="frame" x="280" y="479" width="30" height="41"/>
+                                <rect key="frame" x="327" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="B"/>
                                 <connections>
@@ -1731,7 +1742,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-jf-4pf">
-                                <rect key="frame" x="31" y="418" width="32" height="41"/>
+                                <rect key="frame" x="78" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C#"/>
                                 <connections>
@@ -1739,7 +1750,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-og-P1U">
-                                <rect key="frame" x="145" y="418" width="30" height="41"/>
+                                <rect key="frame" x="192" y="712" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F#"/>
                                 <connections>
@@ -1747,7 +1758,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX3-PF-oj1">
-                                <rect key="frame" x="200" y="418" width="33" height="41"/>
+                                <rect key="frame" x="247" y="712" width="33" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G#"/>
                                 <connections>
@@ -1755,7 +1766,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="srN-hZ-63k">
-                                <rect key="frame" x="258" y="418" width="31" height="41"/>
+                                <rect key="frame" x="305" y="712" width="31" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A#"/>
                                 <connections>
@@ -1763,7 +1774,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBw-2Y-IuI">
-                                <rect key="frame" x="145" y="479" width="30" height="41"/>
+                                <rect key="frame" x="192" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F"/>
                                 <connections>
@@ -1771,7 +1782,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUz-fu-ftB">
-                                <rect key="frame" x="88" y="418" width="32" height="41"/>
+                                <rect key="frame" x="135" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D#"/>
                                 <connections>
@@ -1779,32 +1790,32 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Scale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvF-zx-3fG">
-                                <rect key="frame" x="23" y="96" width="274" height="29"/>
+                                <rect key="frame" x="70" y="120" width="274" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCa-pe-uwl">
-                                <rect key="frame" x="87.5" y="366.5" width="145" height="31.5"/>
+                                <rect key="frame" x="134.5" y="660.5" width="145" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-FX-C6Z">
-                                <rect key="frame" x="8.5" y="189" width="303" height="128"/>
+                                <rect key="frame" x="55.5" y="213" width="303" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="2qR-KK-5kN"/>
                                     <constraint firstAttribute="width" constant="303" id="iOE-9M-eIe"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gl-EZ-1mj">
-                                <rect key="frame" x="105" y="337" width="110" height="21"/>
+                                <rect key="frame" x="152" y="631.5" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale: Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-Jq-ENz">
-                                <rect key="frame" x="120.5" y="325" width="79" height="17"/>
+                                <rect key="frame" x="167.5" y="349" width="79" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1849,6 +1860,8 @@ Minor</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewHeight" destination="2qR-KK-5kN" id="4Za-LX-6xn"/>
+                        <outlet property="imageViewWidth" destination="iOE-9M-eIe" id="GP4-4t-2II"/>
                         <outlet property="note10Button" destination="z9l-X0-zMa" id="3pw-il-QXd"/>
                         <outlet property="note11Button" destination="srN-hZ-63k" id="RQW-zq-KBn"/>
                         <outlet property="note12Button" destination="kJb-a3-pfb" id="jje-Qo-otA"/>
@@ -1881,11 +1894,11 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="Xjf-gK-zjN"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="DFJ-SD-sfQ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5SL-Pm-shZ">
-                                <rect key="frame" x="10" y="463" width="30" height="41"/>
+                                <rect key="frame" x="57" y="757" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="C"/>
                                 <connections>
@@ -1893,7 +1906,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eLD-6l-BRz">
-                                <rect key="frame" x="235" y="431" width="30" height="41"/>
+                                <rect key="frame" x="282" y="725" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A"/>
                                 <connections>
@@ -1901,7 +1914,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbs-Fw-eL6">
-                                <rect key="frame" x="55" y="431" width="30" height="41"/>
+                                <rect key="frame" x="102" y="725" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D"/>
                                 <connections>
@@ -1909,7 +1922,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whP-q2-Pnt">
-                                <rect key="frame" x="100" y="463" width="30" height="41"/>
+                                <rect key="frame" x="147" y="757" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="E"/>
                                 <connections>
@@ -1917,7 +1930,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vdP-dX-kDj">
-                                <rect key="frame" x="190" y="463" width="30" height="41"/>
+                                <rect key="frame" x="237" y="757" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G"/>
                                 <connections>
@@ -1925,7 +1938,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPd-q3-tlB">
-                                <rect key="frame" x="280" y="463" width="30" height="41"/>
+                                <rect key="frame" x="327" y="757" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="B"/>
                                 <connections>
@@ -1933,7 +1946,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UCf-Pv-AAM">
-                                <rect key="frame" x="145" y="431" width="30" height="41"/>
+                                <rect key="frame" x="192" y="725" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F"/>
                                 <connections>
@@ -1941,26 +1954,26 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIq-xj-92p">
-                                <rect key="frame" x="15.5" y="96" width="289" height="32"/>
+                                <rect key="frame" x="62.5" y="120" width="289" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7m-CH-LYX">
-                                <rect key="frame" x="87.5" y="370.5" width="145" height="31.5"/>
+                                <rect key="frame" x="134.5" y="664.5" width="145" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2y6-a2-r6e">
-                                <rect key="frame" x="8.5" y="160" width="303" height="180"/>
+                                <rect key="frame" x="55.5" y="184" width="303" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="FK7-1v-n5C"/>
                                     <constraint firstAttribute="width" constant="303" id="RJx-qy-XvN"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UsY-QJ-pCP">
-                                <rect key="frame" x="105" y="341" width="110" height="21"/>
+                                <rect key="frame" x="152" y="635.5" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1993,6 +2006,8 @@ Minor</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewHeight" destination="FK7-1v-n5C" id="Bb3-qI-5kK"/>
+                        <outlet property="imageViewWidth" destination="RJx-qy-XvN" id="7kb-0X-eTY"/>
                         <outlet property="note1Button" destination="5SL-Pm-shZ" id="JIY-A1-3HD"/>
                         <outlet property="note2Button" destination="Xbs-Fw-eL6" id="SY2-48-ZLK"/>
                         <outlet property="note3Button" destination="whP-q2-Pnt" id="A1V-fH-w72"/>
@@ -2019,11 +2034,11 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="50V-mS-u9e"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="Rug-4f-nsA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKH-Db-Q9e">
-                                <rect key="frame" x="255" y="479" width="30" height="41"/>
+                                <rect key="frame" x="302" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="A"/>
                                 <connections>
@@ -2031,7 +2046,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAM-uf-z2q">
-                                <rect key="frame" x="35" y="479" width="30" height="41"/>
+                                <rect key="frame" x="82" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D"/>
                                 <connections>
@@ -2039,7 +2054,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvz-Bd-B3j">
-                                <rect key="frame" x="90" y="479" width="30" height="41"/>
+                                <rect key="frame" x="137" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="E"/>
                                 <connections>
@@ -2047,7 +2062,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ns-HQ-NNs">
-                                <rect key="frame" x="200" y="479" width="30" height="41"/>
+                                <rect key="frame" x="247" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G"/>
                                 <connections>
@@ -2055,7 +2070,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBt-mh-lCZ">
-                                <rect key="frame" x="145" y="418" width="30" height="41"/>
+                                <rect key="frame" x="192" y="712" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F#"/>
                                 <connections>
@@ -2063,7 +2078,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vze-OW-Xdp">
-                                <rect key="frame" x="210" y="418" width="33" height="41"/>
+                                <rect key="frame" x="257" y="712" width="33" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="G#"/>
                                 <connections>
@@ -2071,7 +2086,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYP-RX-sgV">
-                                <rect key="frame" x="145" y="479" width="30" height="41"/>
+                                <rect key="frame" x="192" y="773" width="30" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="F"/>
                                 <connections>
@@ -2079,7 +2094,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3WB-tb-Dgv">
-                                <rect key="frame" x="78" y="418" width="32" height="41"/>
+                                <rect key="frame" x="125" y="712" width="32" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="D#"/>
                                 <connections>
@@ -2087,32 +2102,32 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Key" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gPP-rh-eTM">
-                                <rect key="frame" x="21.5" y="96" width="277" height="32"/>
+                                <rect key="frame" x="68.5" y="120" width="277" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCL-HM-mdf">
-                                <rect key="frame" x="87.5" y="370.5" width="145" height="31.5"/>
+                                <rect key="frame" x="134.5" y="664.5" width="145" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oGz-dZ-OBo">
-                                <rect key="frame" x="8.5" y="160" width="303" height="200"/>
+                                <rect key="frame" x="55.5" y="184" width="303" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="303" id="NWp-wF-O0R"/>
                                     <constraint firstAttribute="height" constant="200" id="pIe-JD-Jg7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qdf-1u-0VS">
-                                <rect key="frame" x="105" y="341" width="110" height="21"/>
+                                <rect key="frame" x="152" y="635.5" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scale: Major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75v-GH-j2z">
-                                <rect key="frame" x="115.5" y="136" width="89" height="19.5"/>
+                                <rect key="frame" x="162.5" y="160" width="89" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2149,6 +2164,8 @@ Minor</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imageViewHeight" destination="pIe-JD-Jg7" id="WUY-FY-AmU"/>
+                        <outlet property="imageViewWidth" destination="NWp-wF-O0R" id="vlG-dv-E8W"/>
                         <outlet property="note10Button" destination="BKH-Db-Q9e" id="jhz-L7-KNq"/>
                         <outlet property="note3Button" destination="wAM-uf-z2q" id="BUa-eq-xOD"/>
                         <outlet property="note4Button" destination="3WB-tb-Dgv" id="YQm-tU-beM"/>
@@ -2177,36 +2194,36 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="4jf-CS-hNb"/>
                     </layoutGuides>
                     <view key="view" contentMode="center" id="IsI-Ao-zG6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the Displayed Chord" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VK1-5K-HrN">
-                                <rect key="frame" x="8" y="96" width="304" height="32"/>
+                                <rect key="frame" x="55" y="120" width="304" height="32"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0/24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-xe-MgO">
-                                <rect key="frame" x="87.5" y="353.5" width="145" height="31.5"/>
+                                <rect key="frame" x="134.5" y="647.5" width="145" height="31.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jJe-TM-aLU">
-                                <rect key="frame" x="8.5" y="160" width="303" height="200"/>
+                                <rect key="frame" x="55.5" y="184" width="303" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="AhP-7u-GZp"/>
                                     <constraint firstAttribute="width" constant="303" id="s77-bg-zOG"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress: 1/24" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CIu-Vh-msc">
-                                <rect key="frame" x="105" y="324" width="110" height="21"/>
+                                <rect key="frame" x="152" y="618.5" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KWH-OZ-5sO">
-                                <rect key="frame" x="48" y="465" width="99" height="39"/>
+                                <rect key="frame" x="52" y="759" width="99" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Agmented"/>
                                 <connections>
@@ -2214,7 +2231,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3k4-96-Lor">
-                                <rect key="frame" x="165" y="465" width="107" height="39"/>
+                                <rect key="frame" x="255" y="759" width="107" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Diminished"/>
                                 <connections>
@@ -2222,7 +2239,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WCr-zH-sN5">
-                                <rect key="frame" x="80" y="394" width="54" height="39"/>
+                                <rect key="frame" x="84" y="688" width="54" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Major"/>
                                 <connections>
@@ -2230,7 +2247,7 @@ Minor</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BsA-Ec-dYf">
-                                <rect key="frame" x="185" y="394" width="55" height="39"/>
+                                <rect key="frame" x="275" y="688" width="55" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Minor"/>
                                 <connections>
@@ -2263,9 +2280,15 @@ Minor</string>
                         <outlet property="bottomLeftConst" destination="IEq-N7-6U3" id="vv1-0S-c6k"/>
                         <outlet property="bottomRightConst" destination="GDm-Nk-VPn" id="zbx-Dl-heS"/>
                         <outlet property="diminishedButton" destination="3k4-96-Lor" id="qGN-yK-mTk"/>
+                        <outlet property="imageViewHeight" destination="AhP-7u-GZp" id="lBB-KM-VtM"/>
+                        <outlet property="imageViewWidth" destination="s77-bg-zOG" id="QFJ-oU-at3"/>
+                        <outlet property="leftAugConst" destination="2de-z2-W4b" id="468-qm-Arn"/>
+                        <outlet property="leftMajorConst" destination="eRL-Vq-1fd" id="Ve5-n8-3r0"/>
                         <outlet property="majorButton" destination="WCr-zH-sN5" id="CXR-mr-L9y"/>
                         <outlet property="minorButton" destination="BsA-Ec-dYf" id="jEN-79-eom"/>
                         <outlet property="progressLabel" destination="CIu-Vh-msc" id="iZK-Ms-FCh"/>
+                        <outlet property="rightDimConst" destination="l8y-L0-GIe" id="OMM-xT-6ed"/>
+                        <outlet property="rightMinorConst" destination="neo-gD-JGB" id="ip8-X0-dEy"/>
                         <outlet property="scoreLabel" destination="BhM-xe-MgO" id="0V9-lT-iuu"/>
                         <outlet property="staffImageView" destination="jJe-TM-aLU" id="MIG-a4-GNh"/>
                         <segue destination="V8t-zC-p4p" kind="show" identifier="completion" id="qWH-em-Zwe"/>
@@ -2284,11 +2307,11 @@ Minor</string>
                         <viewControllerLayoutGuide type="bottom" id="3Kp-2i-w9t"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="H7O-K3-Q30">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFS-oD-CDX">
-                                <rect key="frame" x="133" y="396" width="54" height="44"/>
+                                <rect key="frame" x="180" y="690" width="54" height="44"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <state key="normal" title="Start"/>
                                 <connections>
@@ -2296,19 +2319,19 @@ Minor</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Staff Note Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WoA-GU-XUp">
-                                <rect key="frame" x="56" y="96" width="208" height="31.5"/>
+                                <rect key="frame" x="103" y="120" width="208" height="31.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzm-Kw-bq9">
-                                <rect key="frame" x="142" y="191.5" width="36" height="24"/>
+                                <rect key="frame" x="189" y="215.5" width="36" height="24"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mY7-iM-U8R">
-                                <rect key="frame" x="96" y="223.5" width="128" height="29"/>
+                                <rect key="frame" x="143" y="247.5" width="128" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="128" id="pfE-au-TBB"/>
                                 </constraints>
@@ -2340,12 +2363,12 @@ Minor</string>
         </scene>
     </scenes>
     <resources>
-        <image name="chad" width="60" height="60"/>
-        <image name="icons8-horizontal_settings_mixer" width="33" height="33"/>
-        <image name="icons8-price_tag_usd" width="33" height="33"/>
-        <image name="icons8-stop_filled" width="50" height="50"/>
+        <image name="chad" width="180" height="180"/>
+        <image name="icons8-horizontal_settings_mixer" width="100" height="100"/>
+        <image name="icons8-price_tag_usd" width="100" height="100"/>
+        <image name="icons8-stop_filled" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qWH-em-Zwe"/>
+        <segue reference="Pb6-BD-X3w"/>
     </inferredMetricsTieBreakers>
 </document>

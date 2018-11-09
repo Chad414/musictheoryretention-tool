@@ -70,6 +70,35 @@ class StaffChordIdentificationVC: UIViewController {
     }
     var buttons: [UIButton] = []
     
+    @IBOutlet var imageViewWidth: NSLayoutConstraint!
+    @IBOutlet var imageViewHeight: NSLayoutConstraint!
+    @IBOutlet var leftMajorConst: NSLayoutConstraint!
+    @IBOutlet var leftAugConst: NSLayoutConstraint!
+    @IBOutlet var rightMinorConst: NSLayoutConstraint!
+    @IBOutlet var rightDimConst: NSLayoutConstraint!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if GlobalSettings.deviceIs129InchiPad() {
+            leftMajorConst.constant *= 6
+            leftAugConst.constant *= 10.1
+            rightMinorConst.constant *= 6
+            rightDimConst.constant *= 10.1
+        } else if GlobalSettings.deviceIs97InchiPad() {
+            leftMajorConst.constant *= 4
+            leftAugConst.constant *= 6.5
+            rightMinorConst.constant *= 4
+            rightDimConst.constant *= 6.5
+        }
+        
+        if GlobalSettings.deviceIsiPad() {
+            imageViewWidth.constant *= 1.5
+            imageViewHeight.constant *= 1.5
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

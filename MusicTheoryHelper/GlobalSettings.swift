@@ -26,12 +26,33 @@ struct GlobalSettings {
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
     
-    static let version: String = "1.0.5"
+    static let version: String = "1.1"
     static var showAds: Bool = true
     static var chadHamdan: Bool = false
     
     static func displayIsCompact() -> Bool {
         if UIScreen.main.nativeBounds.height <= 1136 {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    static func deviceIsiPad() -> Bool {
+        if UIDevice.current.userInterfaceIdiom == .pad { return true }
+        return false
+    }
+    
+    static func deviceIs97InchiPad() -> Bool {
+        if UIScreen.main.nativeBounds.height <= 2048 && UIDevice.current.userInterfaceIdiom == .pad {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    static func deviceIs129InchiPad() -> Bool {
+        if UIScreen.main.nativeBounds.height >= 2732 && UIDevice.current.userInterfaceIdiom == .pad {
             return true
         } else {
             return false
