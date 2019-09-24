@@ -14,6 +14,10 @@ class SettingsVC: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Settings"
+        
+        if GlobalSettings.deviceIsiPad() {
+            tableView.rowHeight = 95
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +56,9 @@ class SettingsVC: UITableViewController {
         default:
             print("Trying to display invalid cell, wrong int returned in delegate function")
         }
+        
+        cell.setFonts()
+        
         return cell
     }
     

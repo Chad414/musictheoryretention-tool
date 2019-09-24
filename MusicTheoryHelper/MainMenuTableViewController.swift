@@ -32,10 +32,6 @@ class MainMenuTableViewController: UITableViewController {
         
         // Remove purchase button until feature is tested
         navigationItem.rightBarButtonItem = nil
-        
-        if GlobalSettings.deviceIsiPad() {
-            
-        }
     }
     
     override func viewDidLoad() {

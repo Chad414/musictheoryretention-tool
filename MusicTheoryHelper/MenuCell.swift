@@ -26,7 +26,6 @@ class MenuCell: UITableViewCell {
             } else {
                 self.textLabel?.font = self.textLabel?.font.withSize(22.0)
             }
-            
         }
     }
     

@@ -133,8 +133,8 @@ class StaffNoteIdentificationVC: UIViewController {
         super.viewWillAppear(animated)
         
         if GlobalSettings.deviceIsiPad() {
-            imageViewWidth.constant *= 1.5
-            imageViewHeight.constant *= 1.5
+            imageViewWidth.constant = 454
+            imageViewHeight.constant = 270
         }
     }
     

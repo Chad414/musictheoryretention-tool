@@ -104,15 +104,15 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         super.viewWillAppear(animated)
         
         if GlobalSettings.deviceIs129InchiPad() {
-            leftMajorConst.constant *= 6
-            leftAugConst.constant *= 7.5
-            rightMinorConst.constant *= 6
-            rightDimConst.constant *= 7.5
+            leftMajorConst.constant = 384
+            leftAugConst.constant = 360
+            rightMinorConst.constant = 384
+            rightDimConst.constant = 360
         } else if GlobalSettings.deviceIs97InchiPad() {
-            leftMajorConst.constant *= 4
-            leftAugConst.constant *= 4.7
-            rightMinorConst.constant *= 4
-            rightDimConst.constant *= 4.7
+            leftMajorConst.constant = 256
+            leftAugConst.constant = 226
+            rightMinorConst.constant = 246
+            rightDimConst.constant = 226
         }
         
     }

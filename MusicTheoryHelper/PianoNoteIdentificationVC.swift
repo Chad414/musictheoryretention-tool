@@ -152,8 +152,8 @@ class PianoNoteIdentificationVC: UIViewController {
         super.viewWillAppear(animated)
         
         if GlobalSettings.deviceIsiPad() {
-            imageViewWidth.constant *= 2
-            imageViewHeight.constant *= 2
+            imageViewWidth.constant = 606
+            imageViewHeight.constant = 256
         }
     }
     

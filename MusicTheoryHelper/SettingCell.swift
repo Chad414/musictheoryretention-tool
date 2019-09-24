@@ -33,6 +33,16 @@ class SettingCell: UITableViewCell {
         }
     }
     
+    func setFonts() {
+        if GlobalSettings.deviceIsiPad() {
+            if GlobalSettings.deviceIs129InchiPad() {
+                self.settingLabel?.font = self.textLabel?.font.withSize(26.0)
+            } else {
+                self.settingLabel?.font = self.textLabel?.font.withSize(22.0)
+            }
+        }
+    }
+    
     override func prepareForReuse() {
         self.contentView.addSubview(settingLabel)
         self.contentView.addSubview(cellSwitch)

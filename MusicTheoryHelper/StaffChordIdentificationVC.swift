@@ -81,20 +81,20 @@ class StaffChordIdentificationVC: UIViewController {
         super.viewWillAppear(animated)
         
         if GlobalSettings.deviceIs129InchiPad() {
-            leftMajorConst.constant *= 6
-            leftAugConst.constant *= 10.1
-            rightMinorConst.constant *= 6
-            rightDimConst.constant *= 10.1
+            leftMajorConst.constant = 384
+            leftAugConst.constant = 323
+            rightMinorConst.constant = 384
+            rightDimConst.constant = 323
         } else if GlobalSettings.deviceIs97InchiPad() {
-            leftMajorConst.constant *= 4
-            leftAugConst.constant *= 6.5
-            rightMinorConst.constant *= 4
-            rightDimConst.constant *= 6.5
+            leftMajorConst.constant = 256
+            leftAugConst.constant = 208
+            rightMinorConst.constant = 256
+            rightDimConst.constant = 208
         }
         
         if GlobalSettings.deviceIsiPad() {
-            imageViewWidth.constant *= 1.5
-            imageViewHeight.constant *= 1.5
+            imageViewWidth.constant = 454
+            imageViewHeight.constant = 270
         }
         
     }
