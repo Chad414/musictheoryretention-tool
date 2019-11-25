@@ -31,7 +31,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     var adShown: Bool = false
     let displayAD = arc4random_uniform(18)
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     let notes: [Int] = Array(0...35) // 12 notes, 3 octaves - 3rd = (0...11) 2nd = (12...23), 4th = (24...35)
     var notesToPlay: [Int] = [] // Determine notes to be played in viewDidLoad()
     var thirdOctaveOnly: Bool = true

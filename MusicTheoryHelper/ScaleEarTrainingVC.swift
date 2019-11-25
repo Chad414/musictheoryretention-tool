@@ -35,7 +35,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     var adShown: Bool = false
     let displayAD = arc4random_uniform(18)
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     let notes: [Int] = Array(0...47) // 12 major scales, 12 minor scales, 12 harmonic minor, 12 melodic minor
     var scalesToPlay: [Int] = [] // Determine notes to be played in viewDidLoad()
     var playHarmonicMinor: Bool = false // This means play melodic minor too

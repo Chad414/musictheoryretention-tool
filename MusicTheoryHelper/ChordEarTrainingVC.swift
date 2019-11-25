@@ -69,7 +69,7 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var progressLabel: UILabel!
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     var chords: [Int] = Array(0...47) // 12 major chords, 12 minor chrords, 12 augmented chords, 12 diminished chords
     var chordsToPlay: [Int] = []
     var numberOfQuestions: Int = 24

@@ -31,7 +31,7 @@ class PianoNoteIdentificationVC: UIViewController {
     var adShown: Bool = false
     let displayAD = arc4random_uniform(18)
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer! 
     let playAudio: Bool = GlobalSettings.playAudio
     // Each note should be displayed twice per session, order will be randomized later.
     var notesToDisplay: [Int] = [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11] // Order will be randomized

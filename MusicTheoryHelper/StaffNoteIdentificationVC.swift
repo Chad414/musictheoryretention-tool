@@ -80,7 +80,7 @@ class StaffNoteIdentificationVC: UIViewController {
     @IBOutlet var progressLabel: UILabel!
     @IBOutlet var pianoImageView: UIImageView!
 
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     let playAudio = GlobalSettings.playAudio
     var notesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13] // Order will be randomized
     var progress: Int = 0 {

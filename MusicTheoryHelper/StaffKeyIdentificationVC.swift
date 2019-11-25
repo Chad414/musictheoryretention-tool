@@ -118,7 +118,7 @@ class StaffKeyIdentificationVC: UIViewController {
     @IBOutlet var pianoImageView: UIImageView!
     @IBOutlet var scaleLabel: UILabel!
     
-    var audioPlayer = AVAudioPlayer()
+    var audioPlayer: AVAudioPlayer!
     // Display 16 signatures because there are 8 per clef
     var signaturesToDisplay: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] // Order will be randomized
     var buttonOrder: [Int] = [0, 1, 2, 3, 4, 5, 6, 7]
