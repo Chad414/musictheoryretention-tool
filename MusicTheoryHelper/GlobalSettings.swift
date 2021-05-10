@@ -26,7 +26,7 @@ struct GlobalSettings {
     static var noteNameOption: Int = 0
     static var playAudio: Bool = true
     
-    static let version: String = "1.1.3"
+    static let version: String = "1.1.4"
     static var showAds: Bool = true
     static var chadHamdan: Bool = false
     

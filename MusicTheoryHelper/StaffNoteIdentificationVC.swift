@@ -21,7 +21,7 @@ class StaffNoteIdentificationVC: UIViewController {
         NSDataAsset(name: "B3")!,
         ]
     
-    var interstitial: GADInterstitial!
+//    var interstitial: GADInterstitial!
     var adShown: Bool = false
     let displayAD = arc4random_uniform(10)
     
@@ -141,10 +141,10 @@ class StaffNoteIdentificationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/9413783805")
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/9413783805")
         
-        let request = GADRequest()
-        interstitial.load(request)
+//        let request = GADRequest()
+//        interstitial.load(request)
         
         navigationItem.title = "Staff Note Identification"
         progressLabel.text = "Progress: 1/\(notesToDisplay.count)"
@@ -228,14 +228,14 @@ class StaffNoteIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
-                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
-                    if self.progress == self.displayAD {
-                        self.interstitial.present(fromRootViewController: self)
-                        self.adShown = true
-                    }
-                } else {
-                    print("Ad wasn't ready")
-                }
+//                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
+//                    if self.progress == self.displayAD {
+//                        self.interstitial.present(fromRootViewController: self)
+//                        self.adShown = true
+//                    }
+//                } else {
+//                    print("Ad wasn't ready")
+//                }
                 self.progress += 1
             })
         })

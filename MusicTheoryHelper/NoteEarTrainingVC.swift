@@ -27,7 +27,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         NSDataAsset(name: "A4")!, NSDataAsset(name: "A#4")!, NSDataAsset(name: "B4")!,
         ]
     
-    var interstitial: GADInterstitial!
+//    var interstitial: GADInterstitial!
     var adShown: Bool = false
     let displayAD = arc4random_uniform(18)
     
@@ -170,9 +170,9 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/4516680345")
-        let request = GADRequest()
-        interstitial.load(request)
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/4516680345")
+//        let request = GADRequest()
+//        interstitial.load(request)
         
         navigationItem.title = "Note Ear Training"
         
@@ -273,14 +273,14 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
-                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
-                    if self.progress == self.displayAD {
-                        self.interstitial.present(fromRootViewController: self)
-                        self.adShown = true
-                    }
-                } else {
-                    print("Ad wasn't ready")
-                }
+//                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
+//                    if self.progress == self.displayAD {
+//                        self.interstitial.present(fromRootViewController: self)
+//                        self.adShown = true
+//                    }
+//                } else {
+//                    print("Ad wasn't ready")
+//                }
                 self.progress += 1
                 self.audioPlayer.stop()
                 if self.progress < 24 {

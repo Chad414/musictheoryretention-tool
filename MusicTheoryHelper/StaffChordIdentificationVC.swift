@@ -11,7 +11,7 @@ import GoogleMobileAds
 
 class StaffChordIdentificationVC: UIViewController {
     
-    var interstitial: GADInterstitial!
+//    var interstitial: GADInterstitial!
     var adShown: Bool = false
     let displayAD = arc4random_uniform(18)
     
@@ -107,10 +107,10 @@ class StaffChordIdentificationVC: UIViewController {
             bottomRightConst.constant = 32
         }
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/6021333701")
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-4468715439448322/6021333701")
         
         let request = GADRequest()
-        interstitial.load(request)
+//        interstitial.load(request)
         
         if displayTrebleClef {
             var array: [String] = []
@@ -227,14 +227,14 @@ class StaffChordIdentificationVC: UIViewController {
                 }
             }, completion: { (finished: Bool) in
                 // Completion of second animation
-                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
-                    if self.progress == self.displayAD {
-                        self.interstitial.present(fromRootViewController: self)
-                        self.adShown = true
-                    }
-                } else {
-                    print("Ad wasn't ready")
-                }
+//                if self.interstitial.isReady && self.adShown == false && GlobalSettings.showAds == true {
+//                    if self.progress == self.displayAD {
+//                        self.interstitial.present(fromRootViewController: self)
+//                        self.adShown = true
+//                    }
+//                } else {
+//                    print("Ad wasn't ready")
+//                }
                 self.progress += 1
             })
         })

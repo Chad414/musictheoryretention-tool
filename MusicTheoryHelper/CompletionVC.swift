@@ -16,7 +16,7 @@ class CompletionVC: UIViewController {
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     
-    var interstitial: GADInterstitial!
+//    var interstitial: GADInterstitial!
     var adShown: Bool = false
     
     @IBAction func quitButton(_ sender: UIButton) {
@@ -97,9 +97,9 @@ class CompletionVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+//        interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         let request = GADRequest()
-        interstitial.load(request)
+//        interstitial.load(request)
         
         navigationItem.hidesBackButton = true
         navigationItem.title = "Results"
