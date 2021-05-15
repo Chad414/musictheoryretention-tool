@@ -28,8 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GlobalSettings.noteNameOption = UserDefaults.standard.integer(forKey: "noteNameOption")
         GlobalSettings.playAudio = UserDefaults.standard.bool(forKey: "playAudio")
         
-        //GADMobileAds.configure(withApplicationID: "ca-app-pub-4468715439448322~9817872822")
-        
         print("Audio Enabled: \(GlobalSettings.playAudio)")
         
         return true

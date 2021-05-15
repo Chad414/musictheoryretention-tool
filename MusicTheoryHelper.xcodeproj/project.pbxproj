@@ -117,6 +117,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6340D1B2264FE8AE0022B36B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */,
+				638691FC1F8591DB0096100C /* MenuCell.swift */,
+				63819B901F8E49C100FB4D61 /* CompletionVC.swift */,
+				638F8C031FA0B924003668C2 /* SettingsVC.swift */,
+				633D1A4F20081768006AB473 /* SettingCell.swift */,
+				63AAE98D2008354600778E7E /* AboutVC.swift */,
+				6340D1B3264FE8BB0022B36B /* Piano */,
+				6340D1B4264FE8C40022B36B /* Staff */,
+				6340D1B5264FE8CE0022B36B /* Ear */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6340D1B3264FE8BB0022B36B /* Piano */ = {
+			isa = PBXGroup;
+			children = (
+				63531C3C1F3F9579003BD606 /* PianoNoteIdentificationVC.swift */,
+				6394646E1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift */,
+				63966D301F66F0D6005940C1 /* PianoChordIdentificationVC.swift */,
+			);
+			path = Piano;
+			sourceTree = "<group>";
+		};
+		6340D1B4264FE8C40022B36B /* Staff */ = {
+			isa = PBXGroup;
+			children = (
+				6339D5431FA296D7001C7A77 /* StaffNoteIdentificationVC.swift */,
+				633A77FF1FB3472000E42B60 /* StaffKeyIdentificationVC.swift */,
+				63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */,
+			);
+			path = Staff;
+			sourceTree = "<group>";
+		};
+		6340D1B5264FE8CE0022B36B /* Ear */ = {
+			isa = PBXGroup;
+			children = (
+				6361DFB41F965608003F0CA7 /* NoteEarTrainingVC.swift */,
+				631EB2431FC33DE300D43F13 /* ScaleEarTrainingVC.swift */,
+				63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */,
+			);
+			path = Ear;
+			sourceTree = "<group>";
+		};
 		63A683F11F3AAA1600B17DE5 = {
 			isa = PBXGroup;
 			children = (
@@ -142,27 +188,13 @@
 		63A683FC1F3AAA1600B17DE5 /* MusicTheoryHelper */ = {
 			isa = PBXGroup;
 			children = (
+				6340D1B2264FE8AE0022B36B /* ViewControllers */,
 				63A683FD1F3AAA1600B17DE5 /* AppDelegate.swift */,
 				63A684011F3AAA1600B17DE5 /* Main.storyboard */,
 				63A684041F3AAA1600B17DE5 /* Assets.xcassets */,
 				63A684061F3AAA1600B17DE5 /* LaunchScreen.storyboard */,
 				63A684091F3AAA1600B17DE5 /* Info.plist */,
-				63A6842B1F3AAB4400B17DE5 /* MainMenuTableViewController.swift */,
-				63531C3C1F3F9579003BD606 /* PianoNoteIdentificationVC.swift */,
-				6394646E1F7A7DC300A58048 /* PianoScaleIdentificationVC.swift */,
-				63966D301F66F0D6005940C1 /* PianoChordIdentificationVC.swift */,
-				6339D5431FA296D7001C7A77 /* StaffNoteIdentificationVC.swift */,
-				633A77FF1FB3472000E42B60 /* StaffKeyIdentificationVC.swift */,
-				63FEB4781FD3185100204335 /* StaffChordIdentificationVC.swift */,
-				6361DFB41F965608003F0CA7 /* NoteEarTrainingVC.swift */,
-				631EB2431FC33DE300D43F13 /* ScaleEarTrainingVC.swift */,
-				63FEB47A1FD3189600204335 /* ChordEarTrainingVC.swift */,
 				63531C3E1F3FAE9F003BD606 /* GlobalSettings.swift */,
-				638691FC1F8591DB0096100C /* MenuCell.swift */,
-				63819B901F8E49C100FB4D61 /* CompletionVC.swift */,
-				638F8C031FA0B924003668C2 /* SettingsVC.swift */,
-				633D1A4F20081768006AB473 /* SettingCell.swift */,
-				63AAE98D2008354600778E7E /* AboutVC.swift */,
 				63AFDB1A20C61ADB00EE6EC5 /* IAPHandler.swift */,
 			);
 			path = MusicTheoryHelper;
