@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import MusicTheoryHelper
+//@testable import MusicTheoryHelper
 
 class MusicTheoryHelperTests: XCTestCase {
     

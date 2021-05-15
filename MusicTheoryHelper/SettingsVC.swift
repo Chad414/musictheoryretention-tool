@@ -43,7 +43,7 @@ class SettingsVC: UITableViewController {
             cell.cellSwitch.isHidden = true
         case 1:
             cell.settingLabel?.text = "Play Sound"
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            cell.selectionStyle = UITableViewCell.SelectionStyle.none
         case 2:
             cell.settingLabel?.text = "Feedback or Report a Bug"
             cell.accessoryType = .disclosureIndicator

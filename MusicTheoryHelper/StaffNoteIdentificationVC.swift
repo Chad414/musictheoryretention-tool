@@ -165,7 +165,7 @@ class StaffNoteIdentificationVC: UIViewController {
         if playAudio {
             do {
                 audioPlayer = try AVAudioPlayer(data: pianoAudioURL[actualNoteIndex].data, fileTypeHint: "mp3")
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setCategory(.ambient)
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
                 print(error)
@@ -182,7 +182,7 @@ class StaffNoteIdentificationVC: UIViewController {
         if playAudio {
             do {
                 audioPlayer = try AVAudioPlayer(data: pianoAudioURL[selected].data, fileTypeHint: "mp3")
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setCategory(.ambient)
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
                 print(error)
@@ -282,3 +282,8 @@ class StaffNoteIdentificationOptionsVC: UIViewController {
     }
 }
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}

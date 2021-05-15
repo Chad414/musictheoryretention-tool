@@ -127,7 +127,7 @@ class ScaleEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         // Play current scale
         do {
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[scalesToPlay[progress]].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
             try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer.delegate = self
         } catch {
@@ -262,4 +262,9 @@ class ScaleEarTrainingOptionsVC: UIViewController {
             print("Unexpected segue selected")
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

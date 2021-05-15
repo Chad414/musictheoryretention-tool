@@ -143,7 +143,7 @@ class ChordEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         // Play first chord
         do {
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[chordsToPlay[progress]].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
             try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer.delegate = self
         } catch {
@@ -279,4 +279,9 @@ class ChordEarTrainingOptionsVC: UIViewController {
             print("Unexpected segue selected")
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

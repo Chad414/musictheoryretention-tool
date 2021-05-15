@@ -205,7 +205,7 @@ class PianoNoteIdentificationVC: UIViewController {
             // Audio can be loaded here if loading is causing issues
             do {
                 audioPlayer = try AVAudioPlayer(data: pianoAudioURL[notesToDisplay[progress]].data, fileTypeHint: "mp3")
-                try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+                try AVAudioSession.sharedInstance().setCategory(.ambient)
                 try AVAudioSession.sharedInstance().setActive(true)
             } catch {
                 print(error)
@@ -252,7 +252,7 @@ class PianoNoteIdentificationVC: UIViewController {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
-        let indexOfCorrectButton = self.noteButtonOrder.index(of: self.notesToDisplay[self.progress])
+        let indexOfCorrectButton = self.noteButtonOrder.firstIndex(of: self.notesToDisplay[self.progress])
         
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
@@ -314,4 +314,9 @@ class PianoNoteIdentificationOptionsVC: UIViewController {
             print("Unexpected segue selected")
         }
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }

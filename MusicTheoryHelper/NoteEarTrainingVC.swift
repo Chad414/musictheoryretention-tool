@@ -192,7 +192,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         noteButtons = [note1Button, note2Button, note3Button, note4Button, note5Button, note6Button, note7Button, note8Button, note9Button,  note10Button, note11Button, note12Button]
         
         for i in noteButtons {
-            i.setTitle(GlobalSettings.noteNames[noteButtons.index(of: i)!], for: .normal)
+            i.setTitle(GlobalSettings.noteNames[noteButtons.firstIndex(of: i)!], for: .normal)
         }
         
         print("Current Note \(notesToPlay[progress])")
@@ -200,7 +200,7 @@ class NoteEarTrainingVC: UIViewController, AVAudioPlayerDelegate {
         // Play reference note and current note after using AVAudioPlayer delegate
         do {
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[referenceNoteIndex].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
             try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer.delegate = self
         } catch {
@@ -414,3 +414,8 @@ class NoteEarTrainingOptionsVC: UIViewController {
 }
 
 
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
+}

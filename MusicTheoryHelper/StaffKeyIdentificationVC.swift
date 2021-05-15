@@ -230,7 +230,7 @@ class StaffKeyIdentificationVC: UIViewController {
         
         do {
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[actualNoteIndex].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error)
@@ -244,7 +244,7 @@ class StaffKeyIdentificationVC: UIViewController {
         
         do {
             audioPlayer = try AVAudioPlayer(data: pianoAudioURL[note].data, fileTypeHint: "mp3")
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
             try AVAudioSession.sharedInstance().setActive(true)
         } catch {
             print(error)
@@ -266,7 +266,7 @@ class StaffKeyIdentificationVC: UIViewController {
         // Force any outstanding layout changes
         view.layoutIfNeeded()
         
-        let indexOfCorrectButton: Int = self.buttonOrder.index(of: actualNoteIndex) ?? 0
+        let indexOfCorrectButton: Int = self.buttonOrder.firstIndex(of: actualNoteIndex) ?? 0
         
         UIView.animate(withDuration: 0.5, animations: {
             if correct {
@@ -356,4 +356,9 @@ class StaffKeyIdentificationOptionsVC: UIViewController {
         super.viewDidLoad()
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertFromAVAudioSessionCategory(_ input: AVAudioSession.Category) -> String {
+	return input.rawValue
 }
